@@ -14,7 +14,7 @@ public class AuthenticationController {
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public ResponseEntity<?> saveUser(@RequestBody String user) throws Exception {
 		
-		if (user != null) {
+		if (user == null) {
 			return ResponseEntity.ok("{\r\n"
 					+ "  \"status\": \"error\",\r\n"
 					+ "  \"message\": \"Email already exist\"\r\n"
