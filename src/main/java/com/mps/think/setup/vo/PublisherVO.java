@@ -2,11 +2,11 @@ package com.mps.think.setup.vo;
 
 import java.math.BigInteger;
 
-import com.mps.think.setup.vo.EnumModel.Currency;
-import com.mps.think.setup.vo.EnumModel.DateFormat;
-import com.mps.think.setup.vo.EnumModel.TimeZone;
+import com.mps.think.setup.vo.EnumModelVO.Currency;
+import com.mps.think.setup.vo.EnumModelVO.DateFormat;
+import com.mps.think.setup.vo.EnumModelVO.TimeZone;
 
-public class Publisher {
+public class PublisherVO {
 
 	private Integer id;
 	private String name;

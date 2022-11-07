@@ -69,10 +69,5 @@ public class SalesRepresentative extends BaseEntity {
 	}
 
 
+
 }
-/*
- * CREATE TABLE `THINK_SETUP`.`sales_representative` ( `id` INT NOT NULL,
- * `pubid` INT NULL, `name` VARCHAR(45) NULL, `isactive` TINYINT NULL,
- * `created_by` VARCHAR(45) NULL, `created_At` VARCHAR(45) NULL, `updated_BY`
- * VARCHAR(45) NULL, `updated_at` VARCHAR(45) NULL, PRIMARY KEY (`id`));
- */

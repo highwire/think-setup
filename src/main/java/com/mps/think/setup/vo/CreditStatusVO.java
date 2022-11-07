@@ -1,10 +1,10 @@
 package com.mps.think.setup.vo;
 
-public class CreditStatus{
+public class CreditStatusVO{
 
 	
 	private Integer creditId;
-	private Publisher pubId;
+	private PublisherVO pubId;
 	private String creditName;
 	private String description;
 	private Integer badcredit;
@@ -19,12 +19,12 @@ public class CreditStatus{
 	}
 
 
-	public Publisher getPubId() {
+	public PublisherVO getPubId() {
 		return pubId;
 	}
 
 
-	public void setPubId(Publisher pubId) {
+	public void setPubId(PublisherVO pubId) {
 		this.pubId = pubId;
 	}
 

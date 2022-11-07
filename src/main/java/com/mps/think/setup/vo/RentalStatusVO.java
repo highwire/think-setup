@@ -1,6 +1,6 @@
 package com.mps.think.setup.vo;
 
-public class RentalStatus {
+public class RentalStatusVO {
 
 	private Integer rentalStatusId;
 	private String rentalcategory;

@@ -1,0 +1,75 @@
+package com.mps.think.setup.serviceImpl;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mps.think.setup.model.SalesRepresentative;
+import com.mps.think.setup.repo.SalesRepresentativeRepo;
+import com.mps.think.setup.service.SalesRepresentativeService;
+import com.mps.think.setup.vo.SalesRepresentativeVO;
+
+@Service
+public class SalesRepresentativeServiceImp implements SalesRepresentativeService {
+	@Autowired
+	SalesRepresentativeRepo salesRepresentativeRepo;
+
+	@Override
+	public List<SalesRepresentativeVO> findAllSalesRepresentative() {
+		List<SalesRepresentative> salesRepresentativeList = salesRepresentativeRepo.findAll();
+		ObjectMapper objectMapper = new ObjectMapper();
+		String jsonString = salesRepresentativeList.toString();
+		System.out.println(jsonString);
+		try {
+			parseJsonArray(jsonString, SalesRepresentativeVO.class);
+		} catch (JsonProcessingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+
+	@Override
+	public SalesRepresentativeVO saveContactDetails(SalesRepresentativeVO contact) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Optional<SalesRepresentativeVO> findbyContactId(Integer contactId) {
+		// TODO Auto-generated method stub
+		return Optional.empty();
+	}
+
+	@Override
+	public boolean findByEmail(String email) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public SalesRepresentativeVO findbytId(Integer contactId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public <T> List<T> parseJsonArray(String json, Class<T> clazz) throws JsonProcessingException {
+		ObjectMapper objectMapper = new ObjectMapper();
+		JsonNode tree = objectMapper.readTree(json);
+		ArrayList<T> list = new ArrayList<T>();
+		  for (JsonNode jsonNode : tree) {
+		    list.add(objectMapper.treeToValue(jsonNode, clazz));
+		  }
+		  System.out.println(list);
+		  return list;
+		}
+
+}

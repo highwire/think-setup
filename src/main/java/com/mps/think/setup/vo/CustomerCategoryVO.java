@@ -1,13 +1,13 @@
 package com.mps.think.setup.vo;
 
-public class CustomerCategory {
+public class CustomerCategoryVO {
 
 	/**
 	 * 
 	 */
 	private Integer CustomerCategoryId;
 
-	private Publisher pubId;
+	private PublisherVO pubId;
 	private String custCategory;
 	private String thinkCategory;
 	private Integer status;
@@ -23,12 +23,12 @@ public class CustomerCategory {
 	}
 
 
-	public Publisher getPubId() {
+	public PublisherVO getPubId() {
 		return pubId;
 	}
 
 
-	public void setPubId(Publisher pubId) {
+	public void setPubId(PublisherVO pubId) {
 		this.pubId = pubId;
 	}
 

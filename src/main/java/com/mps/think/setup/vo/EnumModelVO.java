@@ -1,6 +1,6 @@
 package com.mps.think.setup.vo;
 
-public class EnumModel {
+public class EnumModelVO {
 	public static enum Currency {
 
 	    USD("USD"),INR("INR"),POUND("POUND"),EURO("EURO");

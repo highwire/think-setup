@@ -11,9 +11,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.mps.think.setup.vo.EnumModel.Currency;
-import com.mps.think.setup.vo.EnumModel.DateFormat;
-import com.mps.think.setup.vo.EnumModel.TimeZone;
+import com.mps.think.setup.vo.EnumModelVO.Currency;
+import com.mps.think.setup.vo.EnumModelVO.DateFormat;
+import com.mps.think.setup.vo.EnumModelVO.TimeZone;
 
 @Entity
 @Table(name = "publisher_details")

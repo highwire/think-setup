@@ -1,10 +1,10 @@
 package com.mps.think.setup.vo;
 
-public class SalesRepresentative {
+public class SalesRepresentativeVO {
 
 	private Integer salesRepID;
 	
-    private Publisher pubId;
+    private PublisherVO pubId;
 	 
 	private String salesRepName;
 	
@@ -19,11 +19,11 @@ public class SalesRepresentative {
 	}
 	
 
-	public Publisher getPubId() {
+	public PublisherVO getPubId() {
 		return pubId;
 	}
 
-	public void setPubId(Publisher pubId) {
+	public void setPubId(PublisherVO pubId) {
 		this.pubId = pubId;
 	}
 
