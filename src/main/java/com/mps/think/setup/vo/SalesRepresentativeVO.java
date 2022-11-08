@@ -1,13 +1,25 @@
 package com.mps.think.setup.vo;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+
+import org.springframework.lang.NonNull;
+
 public class SalesRepresentativeVO {
 
 	private Integer salesRepID;
 	
-    private PublisherVO pubId;
-	 
+	@NonNull
+	//@NotBlank(message = "Publisher is mandatory in Sales Rep")
+	private PublisherVO pubId;
+	
+	@NotBlank(message = "Sales Rep is mandatory")
+	@NonNull
 	private String salesRepName;
 	
+	//@NotBlank(message = "Sales Rep status is mandatory")
+	@NonNull
+    @Min(1)
 	private Integer status;
 
 	public Integer getSalesRepID() {
@@ -17,7 +29,6 @@ public class SalesRepresentativeVO {
 	public void setSalesRepID(Integer salesRepID) {
 		this.salesRepID = salesRepID;
 	}
-	
 
 	public PublisherVO getPubId() {
 		return pubId;
@@ -48,6 +59,5 @@ public class SalesRepresentativeVO {
 		return "SalesRepresentative [salesRepID=" + salesRepID + ", pubId=" + pubId + ", salesRepName=" + salesRepName
 				+ ", status=" + status + "]";
 	}
-
 
 }

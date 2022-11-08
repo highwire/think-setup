@@ -24,7 +24,7 @@ SalesRepresentativeServiceImp imp;
 					+ "  \"message\": \"Email already exist\"\r\n"
 					+ "}");
 		} else {
-			return ResponseEntity.ok(imp.findAllSalesRepresentative());
+			return ResponseEntity.ok(user);
 		}
 	}
 

@@ -3,13 +3,14 @@ package com.mps.think.setup.service;
 import java.util.List;
 import java.util.Optional;
 
+import com.mps.think.setup.model.SalesRepresentative;
 import com.mps.think.setup.vo.SalesRepresentativeVO;
 
 public interface SalesRepresentativeService {
 
-	public List<SalesRepresentativeVO> findAllSalesRepresentative();
+	public List<SalesRepresentative> findAllSalesRepresentative();
 
-	public SalesRepresentativeVO saveContactDetails(SalesRepresentativeVO contact);
+	public SalesRepresentativeVO saveSalesRepresentative(SalesRepresentativeVO salesRepresentativeVO);
 
 	public Optional<SalesRepresentativeVO> findbyContactId(Integer contactId);
 

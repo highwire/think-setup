@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mps.think.setup.model.Publisher;
 import com.mps.think.setup.model.SalesRepresentative;
 import com.mps.think.setup.repo.SalesRepresentativeRepo;
 import com.mps.think.setup.service.SalesRepresentativeService;
@@ -22,25 +22,22 @@ public class SalesRepresentativeServiceImp implements SalesRepresentativeService
 	SalesRepresentativeRepo salesRepresentativeRepo;
 
 	@Override
-	public List<SalesRepresentativeVO> findAllSalesRepresentative() {
+	public List<SalesRepresentative> findAllSalesRepresentative() {
 		List<SalesRepresentative> salesRepresentativeList = salesRepresentativeRepo.findAll();
-		ObjectMapper objectMapper = new ObjectMapper();
-		String jsonString = salesRepresentativeList.toString();
-		System.out.println(jsonString);
-		try {
-			parseJsonArray(jsonString, SalesRepresentativeVO.class);
-		} catch (JsonProcessingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return null;
+		return salesRepresentativeList;
 	}
 
 	@Override
-	public SalesRepresentativeVO saveContactDetails(SalesRepresentativeVO contact) {
-		// TODO Auto-generated method stub
-		return null;
+	public SalesRepresentativeVO saveSalesRepresentative(SalesRepresentativeVO contact) {
+		SalesRepresentative SalesRepresentative= new SalesRepresentative();
+		SalesRepresentative.setSalesRepName(contact.getSalesRepName());
+		SalesRepresentative.setStatus(contact.getStatus());
+		Publisher publisher=new Publisher();
+		publisher.setId(contact.getPubId().getId());
+		SalesRepresentative.setPubId(publisher);
+		salesRepresentativeRepo.saveAndFlush(SalesRepresentative);
+		contact.setSalesRepID(SalesRepresentative.getSalesRepID());
+		return contact;
 	}
 
 	@Override

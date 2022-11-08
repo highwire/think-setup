@@ -2,12 +2,20 @@ package com.mps.think.setup.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
-@Table(name="sales_representative")
+import org.springframework.lang.NonNull;
+
+@Table(name = "sales_representative")
 @Entity
 public class SalesRepresentative extends BaseEntity {
 
@@ -17,15 +25,19 @@ public class SalesRepresentative extends BaseEntity {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@Column(name = "sales_rep_id")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer salesRepID;
+
+	@NonNull
+	@OneToOne
+	@JoinColumn(name = "pub_id", referencedColumnName = "id")
+	private Publisher pubId;
 	
-	 @OneToOne
-	 @JoinColumn(name = "pub_id", referencedColumnName = "id")
-    private Publisher pubId;
-	 
+	@NotBlank(message = "Sales Rep Name is mandatory")
 	@Column(name = "sales_rep_name")
 	private String salesRepName;
 	
+	@NotNull
 	@Column(name = "status")
 	private Integer status;
 
@@ -36,7 +48,6 @@ public class SalesRepresentative extends BaseEntity {
 	public void setSalesRepID(Integer salesRepID) {
 		this.salesRepID = salesRepID;
 	}
-	
 
 	public Publisher getPubId() {
 		return pubId;
@@ -67,7 +78,5 @@ public class SalesRepresentative extends BaseEntity {
 		return "SalesRepresentative [salesRepID=" + salesRepID + ", pubId=" + pubId + ", salesRepName=" + salesRepName
 				+ ", status=" + status + "]";
 	}
-
-
 
 }
