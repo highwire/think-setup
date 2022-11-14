@@ -2,7 +2,6 @@ package com.mps.think.setup.serviceImpl;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -41,21 +40,15 @@ public class SalesRepresentativeServiceImp implements SalesRepresentativeService
 	}
 
 	@Override
-	public Optional<SalesRepresentativeVO> findbyContactId(Integer contactId) {
-		// TODO Auto-generated method stub
-		return Optional.empty();
+	public SalesRepresentative findbySalesRepresentativeId(Integer contactId) {
+		return salesRepresentativeRepo.findById(contactId).get();
 	}
 
-	@Override
-	public boolean findByEmail(String email) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+
 
 	@Override
-	public SalesRepresentativeVO findbytId(Integer contactId) {
-		// TODO Auto-generated method stub
-		return null;
+	public SalesRepresentative findbytId(Integer contactId) {
+		return salesRepresentativeRepo.findById(contactId).get();
 	}
 	
 	public <T> List<T> parseJsonArray(String json, Class<T> clazz) throws JsonProcessingException {

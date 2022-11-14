@@ -31,4 +31,9 @@ public class SalesRepresentativeController {
 		return ResponseEntity.ok(salesRepresentativeServiceImp.saveSalesRepresentative(salesRepresentativeVO));
 	}
 
+	@RequestMapping(value = "/findbySalesRepresentativeId", method = RequestMethod.POST)
+	public ResponseEntity<?> findbySalesRepresentativeId(@Valid @RequestBody Integer salesRepresentativeId) {
+
+		return ResponseEntity.ok(salesRepresentativeServiceImp.findbySalesRepresentativeId(salesRepresentativeId));
+	}
 }
