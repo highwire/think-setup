@@ -3,12 +3,13 @@ package com.mps.think.setup.serviceImpl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.mps.think.setup.model.CreditStatus;
 import com.mps.think.setup.repo.CreditStatusRepo;
 import com.mps.think.setup.service.CreditStatusService;
 import com.mps.think.setup.vo.CreditStatusVO;
-
+@Service
 public class CreditStatusServiceImpl implements CreditStatusService {
 
 	@Autowired
