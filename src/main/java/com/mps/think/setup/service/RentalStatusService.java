@@ -13,6 +13,6 @@ public interface RentalStatusService {
 
 	public RentalStatusVO updateRentalStatus(RentalStatusVO rentalStatusVO);
 
-	Object findbyRentalStatusId(Integer rentalStatusId);
+	RentalStatus findbyRentalStatusId(Integer rentalStatusId);
 
 }

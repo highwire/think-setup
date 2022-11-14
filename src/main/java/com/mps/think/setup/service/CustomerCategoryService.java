@@ -9,10 +9,10 @@ public interface CustomerCategoryService {
 
 	public List<CustomerCategory> findAllCustomerCategory();
 
-	public CustomerCategoryVO saveCustomerCategory(CustomerCategoryVO creditStatus);
+	public CustomerCategoryVO saveCustomerCategory(CustomerCategoryVO customerCategory);
 
-	public CustomerCategoryVO updateCustomerCategory(CustomerCategoryVO creditStatus);
+	public CustomerCategoryVO updateCustomerCategory(CustomerCategoryVO customerCategory);
 
-	Object findbyCustomerCategoryId(Integer customerCategoryId);
+	public CustomerCategory findbyCustomerCategoryId(Integer customerCategoryId);
 
 }

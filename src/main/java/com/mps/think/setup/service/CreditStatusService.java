@@ -13,6 +13,6 @@ public interface CreditStatusService {
 
 	public CreditStatusVO updatecreditStatus(CreditStatusVO creditStatus);
 
-	Object findbycreditId(Integer creditId);
+	public CreditStatus findbycreditId(Integer creditId);
 
 }

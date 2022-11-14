@@ -13,6 +13,6 @@ public interface PublisherSerivce {
 
 	public PublisherVO updatePublisher(PublisherVO publiser);
 
-	public PublisherVO findbyPublisherId(Integer id);
+	public Publisher findbyPublisherId(Integer id);
 
 }

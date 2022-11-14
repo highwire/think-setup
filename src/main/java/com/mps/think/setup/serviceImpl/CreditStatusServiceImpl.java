@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mps.think.setup.model.CreditStatus;
+import com.mps.think.setup.model.Publisher;
 import com.mps.think.setup.repo.CreditStatusRepo;
 import com.mps.think.setup.service.CreditStatusService;
 import com.mps.think.setup.vo.CreditStatusVO;
@@ -21,20 +22,36 @@ public class CreditStatusServiceImpl implements CreditStatusService {
 
 	@Override
 	public CreditStatusVO savecreditStatus(CreditStatusVO creditStatus) {
-		// TODO Auto-generated method stub
-		return null;
+		CreditStatus data = new CreditStatus();
+		data.setCreditName(creditStatus.getCreditName());
+		data.setDescription(creditStatus.getDescription());
+		data.setBadcredit(creditStatus.getBadcredit());
+		Publisher publisher=new Publisher();
+		publisher.setId(creditStatus.getPubId().getId());
+		data.setPubId(publisher);
+		creditStatusRepo.saveAndFlush(data);
+		creditStatus.setCreditId(data.getCreditId());
+		return creditStatus;
 	}
 
 	@Override
 	public CreditStatusVO updatecreditStatus(CreditStatusVO creditStatus) {
-		// TODO Auto-generated method stub
-		return null;
+		CreditStatus data = new CreditStatus();
+		data.setCreditName(creditStatus.getCreditName());
+		data.setDescription(creditStatus.getDescription());
+		data.setBadcredit(creditStatus.getBadcredit());
+		data.setCreditId(creditStatus.getCreditId());
+		Publisher publisher=new Publisher();
+		publisher.setId(creditStatus.getPubId().getId());
+		data.setPubId(publisher);
+		creditStatusRepo.saveAndFlush(data);
+		return creditStatus;
 	}
 
 	@Override
-	public Object findbycreditId(Integer creditId) {
-		// TODO Auto-generated method stub
-		return null;
+	public CreditStatus findbycreditId(Integer creditId) {
+		CreditStatus cs =creditStatusRepo.findById(creditId).get();
+		return cs;
 	}
 
 }

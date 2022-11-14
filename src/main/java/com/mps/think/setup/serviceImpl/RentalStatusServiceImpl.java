@@ -21,17 +21,33 @@ public class RentalStatusServiceImpl implements RentalStatusService {
 
 	@Override
 	public RentalStatusVO saveRentalStatus(RentalStatusVO rentalStatusVO) {
-		return null;
+		RentalStatus data= new RentalStatus();
+		data.setRentalcategory(rentalStatusVO.getRentalcategory());
+		data.setRentalStatusId(rentalStatusVO.getRentalStatusId());
+		data.setRentName(rentalStatusVO.getRentName());
+		data.setRentEmail(rentalStatusVO.getRentEmail());
+		data.setDescription(rentalStatusVO.getDescription());
+		rentalStatusRepo.saveAndFlush(data);
+		
+		return rentalStatusVO;
 	}
 
 	@Override
 	public RentalStatusVO updateRentalStatus(RentalStatusVO rentalStatusVO) {
-		return null;
+		RentalStatus data= new RentalStatus();
+		data.setRentalcategory(rentalStatusVO.getRentalcategory());
+		data.setRentalStatusId(rentalStatusVO.getRentalStatusId());
+		data.setRentName(rentalStatusVO.getRentName());
+		data.setRentEmail(rentalStatusVO.getRentEmail());
+		data.setDescription(rentalStatusVO.getDescription());
+		rentalStatusRepo.saveAndFlush(data);
+		return rentalStatusVO;
 	}
 
 	@Override
-	public Object findbyRentalStatusId(Integer rentalStatusId) {
-		return null;
+	public RentalStatus findbyRentalStatusId(Integer rentalStatusId) {
+		RentalStatus rentalStatus =rentalStatusRepo.findById(rentalStatusId).get();
+		return rentalStatus;
 	}
 
 }

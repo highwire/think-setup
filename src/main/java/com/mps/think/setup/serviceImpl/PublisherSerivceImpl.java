@@ -21,17 +21,52 @@ public class PublisherSerivceImpl implements PublisherSerivce {
 
 	@Override
 	public PublisherVO savePublisher(PublisherVO publiser) {
-		return null;
+		Publisher data = new Publisher();
+		data.setName(publiser.getName());
+		data.setAbbreviation(publiser.getAbbreviation());
+		data.setAddress1(publiser.getAddress1());
+		data.setAddress2(publiser.getAddress2());
+		data.setCity(publiser.getCity());
+		data.setState(publiser.getState());
+		data.setCountry(publiser.getCountry());
+		data.setIsdCode(publiser.getIsdCode());
+		data.setZipCode(publiser.getZipCode());
+		data.setPrimaryPhone(publiser.getPrimaryPhone());
+		data.setSecondary_Phone(publiser.getSecondaryPhone());
+		data.setLogoUrl(publiser.getLogoUrl());
+		data.setWebsite(publiser.getWebsite());
+		publisherRepo.saveAndFlush(data);
+		
+
+		return publiser;
 	}
 
 	@Override
 	public PublisherVO updatePublisher(PublisherVO publiser) {
-		return null;
+		Publisher data = new Publisher();
+		data.setName(publiser.getName());
+		data.setAbbreviation(publiser.getAbbreviation());
+		data.setAddress1(publiser.getAddress1());
+		data.setAddress2(publiser.getAddress2());
+		data.setCity(publiser.getCity());
+		data.setState(publiser.getState());
+		data.setCountry(publiser.getCountry());
+		data.setIsdCode(publiser.getIsdCode());
+		data.setZipCode(publiser.getZipCode());
+		data.setPrimaryPhone(publiser.getPrimaryPhone());
+		data.setSecondary_Phone(publiser.getSecondaryPhone());
+		data.setLogoUrl(publiser.getLogoUrl());
+		data.setWebsite(publiser.getWebsite());
+		publisherRepo.saveAndFlush(data);
+		
+
+		return publiser;
 	}
 
 	@Override
-	public PublisherVO findbyPublisherId(Integer id) {
-		return null;
+	public Publisher findbyPublisherId(Integer id) {
+		Publisher publisher= publisherRepo.findById(id).get();
+		return publisher;
 	}
 
 }
