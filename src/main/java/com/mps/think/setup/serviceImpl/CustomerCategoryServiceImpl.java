@@ -1,9 +1,12 @@
 package com.mps.think.setup.serviceImpl;
 
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.webjars.NotFoundException;
 
 import com.mps.think.setup.model.CustomerCategory;
 import com.mps.think.setup.model.Publisher;
@@ -17,7 +20,11 @@ public class CustomerCategoryServiceImpl implements CustomerCategoryService {
 	CustomerCategoryRepo CustomerCategoryRepo;
 	@Override
 	public List<CustomerCategory> findAllCustomerCategory() {
-		return CustomerCategoryRepo.findAll();
+		List<CustomerCategory> customerCategory=CustomerCategoryRepo.findAll();
+		if(customerCategory.isEmpty()) {
+			throw new NotFoundException("Customer Category data not found!");
+		}
+		return customerCategory;
 	}
 
 	@Override
@@ -50,8 +57,11 @@ public class CustomerCategoryServiceImpl implements CustomerCategoryService {
 
 	@Override
 	public CustomerCategory findbyCustomerCategoryId(Integer customerCategoryId) {
-		CustomerCategory cc =CustomerCategoryRepo.findById(customerCategoryId).get();
-		return cc;
+		Optional<CustomerCategory> cc =CustomerCategoryRepo.findById(customerCategoryId);
+		if(!cc.isPresent()) {
+			throw new NoSuchElementException("Customer Category Id : "+customerCategoryId+" does not exist!");
+		}
+		return cc.get();
 	}
 
 }

@@ -1,9 +1,12 @@
 package com.mps.think.setup.serviceImpl;
 
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.webjars.NotFoundException;
 
 import com.mps.think.setup.model.RentalStatus;
 import com.mps.think.setup.repo.RentalStatusRepo;
@@ -16,7 +19,11 @@ public class RentalStatusServiceImpl implements RentalStatusService {
 	RentalStatusRepo rentalStatusRepo;
 	@Override
 	public List<RentalStatus> findAllRentalStatus() {
-		return rentalStatusRepo.findAll();
+		List<RentalStatus> list =rentalStatusRepo.findAll();
+		if(list.isEmpty()) {
+			throw new NotFoundException("No RentalStatus Present, please add RentalStatus!.");
+		}
+		return list;
 	}
 
 	@Override
@@ -46,8 +53,11 @@ public class RentalStatusServiceImpl implements RentalStatusService {
 
 	@Override
 	public RentalStatus findbyRentalStatusId(Integer rentalStatusId) {
-		RentalStatus rentalStatus =rentalStatusRepo.findById(rentalStatusId).get();
-		return rentalStatus;
+		Optional<RentalStatus> rentalStatus =rentalStatusRepo.findById(rentalStatusId);
+		if(!rentalStatus.isPresent()) {
+			throw new NoSuchElementException("RentalStatus Id : "+rentalStatusId+" does not exist!");
+		}
+		return rentalStatus.get();
 	}
 
 }
