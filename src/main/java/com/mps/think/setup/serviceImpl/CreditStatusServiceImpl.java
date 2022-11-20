@@ -1,9 +1,13 @@
 package com.mps.think.setup.serviceImpl;
 
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
+import org.webjars.NotFoundException;
 
 import com.mps.think.setup.model.CreditStatus;
 import com.mps.think.setup.model.Publisher;
@@ -17,11 +21,21 @@ public class CreditStatusServiceImpl implements CreditStatusService {
 	CreditStatusRepo creditStatusRepo;
 	@Override
 	public List<CreditStatus> findAllcreditStatus() {
-		return creditStatusRepo.findAll();
+		List<CreditStatus> list =creditStatusRepo.findAll();
+		if(list.isEmpty()) {
+			throw new NotFoundException("No Credit Name Present, please add Credit Name!.");
+		}
+		return list;
 	}
 
 	@Override
 	public CreditStatusVO savecreditStatus(CreditStatusVO creditStatus) {
+		CreditStatus data1=creditStatusRepo.findBycreditName(creditStatus.getCreditName());
+		if(data1 !=null) {
+			throw new DataIntegrityViolationException(
+					"Credit name : "+creditStatus.getCreditName()+" already exist!");
+//			throw new DataIntegrityViolationException("Credit name : "+creditStatus.getCreditName()+" already exist!");
+		}
 		CreditStatus data = new CreditStatus();
 		data.setCreditName(creditStatus.getCreditName());
 		data.setDescription(creditStatus.getDescription());
@@ -50,8 +64,11 @@ public class CreditStatusServiceImpl implements CreditStatusService {
 
 	@Override
 	public CreditStatus findbycreditId(Integer creditId) {
-		CreditStatus cs =creditStatusRepo.findById(creditId).get();
-		return cs;
+		Optional<CreditStatus> cs =creditStatusRepo.findById(creditId);
+		if(!cs.isPresent()) {
+			throw new NoSuchElementException("Credit Id : "+creditId+" does not exist!");
+		}
+		return cs.get();
 	}
 
 }
