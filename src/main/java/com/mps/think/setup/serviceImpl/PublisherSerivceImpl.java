@@ -1,12 +1,9 @@
 package com.mps.think.setup.serviceImpl;
 
 import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.webjars.NotFoundException;
 
 import com.mps.think.setup.model.Publisher;
 import com.mps.think.setup.repo.PublisherRepo;
@@ -19,11 +16,7 @@ public class PublisherSerivceImpl implements PublisherSerivce {
 	PublisherRepo publisherRepo;
 	@Override
 	public List<Publisher> findAllPublisher() {
-		List<Publisher> list =publisherRepo.findAll();
-		if(list.isEmpty()) {
-			throw new NotFoundException("No Publisher Present, please add Publisher!.");
-		}
-		return list;
+		return publisherRepo.findAll();
 	}
 
 	@Override
@@ -72,11 +65,8 @@ public class PublisherSerivceImpl implements PublisherSerivce {
 
 	@Override
 	public Publisher findbyPublisherId(Integer id) {
-		Optional<Publisher> publisher= publisherRepo.findById(id);
-		if(!publisher.isPresent()) {
-			throw new NoSuchElementException("Publisher Id : "+id+" does not exist!");
-		}
-		return publisher.get();
+		Publisher publisher= publisherRepo.findById(id).get();
+		return publisher;
 	}
 
 }

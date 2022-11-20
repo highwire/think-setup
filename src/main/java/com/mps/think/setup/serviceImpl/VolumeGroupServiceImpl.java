@@ -1,12 +1,9 @@
 package com.mps.think.setup.serviceImpl;
 
 import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.webjars.NotFoundException;
 
 import com.mps.think.setup.model.Publisher;
 import com.mps.think.setup.model.VolumeGroup;
@@ -22,11 +19,7 @@ public class VolumeGroupServiceImpl implements VolumeGroupService {
 
 	@Override
 	public List<VolumeGroup> findAllVolumeGroup() {
-		List<VolumeGroup> volumeGroup = volumeGroupRepo.findAll();
-		if(volumeGroup.isEmpty()) {
-			throw new NotFoundException("No data Present, please add volumeGroup!.");
-		}
-		return volumeGroup;
+		return volumeGroupRepo.findAll();
 	}
 
 	@Override
@@ -55,12 +48,7 @@ public class VolumeGroupServiceImpl implements VolumeGroupService {
 
 	@Override
 	public VolumeGroup findbyVolumeGroupId(Integer creditId) {
-		
-		Optional<VolumeGroup> volumeGroup=volumeGroupRepo.findById(creditId);
-		if(!volumeGroup.isPresent()) {
-			throw new NoSuchElementException("sales Representative Id : "+creditId+" does not exist!");
-		}
-		return volumeGroup.get();
+		return volumeGroupRepo.findById(creditId).get();
 	}
 
 }
