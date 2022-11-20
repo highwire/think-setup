@@ -25,17 +25,17 @@ public class SourceFormatSegment extends BaseEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Integer id;
-
-	@OneToOne
-	@JoinColumn(name = "source_format_id", referencedColumnName = "id")
-	private SourceFormat SourceFormatId;
-
-	@Column(name = "mru_source_format_segment_seq")
-	private Integer mruSourceFormatSegmentSeq;
-
+	
 	@OneToOne
 	@JoinColumn(name = "Source_attribute_id", referencedColumnName = "id")
 	private SourceAttribute sourceAttribute;
+
+	@Column(name = "source_format")
+	private Integer sourceFormat;
+	
+	@Column(name = "mru_source_format_segment_seq")
+	private Integer mruSourceFormatSegmentSeq;
+
 
 	@Enumerated(EnumType.STRING)
 	@Column(name = "generation_method")
@@ -62,13 +62,6 @@ public class SourceFormatSegment extends BaseEntity {
 		this.id = id;
 	}
 
-	public SourceFormat getSourceFormatId() {
-		return SourceFormatId;
-	}
-
-	public void setSourceFormatId(SourceFormat sourceFormatId) {
-		SourceFormatId = sourceFormatId;
-	}
 
 	public Integer getMruSourceFormatSegmentSeq() {
 		return mruSourceFormatSegmentSeq;
