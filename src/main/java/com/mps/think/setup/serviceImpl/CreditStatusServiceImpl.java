@@ -70,6 +70,4 @@ public class CreditStatusServiceImpl implements CreditStatusService {
 		}
 		return cs.get();
 	}
-	
-
 }
