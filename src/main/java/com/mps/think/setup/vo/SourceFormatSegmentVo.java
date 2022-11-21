@@ -1,11 +1,6 @@
 package com.mps.think.setup.vo;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
-@Table(name = "source_format_segment")
-@Entity
-public class SourceFormatSegment {
+public class SourceFormatSegmentVo {
 
 	
 	private Integer id;
