@@ -48,9 +48,5 @@ public class CreditStatusServiceImpl implements CreditStatusService {
 		return creditStatus;
 	}
 
-	@Override
-	public CreditStatus findbycreditId(Integer creditId) {
-		
-	}
-
+	
 }
