@@ -50,8 +50,7 @@ public class CreditStatusServiceImpl implements CreditStatusService {
 
 	@Override
 	public CreditStatus findbycreditId(Integer creditId) {
-		CreditStatus cs =creditStatusRepo.findById(creditId).get();
-		return cs;
+		
 	}
 
 }
