@@ -46,5 +46,7 @@ public class CreditStatusServiceImpl implements CreditStatusService {
 		data.setPubId(publisher);
 		creditStatusRepo.saveAndFlush(data);
 		return creditStatus;
+
 	}	
 }
+
