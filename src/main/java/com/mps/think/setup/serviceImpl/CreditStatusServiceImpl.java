@@ -1,9 +1,11 @@
 package com.mps.think.setup.serviceImpl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.webjars.NotFoundException;
 
 import com.mps.think.setup.model.CreditStatus;
 import com.mps.think.setup.model.Publisher;
@@ -17,7 +19,11 @@ public class CreditStatusServiceImpl implements CreditStatusService {
 	CreditStatusRepo creditStatusRepo;
 	@Override
 	public List<CreditStatus> findAllcreditStatus() {
-		return creditStatusRepo.findAll();
+		List<CreditStatus> creditList = creditStatusRepo.findAll();
+		if (creditList.isEmpty()) {
+			throw new NotFoundException("No Credit Status Name present, please add Credit Status Name!");
+		}
+		return creditList;
 	}
 
 	@Override

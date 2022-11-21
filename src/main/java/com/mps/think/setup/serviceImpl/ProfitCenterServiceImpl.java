@@ -1,10 +1,13 @@
 package com.mps.think.setup.serviceImpl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.webjars.NotFoundException;
 
+import com.mps.think.setup.model.CreditStatus;
 import com.mps.think.setup.model.ProfitCenter;
 import com.mps.think.setup.repo.ProfitCenterRepo;
 import com.mps.think.setup.service.ProfitCenterService;
@@ -18,7 +21,11 @@ public class ProfitCenterServiceImpl implements ProfitCenterService {
 
 	@Override
 	public List<ProfitCenter> findAllcreditStatus() {
-		return profitCenterRepo.findAll();
+		List<ProfitCenter> profitCenterList = profitCenterRepo.findAll();
+		if (profitCenterList.isEmpty()) {
+			throw new NotFoundException("No Profit Center data present, please add Profit Center!");
+		}
+		return profitCenterList;
 	}
 
 	@Override
@@ -53,7 +60,11 @@ public class ProfitCenterServiceImpl implements ProfitCenterService {
 
 	@Override
 	public ProfitCenter findbycreditId(Integer creditId) {
-		return profitCenterRepo.findById(creditId).get();
+		Optional<ProfitCenter> cs =profitCenterRepo.findById(creditId);
+		if(!cs.isPresent()) {
+			throw new NotFoundException("Profit Center Id : "+creditId+" does not exist!");
+		}
+		return cs.get();
 	}
 
 }
