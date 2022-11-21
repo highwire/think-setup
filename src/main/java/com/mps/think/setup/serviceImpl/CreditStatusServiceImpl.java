@@ -46,7 +46,15 @@ public class CreditStatusServiceImpl implements CreditStatusService {
 		data.setPubId(publisher);
 		creditStatusRepo.saveAndFlush(data);
 		return creditStatus;
+	}
 
-	}	
+	@Override
+	public CreditStatus findbycreditId(Integer creditId) {
+		Optional<CreditStatus> cs =creditStatusRepo.findById(creditId);
+		if(!cs.isPresent()) {
+			throw new NotFoundException("Credit Id : "+creditId+" does not exist!");
+		}
+		return cs.get();
+	}
 }
 
