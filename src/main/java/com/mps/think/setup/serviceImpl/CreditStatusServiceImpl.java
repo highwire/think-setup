@@ -66,9 +66,10 @@ public class CreditStatusServiceImpl implements CreditStatusService {
 	public CreditStatus findbycreditId(Integer creditId) {
 		Optional<CreditStatus> cs =creditStatusRepo.findById(creditId);
 		if(!cs.isPresent()) {
-			throw new NoSuchElementException("Credit Id : "+creditId+" does not exist!");
+			throw new NotFoundException("Credit Id : "+creditId+" does not exist!");
 		}
 		return cs.get();
 	}
+	
 
 }
