@@ -1,10 +1,13 @@
 package com.mps.think.setup.serviceImpl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.webjars.NotFoundException;
 
+import com.mps.think.setup.model.CreditStatus;
 import com.mps.think.setup.model.CustomerCategory;
 import com.mps.think.setup.model.Publisher;
 import com.mps.think.setup.repo.CustomerCategoryRepo;
@@ -17,7 +20,11 @@ public class CustomerCategoryServiceImpl implements CustomerCategoryService {
 	CustomerCategoryRepo CustomerCategoryRepo;
 	@Override
 	public List<CustomerCategory> findAllCustomerCategory() {
-		return CustomerCategoryRepo.findAll();
+		List<CustomerCategory> ccList = CustomerCategoryRepo.findAll();
+		if (ccList.isEmpty()) {
+			throw new NotFoundException("No Customer category present, please add Customer category!");
+		}
+		return ccList;
 	}
 
 	@Override
@@ -50,8 +57,12 @@ public class CustomerCategoryServiceImpl implements CustomerCategoryService {
 
 	@Override
 	public CustomerCategory findbyCustomerCategoryId(Integer customerCategoryId) {
-		CustomerCategory cc =CustomerCategoryRepo.findById(customerCategoryId).get();
-		return cc;
+		Optional<CustomerCategory> cc =CustomerCategoryRepo.findById(customerCategoryId);
+		
+		if(!cc.isPresent()) {
+			throw new NotFoundException("Customer category Id : "+customerCategoryId+" does not exist!");
+		}
+		return cc.get();
 	}
 
 }

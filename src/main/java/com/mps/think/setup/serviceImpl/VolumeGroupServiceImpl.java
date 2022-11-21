@@ -1,10 +1,13 @@
 package com.mps.think.setup.serviceImpl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.webjars.NotFoundException;
 
+import com.mps.think.setup.model.CreditStatus;
 import com.mps.think.setup.model.Publisher;
 import com.mps.think.setup.model.VolumeGroup;
 import com.mps.think.setup.repo.VolumeGroupRepo;
@@ -19,7 +22,11 @@ public class VolumeGroupServiceImpl implements VolumeGroupService {
 
 	@Override
 	public List<VolumeGroup> findAllVolumeGroup() {
-		return volumeGroupRepo.findAll();
+		List<VolumeGroup> volumeGroupList = volumeGroupRepo.findAll();
+		if (volumeGroupList.isEmpty()) {
+			throw new NotFoundException("No Volume Group present, please add Volume Group!");
+		}
+		return volumeGroupList;
 	}
 
 	@Override
@@ -48,7 +55,11 @@ public class VolumeGroupServiceImpl implements VolumeGroupService {
 
 	@Override
 	public VolumeGroup findbyVolumeGroupId(Integer creditId) {
-		return volumeGroupRepo.findById(creditId).get();
+		Optional<VolumeGroup> cs =volumeGroupRepo.findById(creditId);
+		if(!cs.isPresent()) {
+			throw new NotFoundException("Volume Group Id : "+creditId+" does not exist!");
+		}
+		return cs.get();
 	}
 
 }

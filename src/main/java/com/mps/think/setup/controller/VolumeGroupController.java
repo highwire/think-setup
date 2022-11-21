@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mps.think.setup.serviceImpl.VolumeGroupServiceImpl;
-import com.mps.think.setup.vo.RentalStatusVO;
 import com.mps.think.setup.vo.VolumeGroupVO;
 
 @RestController
