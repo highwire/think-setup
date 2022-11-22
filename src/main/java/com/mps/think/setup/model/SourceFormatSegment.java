@@ -11,8 +11,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.mps.think.setup.model.SourceFormat.codeGen;
-
 @Table(name = "source_format_segment")
 @Entity
 public class SourceFormatSegment extends BaseEntity {

@@ -77,9 +77,12 @@ public class SourceAttributeValue extends BaseEntity {
 		this.idx = idx;
 	}
 
-	
-	
-	
+	@Override
+	public String toString() {
+		return "SourceAttributeValue [id=" + id + ", SourceAttribute=" + SourceAttribute + ", sourceAttributeValue="
+				+ sourceAttributeValue + ", description=" + description + ", idx=" + idx + "]";
+	}
 
-
-}
+	
+	
+	}
