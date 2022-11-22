@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class SourceFormat extends BaseEntity {
 
 	/**
-	 * 
+	 * 3
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id

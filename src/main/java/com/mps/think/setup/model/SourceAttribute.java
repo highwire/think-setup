@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class SourceAttribute extends BaseEntity {
 
 	/**
-	 * 
+	 * 1
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
