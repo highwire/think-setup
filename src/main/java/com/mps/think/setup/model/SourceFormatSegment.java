@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.mps.think.setup.utils.AppConstants;
+
 @Table(name = "source_format_segment")
 @Entity
 public class SourceFormatSegment extends BaseEntity {
@@ -37,7 +39,7 @@ public class SourceFormatSegment extends BaseEntity {
 
 	@Enumerated(EnumType.STRING)
 	@Column(name = "generation_method")
-	private GenerationMethod generationMethod;
+	private AppConstants.GenerationMethod generationMethod;
 
 	@Column(name = "fixed_value")
 	private String fixedValue;
@@ -50,7 +52,7 @@ public class SourceFormatSegment extends BaseEntity {
 
 	@Enumerated(EnumType.STRING)
 	@Column(name = "generation_function")
-	private GenerationFunction generationFunction;
+	private AppConstants.GenerationFunction generationFunction;
 
 	public Integer getId() {
 		return id;
@@ -77,11 +79,21 @@ public class SourceFormatSegment extends BaseEntity {
 		this.sourceAttribute = sourceAttribute;
 	}
 
-	public GenerationMethod getGenerationMethod() {
+
+
+	public Integer getSourceFormat() {
+		return sourceFormat;
+	}
+
+	public void setSourceFormat(Integer sourceFormat) {
+		this.sourceFormat = sourceFormat;
+	}
+
+	public AppConstants.GenerationMethod getGenerationMethod() {
 		return generationMethod;
 	}
 
-	public void setGenerationMethod(GenerationMethod generationMethod) {
+	public void setGenerationMethod(AppConstants.GenerationMethod generationMethod) {
 		this.generationMethod = generationMethod;
 	}
 
@@ -109,21 +121,22 @@ public class SourceFormatSegment extends BaseEntity {
 		this.demQuestionId = demQuestionId;
 	}
 
-	public GenerationFunction getGenerationFunction() {
+	public AppConstants.GenerationFunction getGenerationFunction() {
 		return generationFunction;
 	}
 
-	public void setGenerationFunction(GenerationFunction generationFunction) {
+	public void setGenerationFunction(AppConstants.GenerationFunction generationFunction) {
 		this.generationFunction = generationFunction;
 	}
 
-	enum GenerationMethod {
-		Carry_Through, Fixed_Value, Function
+	@Override
+	public String toString() {
+		return "SourceFormatSegment [id=" + id + ", sourceAttribute=" + sourceAttribute + ", sourceFormat="
+				+ sourceFormat + ", mruSourceFormatSegmentSeq=" + mruSourceFormatSegmentSeq + ", generationMethod="
+				+ generationMethod + ", fixedValue=" + fixedValue + ", genFuncParm=" + genFuncParm + ", demQuestionId="
+				+ demQuestionId + ", generationFunction=" + generationFunction + "]";
 	}
 
-	enum GenerationFunction {
-		NA, New_Renewal, Order_Year, Order_Month, Order_Week, Expire_Year, Expire_Month, Expire_Week, Effort_Year,
-		Effort_Month, Effort_Week, Effort_Number, Demographic_Response, Region, Test_Sequence
-	}
+
 
 }

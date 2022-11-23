@@ -19,5 +19,16 @@ public class AppConstants {
 		None, Renewals, Promotions
 	}
 
+	public enum GenerationFunction {
+		NA, New_Renewal, Order_Year, Order_Month, Order_Week, Expire_Year, Expire_Month, Expire_Week, Effort_Year,
+		Effort_Month, Effort_Week, Effort_Number, Demographic_Response, Region, Test_Sequence
+	}
+
+	
+
+	public enum GenerationMethod {
+		Carry_Through, Fixed_Value, Function
+	}
+
 
 }
