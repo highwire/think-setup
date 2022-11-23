@@ -15,5 +15,9 @@ public class AppConstants {
 	public static final String Email_User_Password = "User Password";
 	public static final String Email_Semi="-:";
 	
+	public enum codeGen {
+		None, Renewals, Promotions
+	}
+
 
 }

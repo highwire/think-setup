@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.mps.think.setup.utils.AppConstants;
+
 @Table(name = "source_format")
 @Entity
 public class SourceFormat extends BaseEntity {
@@ -33,7 +35,7 @@ public class SourceFormat extends BaseEntity {
 
 	@Enumerated(EnumType.STRING)
 	@Column(name = "code_gen_type")
-	private codeGen codeGenType;
+	private AppConstants.codeGen codeGenType;
 
 	public Integer getId() {
 		return id;
@@ -67,16 +69,21 @@ public class SourceFormat extends BaseEntity {
 		this.mruSourceFormatSegmentSeq = mruSourceFormatSegmentSeq;
 	}
 
-	public codeGen getCodeGenType() {
+	public AppConstants.codeGen getCodeGenType() {
 		return codeGenType;
 	}
 
-	public void setCodeGenType(codeGen codeGenType) {
+	public void setCodeGenType(AppConstants.codeGen codeGenType) {
 		this.codeGenType = codeGenType;
 	}
 
-	enum codeGen {
-		None, Renewals, Promotions
+	@Override
+	public String toString() {
+		return "SourceFormat [id=" + id + ", sourceFormat=" + sourceFormat + ", description=" + description
+				+ ", mruSourceFormatSegmentSeq=" + mruSourceFormatSegmentSeq + ", codeGenType=" + codeGenType + "]";
 	}
 
+	
+
+	
 }

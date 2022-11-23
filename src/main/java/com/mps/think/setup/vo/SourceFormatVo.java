@@ -1,5 +1,10 @@
 package com.mps.think.setup.vo;
 
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+
+import com.mps.think.setup.utils.AppConstants;
+
 public class SourceFormatVo  {
 
 	
@@ -11,7 +16,9 @@ public class SourceFormatVo  {
 
 	private Integer mruSourceFormatSegmentSeq;
 
-	private String codeGenType;
+	@Enumerated(EnumType.STRING)
+	private AppConstants.codeGen codeGenType;
+//	private String codeGenType;
 
 	public Integer getId() {
 		return id;
@@ -45,14 +52,21 @@ public class SourceFormatVo  {
 		this.mruSourceFormatSegmentSeq = mruSourceFormatSegmentSeq;
 	}
 
-	public String getCodeGenType() {
+	
+	public AppConstants.codeGen getCodeGenType() {
 		return codeGenType;
 	}
 
-	public void setCodeGenType(String codeGenType) {
+	public void setCodeGenType(AppConstants.codeGen codeGenType) {
 		this.codeGenType = codeGenType;
 	}
 
+	@Override
+	public String toString() {
+		return "SourceFormatVo [id=" + id + ", sourceFormat=" + sourceFormat + ", description=" + description
+				+ ", mruSourceFormatSegmentSeq=" + mruSourceFormatSegmentSeq + ", codeGenType=" + codeGenType + "]";
+	}
 
 
+	
 }
