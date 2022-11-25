@@ -30,8 +30,10 @@ public class SourceFormatSegment extends BaseEntity {
 	@JoinColumn(name = "Source_attribute_id", referencedColumnName = "id")
 	private SourceAttribute sourceAttribute;
 
-	@Column(name = "source_format")
-	private Integer sourceFormat;
+//	@Column(name = "source_format")
+	@OneToOne
+	@JoinColumn(name = "Source_format_id", referencedColumnName = "id")
+	private SourceFormat sourceFormat;
 
 	@Enumerated(EnumType.STRING)
 	@Column(name = "generation_method")
@@ -65,13 +67,11 @@ public class SourceFormatSegment extends BaseEntity {
 		this.sourceAttribute = sourceAttribute;
 	}
 
-
-
-	public Integer getSourceFormat() {
+	public SourceFormat getSourceFormat() {
 		return sourceFormat;
 	}
 
-	public void setSourceFormat(Integer sourceFormat) {
+	public void setSourceFormat(SourceFormat sourceFormat) {
 		this.sourceFormat = sourceFormat;
 	}
 
