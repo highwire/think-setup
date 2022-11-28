@@ -5,23 +5,27 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+@Table(name = "order_categories")
 @Entity
-@Table(name ="order_category")
 public class OrderCategory extends BaseEntity {
-	
-	
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
-	private Integer id;
+	@Column(name = "order_category_id")
+	private Integer OrderCategoryId;
+	
+	@OneToOne
+	@JoinColumn(name = "pub_id", referencedColumnName = "id")
+	private Publisher pubId;
 	
 	@Column(name = "order_category")
 	private String orderCategory;
@@ -29,12 +33,20 @@ public class OrderCategory extends BaseEntity {
 	@Column(name = "order_description")
 	private String orderDescription;
 
-	public Integer getId() {
-		return id;
+	public Integer getOrderCategoryId() {
+		return OrderCategoryId;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setOrderCategoryId(Integer orderCategoryId) {
+		OrderCategoryId = orderCategoryId;
+	}
+
+	public Publisher getPubId() {
+		return pubId;
+	}
+
+	public void setPubId(Publisher pubId) {
+		this.pubId = pubId;
 	}
 
 	public String getOrderCategory() {
@@ -55,8 +67,10 @@ public class OrderCategory extends BaseEntity {
 
 	@Override
 	public String toString() {
-		return "OrderCategory [id=" + id + ", orderCategory=" + orderCategory + ", oderDescription=" + orderDescription
-				+ "]";
+		return "OrderCategory [OrderCategoryId=" + OrderCategoryId + ", pubId=" + pubId + ", orderCategory="
+				+ orderCategory + ", orderDescription=" + orderDescription + "]";
 	}
+	
+	
 
 }

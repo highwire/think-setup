@@ -1,47 +1,54 @@
 package com.mps.think.setup.controller;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mps.think.setup.serviceImpl.OrderCategoryServiceImpl;
 
-import com.mps.think.setup.vo.OrderCategoryVo;
+import com.mps.think.setup.service.OrderCategoryService;
 
-
+import com.mps.think.setup.vo.OrderCategoryVO;
 
 @RestController
 @CrossOrigin
 public class OrderCategoryController {
 	
 	@Autowired
-	OrderCategoryServiceImpl orderCategoryServiceImpl;
+	OrderCategoryService orderCategoryService;
 	
-	@RequestMapping(value = "/findAllOrderCategory", method = RequestMethod.GET)
-	public ResponseEntity<?> findAllOrderCategory() {
-		return ResponseEntity.ok(orderCategoryServiceImpl.findAllOrderCategory());
-	}
-	
-	@RequestMapping(value = "/saveOrderCategory", method = RequestMethod.POST)
-	public ResponseEntity<?> saveOrderCategory(@Valid @RequestBody OrderCategoryVo orderCategoryVO) {
-	    return ResponseEntity.ok(orderCategoryServiceImpl.saveOrderCategory(orderCategoryVO));
-}
-	
-	@PostMapping("/updateOrderCategory")
-	public ResponseEntity<?> updateOrderCategory(@RequestBody OrderCategoryVo orderCategoryVo) {
-		return ResponseEntity.ok(orderCategoryServiceImpl.updateOrderCategory(orderCategoryVo));
-	}
-	
-	@RequestMapping(value = "/findbyOrderCategoryId", method = RequestMethod.POST)
-	public ResponseEntity<?> findbyOrderCategoryId(@Valid @RequestBody Integer orderCategoryId) {
-		return ResponseEntity.ok(orderCategoryServiceImpl.findbyOrderCategoryId(orderCategoryId));
+	@GetMapping("/getAllOrderCategory")
+	public ResponseEntity<?> getAllPubliser() {
+		return ResponseEntity.ok(orderCategoryService.findAllOrderCategory());
 	}
 
+	@PostMapping("/saveorderCategory")
+	public ResponseEntity<?> saveorderCategory(@RequestBody OrderCategoryVO Id) {
+		return ResponseEntity.ok(orderCategoryService.saveOrderCategory(Id));
+	}
+	
+	@PostMapping("/updateorderCategory")
+	public ResponseEntity<?> updateorderCategory(@RequestBody OrderCategoryVO Id) {
+		return ResponseEntity.ok(orderCategoryService.updateOrderCategory(Id));
+	}
+	
+	@PostMapping("/findbyOrderCategoryId")
+	public ResponseEntity<?> findbyOrderCategoryId(@RequestBody Integer orderCategoryId) {
+		return ResponseEntity.ok(orderCategoryService.findbyOrderCategoryId(orderCategoryId));
+	}
+//	Controller for delete
+	
+//	 @DeleteMapping("/deleteOrderCategory{id}")
+//	    public ResponseEntity<String> deleteOrderCategory(@PathVariable("id") Integer orderCategoryId){
+//		 orderCategoryService.deleteOrderCategory(orderCategoryId);
+//	        return new ResponseEntity<>("OrderCategory successfully deleted!", HttpStatus.OK);
+//	    }
+//	
+	  
 }

@@ -1,44 +1,41 @@
 package com.mps.think.setup.vo;
 
-public class OrderCategoryVo {
-private Integer id;
+public class OrderCategoryVO {
 	
-	private String orderCategory;
-	
+	private Integer OrderCategoryId;
+	private PublisherVO pubId;
 	private String orderDescription;
-
-	public Integer getId() {
-		return id;
+	private String orderCategory;
+	public Integer getOrderCategoryId() {
+		return OrderCategoryId;
 	}
-
-	public void setId(Integer id) {
-		this.id = id;
+	public void setOrderCategoryId(Integer orderCategoryId) {
+		OrderCategoryId = orderCategoryId;
 	}
-
-	public String getOrderCategory() {
-		return orderCategory;
+	public PublisherVO getPubId() {
+		return pubId;
 	}
-
-	public void setOrderCategory(String orderCategory) {
-		this.orderCategory = orderCategory;
+	public void setPubId(PublisherVO pubId) {
+		this.pubId = pubId;
 	}
-
 	public String getOrderDescription() {
 		return orderDescription;
 	}
-
 	public void setOrderDescription(String orderDescription) {
 		this.orderDescription = orderDescription;
 	}
-
+	public String getOrderCategory() {
+		return orderCategory;
+	}
+	public void setOrderCategory(String orderCategory) {
+		this.orderCategory = orderCategory;
+	}
 	@Override
 	public String toString() {
-		return "OrderCategoryVo [id=" + id + ", orderCategory=" + orderCategory + ", orderDescription="
-				+ orderDescription + "]";
+		return "OrderCategoryVo [OrderCategoryId=" + OrderCategoryId + ", pubId=" + pubId + ", orderDescription="
+				+ orderDescription + ", orderCategory=" + orderCategory + "]";
 	}
-
 	
-
-
+	
 
 }
