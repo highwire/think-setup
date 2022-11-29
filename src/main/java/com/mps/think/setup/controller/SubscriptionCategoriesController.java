@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.mps.think.setup.model.SubscriptionCategories;
 import com.mps.think.setup.service.SubscriptionCategoriesService;
+import com.mps.think.setup.vo.SubscriptionCategoriesVO;
 
 @RestController
 @CrossOrigin
@@ -23,12 +24,12 @@ public class SubscriptionCategoriesController {
 	}
 
 	@PostMapping("/savesubscriptionCategories")
-	public ResponseEntity<?> saveSubscriptionCategory(@RequestBody SubscriptionCategories subscriptionCategory) throws Exception {
+	public ResponseEntity<?> saveSubscriptionCategory(@RequestBody SubscriptionCategoriesVO subscriptionCategory) throws Exception {
 		return ResponseEntity.ok(subscriptionCategoriesService.saveSubscriptionCategories(subscriptionCategory));
 	}
 	
 	@PostMapping("/updatesubscriptionCategory")
-	public ResponseEntity<?> updatecustomerCategory(@RequestBody SubscriptionCategories subscriptionCategory) throws Exception {
+	public ResponseEntity<?> updatecustomerCategory(@RequestBody SubscriptionCategoriesVO subscriptionCategory) throws Exception {
 		return ResponseEntity.ok(subscriptionCategoriesService.updateSubscriptionCategories(subscriptionCategory));
 	}
 	
