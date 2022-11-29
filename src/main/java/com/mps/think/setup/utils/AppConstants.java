@@ -30,5 +30,12 @@ public class AppConstants {
 		Carry_Through, Fixed_Value, Function
 	}
 
-
+	public enum AuxCategory {
+		Customer, CustomerAddress, Order
+	}
+	
+	public enum VariableType {
+		Customer, CustomerAddress, Order
+	}
+	
 }
