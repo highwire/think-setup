@@ -34,9 +34,7 @@ public class SourceAttributeValue extends BaseEntity {
 	@Column(name = "description")
 	private String description;
 	
-	@Column(name="idx")
-	private Integer idx;
-
+	
 	public Integer getId() {
 		return id;
 	}
@@ -69,18 +67,10 @@ public class SourceAttributeValue extends BaseEntity {
 		this.description = description;
 	}
 
-	public Integer getIdx() {
-		return idx;
-	}
-
-	public void setIdx(Integer idx) {
-		this.idx = idx;
-	}
-
 	@Override
 	public String toString() {
 		return "SourceAttributeValue [id=" + id + ", SourceAttribute=" + SourceAttribute + ", sourceAttributeValue="
-				+ sourceAttributeValue + ", description=" + description + ", idx=" + idx + "]";
+				+ sourceAttributeValue + ", description=" + description + "]";
 	}
 
 	

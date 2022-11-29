@@ -30,12 +30,10 @@ public class SourceFormatSegment extends BaseEntity {
 	@JoinColumn(name = "Source_attribute_id", referencedColumnName = "id")
 	private SourceAttribute sourceAttribute;
 
-	@Column(name = "source_format")
-	private Integer sourceFormat;
-	
-	@Column(name = "mru_source_format_segment_seq")
-	private Integer mruSourceFormatSegmentSeq;
-
+//	@Column(name = "source_format")
+	@OneToOne
+	@JoinColumn(name = "Source_format_id", referencedColumnName = "id")
+	private SourceFormat sourceFormat;
 
 	@Enumerated(EnumType.STRING)
 	@Column(name = "generation_method")
@@ -46,9 +44,6 @@ public class SourceFormatSegment extends BaseEntity {
 
 	@Column(name = "gen_func_parm")
 	private String genFuncParm;
-
-	@Column(name = "dem_question_id")
-	private Integer demQuestionId;
 
 	@Enumerated(EnumType.STRING)
 	@Column(name = "generation_function")
@@ -63,13 +58,6 @@ public class SourceFormatSegment extends BaseEntity {
 	}
 
 
-	public Integer getMruSourceFormatSegmentSeq() {
-		return mruSourceFormatSegmentSeq;
-	}
-
-	public void setMruSourceFormatSegmentSeq(Integer mruSourceFormatSegmentSeq) {
-		this.mruSourceFormatSegmentSeq = mruSourceFormatSegmentSeq;
-	}
 
 	public SourceAttribute getSourceAttribute() {
 		return sourceAttribute;
@@ -79,13 +67,11 @@ public class SourceFormatSegment extends BaseEntity {
 		this.sourceAttribute = sourceAttribute;
 	}
 
-
-
-	public Integer getSourceFormat() {
+	public SourceFormat getSourceFormat() {
 		return sourceFormat;
 	}
 
-	public void setSourceFormat(Integer sourceFormat) {
+	public void setSourceFormat(SourceFormat sourceFormat) {
 		this.sourceFormat = sourceFormat;
 	}
 
@@ -113,13 +99,7 @@ public class SourceFormatSegment extends BaseEntity {
 		this.genFuncParm = genFuncParm;
 	}
 
-	public Integer getDemQuestionId() {
-		return demQuestionId;
-	}
-
-	public void setDemQuestionId(Integer demQuestionId) {
-		this.demQuestionId = demQuestionId;
-	}
+	
 
 	public AppConstants.GenerationFunction getGenerationFunction() {
 		return generationFunction;
@@ -132,11 +112,10 @@ public class SourceFormatSegment extends BaseEntity {
 	@Override
 	public String toString() {
 		return "SourceFormatSegment [id=" + id + ", sourceAttribute=" + sourceAttribute + ", sourceFormat="
-				+ sourceFormat + ", mruSourceFormatSegmentSeq=" + mruSourceFormatSegmentSeq + ", generationMethod="
-				+ generationMethod + ", fixedValue=" + fixedValue + ", genFuncParm=" + genFuncParm + ", demQuestionId="
-				+ demQuestionId + ", generationFunction=" + generationFunction + "]";
+				+ sourceFormat + ", generationMethod=" + generationMethod + ", fixedValue=" + fixedValue
+				+ ", genFuncParm=" + genFuncParm + ", generationFunction=" + generationFunction + "]";
 	}
 
-
+	
 
 }

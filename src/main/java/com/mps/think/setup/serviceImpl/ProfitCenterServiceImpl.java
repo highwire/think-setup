@@ -32,6 +32,7 @@ public class ProfitCenterServiceImpl implements ProfitCenterService {
 	public ProfitCenterVO savecreditStatus(ProfitCenterVO profitCenterVo) {
 		ProfitCenter profitCenter = new ProfitCenter();
 		profitCenter.setProfitDescription(profitCenterVo.getProfitDescription());
+		profitCenter.setProfitCenter(profitCenterVo.getProfitCenter());
 		profitCenter.setInclComAr(profitCenterVo.getInclComAr());
 		profitCenter.setInclComLiab(profitCenterVo.getInclComLiab());
 		profitCenter.setInclDelAr(profitCenterVo.getInclDelAr());
@@ -45,16 +46,29 @@ public class ProfitCenterServiceImpl implements ProfitCenterService {
 
 	@Override
 	public ProfitCenterVO updatecreditStatus(ProfitCenterVO profitCenterVo) {
-		ProfitCenter profitCenter = new ProfitCenter();
-		profitCenter.setProftId(profitCenterVo.getProftId());
-		profitCenter.setProfitDescription(profitCenterVo.getProfitDescription());
-		profitCenter.setInclComAr(profitCenterVo.getInclComAr());
-		profitCenter.setInclComLiab(profitCenterVo.getInclComLiab());
-		profitCenter.setInclDelAr(profitCenterVo.getInclDelAr());
-		profitCenter.setInclDelLiab(profitCenterVo.getInclDelLiab());
-		profitCenter.setInclTaxAr(profitCenterVo.getInclTaxAr());
-		profitCenter.setInclTaxLiab(profitCenterVo.getInclTaxLiab());
-		profitCenter = profitCenterRepo.saveAndFlush(profitCenter);
+//		ProfitCenter profitCenter = new ProfitCenter();
+//		profitCenter.setProftId(profitCenterVo.getProftId());
+//		profitCenter.setProfitDescription(profitCenterVo.getProfitDescription());
+//		profitCenter.setProfitCenter(profitCenterVo.getProfitCenter());
+//		profitCenter.setInclComAr(profitCenterVo.getInclComAr());
+//		profitCenter.setInclComLiab(profitCenterVo.getInclComLiab());
+//		profitCenter.setInclDelAr(profitCenterVo.getInclDelAr());
+//		profitCenter.setInclDelLiab(profitCenterVo.getInclDelLiab());
+//		profitCenter.setInclTaxAr(profitCenterVo.getInclTaxAr());
+//		profitCenter.setInclTaxLiab(profitCenterVo.getInclTaxLiab());
+//		profitCenter = profitCenterRepo.saveAndFlush(profitCenter);
+		
+		
+		ProfitCenter profitCenterid= profitCenterRepo.findById(profitCenterVo.getProftId()).get();
+		profitCenterid.setProfitDescription(profitCenterVo.getProfitDescription());
+		profitCenterid.setProfitCenter(profitCenterVo.getProfitCenter());
+		profitCenterid.setInclComAr(profitCenterVo.getInclComAr());
+		profitCenterid.setInclComLiab(profitCenterVo.getInclComLiab());
+		profitCenterid.setInclDelAr(profitCenterVo.getInclDelAr());
+		profitCenterid.setInclDelLiab(profitCenterVo.getInclDelLiab());
+		profitCenterid.setInclTaxAr(profitCenterVo.getInclTaxAr());
+		profitCenterid.setInclTaxLiab(profitCenterVo.getInclTaxLiab());
+		profitCenterid = profitCenterRepo.saveAndFlush(profitCenterid);
 		return profitCenterVo;
 	}
 
