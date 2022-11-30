@@ -24,8 +24,6 @@ public class AppConstants {
 		Effort_Month, Effort_Week, Effort_Number, Demographic_Response, Region, Test_Sequence
 	}
 
-	
-
 	public enum GenerationMethod {
 		Carry_Through, Fixed_Value, Function
 	}
