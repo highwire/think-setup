@@ -47,6 +47,19 @@ public class EnumModelVO {
 	        return displayTimeZone;
 	    }
 	}
+	public static enum OrderClasses  {
 
+		SAMPLE_1("SAMPLE_1"),SAMPLE_2("SAMPLE_2"),SAMPLE_3("SAMPLE_3");
+
+	    private final String displayOrderClasses;
+
+	    OrderClasses(String displayOrderClasses) {
+	        this.displayOrderClasses = displayOrderClasses;
+	    }
+
+	    public String getDisplayName() {
+	        return displayOrderClasses;
+	    }
+	}
 
 }

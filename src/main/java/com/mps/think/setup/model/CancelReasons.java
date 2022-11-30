@@ -14,7 +14,6 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.mps.think.setup.vo.EnumModelVO.OrderClasses;
-import com.mps.think.setup.vo.EnumModelVO.TimeZone;
 
 @Table(name = "cancel_reasons")
 @Entity
