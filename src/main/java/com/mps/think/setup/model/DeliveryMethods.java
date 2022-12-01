@@ -1,11 +1,14 @@
 package com.mps.think.setup.model;
 
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -42,6 +45,10 @@ public class DeliveryMethods extends BaseEntity {
 	
 	@Column(name = "transport_mode")
 	private String transportMode;
+	
+	@OneToOne
+	@JoinColumn(name = "publisher_id")
+	private Publisher publisher;
 
 	public Boolean getDefaultDelivery() {
 		return defaultDelivery;
@@ -99,20 +106,29 @@ public class DeliveryMethods extends BaseEntity {
 		this.transportMode = transportMode;
 	}
 
-
 	public Integer getDeliveryMethodsId() {
 		return deliveryMethodsId;
 	}
+
 
 	public void setDeliveryMethodsId(Integer deliveryMethodsId) {
 		this.deliveryMethodsId = deliveryMethodsId;
 	}
 	
+	public Publisher getPublisher() {
+		return publisher;
+	}
+	
+	public void setPublisher(Publisher publisher) {
+		this.publisher = publisher;
+	}
+	
 	@Override
 	public String toString() {
-		return "DeliveryMethods [defaultDelivery=" + defaultDelivery + ", deliveryMethod=" + deliveryMethod
-				+ ", active=" + active + ", description=" + description + ", regionList=" + regionList + ", amount="
-				+ amount + ", transportMode=" + transportMode + "]";
+		return "DeliveryMethods [deliveryMethodsId=" + deliveryMethodsId + ", defaultDelivery=" + defaultDelivery
+				+ ", deliveryMethod=" + deliveryMethod + ", active=" + active + ", description=" + description
+				+ ", regionList=" + regionList + ", amount=" + amount + ", transportMode=" + transportMode
+				+ ", publisher=" + publisher + "]";
 	}
 	
 }

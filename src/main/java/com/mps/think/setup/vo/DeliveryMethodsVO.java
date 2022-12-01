@@ -1,5 +1,7 @@
 package com.mps.think.setup.vo;
 
+import com.mps.think.setup.model.Publisher;
+
 public class DeliveryMethodsVO {
 
 	private Integer deliveryMethodsId;
@@ -17,6 +19,8 @@ public class DeliveryMethodsVO {
 	private String amount;
 
 	private String transportMode;
+	
+	private Publisher publisher;
 	
 	public Integer getDeliveryMethodsId() {
 		return deliveryMethodsId;
@@ -80,6 +84,14 @@ public class DeliveryMethodsVO {
 
 	public void setTransportMode(String transportMode) {
 		this.transportMode = transportMode;
+	}
+
+	public Publisher getPublisher() {
+		return publisher;
+	}
+
+	public void setPublisher(Publisher publisher) {
+		this.publisher = publisher;
 	}
 
 }

@@ -26,6 +26,7 @@ public class DeliveryMethodsServiceImpl implements DeliveryMethodsService {
 		newDeliveryMethod.setRegionList(delivery.getRegionList());
 		newDeliveryMethod.setAmount(delivery.getAmount());
 		newDeliveryMethod.setTransportMode(delivery.getTransportMode());
+		newDeliveryMethod.setPublisher(delivery.getPublisher());
 		deliveryMethodsRepo.saveAndFlush(newDeliveryMethod);
 		return delivery;
 	}
@@ -46,6 +47,7 @@ public class DeliveryMethodsServiceImpl implements DeliveryMethodsService {
 			deliveryToUpdate.setRegionList(delivery.getRegionList());
 			deliveryToUpdate.setAmount(delivery.getAmount());
 			deliveryToUpdate.setTransportMode(delivery.getTransportMode());
+//			deliveryToUpdate.setPublisher(delivery.getPublisher());
 			deliveryMethodsRepo.saveAndFlush(deliveryToUpdate);
 			return delivery;
 		}
