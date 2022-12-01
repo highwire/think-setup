@@ -57,4 +57,13 @@ public class DeliveryMethodsServiceImpl implements DeliveryMethodsService {
 		return deliveryMethodsRepo.findByDeliveryMethodsId(deliveryMethodsId);
 	}
 
+	@Override
+	public DeliveryMethodsVO deleteDeliveryMethod(DeliveryMethodsVO delivery) {
+		DeliveryMethods deliveryToRemove = deliveryMethodsRepo.findByDeliveryMethodsId(delivery.getDeliveryMethodsId());
+		if (deliveryToRemove != null) {
+			deliveryMethodsRepo.delete(deliveryToRemove);
+		}
+		return delivery;
+	}
+	
 }
