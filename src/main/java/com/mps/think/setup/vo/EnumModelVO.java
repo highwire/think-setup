@@ -61,5 +61,37 @@ public class EnumModelVO {
 	        return displayOrderClasses;
 	    }
 	}
+	
+	public static enum StartType  {
+
+		ANY_TIME_START("ANY_TIME_START"),VOLUME_GROUP_START("VOLUME_GROUP_START"),DATA_BASED_WITH_ISSUES("DATA_BASED_WITH_ISSUES")
+	    ,DATA_BASED_WITH_NO_ISSUES("DATA_BASED_WITH_NO_ISSUES"),DATA_BASED_WITH_UNITS("DATA_BASED_WITH_NO_ISSUES"),
+		DATE_BASED_WITH_UNITS("DATE_BASED_WITH_UNITS"), UNIT_BASED_NO_TIME("UNIT_BASED_NO_TIME"),ANY("ANY");
+
+	    private final String displayStartType;
+
+	    StartType(String displayStartType) {
+	        this.displayStartType = displayStartType;
+	    }
+
+	    public String getDisplayName() {
+	        return displayStartType;
+	    }
+	}
+	
+	public static enum InstallmentTerm  {
+
+		MONTHLY("MONTHLY"),YEARLY("YEARLY"),HALF_YEARLY("HALF_YEARLY");
+
+	    private final String displayInstallmentTerm;
+
+	    InstallmentTerm(String displayInstallmentTerm) {
+	        this.displayInstallmentTerm = displayInstallmentTerm;
+	    }
+
+	    public String getDisplayName() {
+	        return displayInstallmentTerm;
+	    }
+	}
 
 }
