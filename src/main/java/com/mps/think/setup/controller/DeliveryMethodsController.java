@@ -46,4 +46,9 @@ public class DeliveryMethodsController {
 		return ResponseEntity.ok(deliveryMethodService.deleteDeliveryMethod(delivery));
 	}
 	
+	@DeleteMapping("/deleteDeliveryMethodById/{id}")
+	public ResponseEntity<?> deleteDeliveryMethodById(@PathVariable Integer id) {
+		return ResponseEntity.ok(deliveryMethodService.deleteDeliveryMethodById(id));
+	}
+	
 }
