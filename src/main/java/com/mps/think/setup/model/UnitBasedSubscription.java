@@ -19,7 +19,7 @@ public class UnitBasedSubscription extends BaseEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "ubsid")
+	@Column(name = "id")
 	private Integer ubsid;
 
 	 @OneToOne
