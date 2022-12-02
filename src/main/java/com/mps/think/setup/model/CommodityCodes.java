@@ -9,7 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-@Table(name = "kest")
+@Table(name = "commodityCodes")
 @Entity
 public class CommodityCodes extends BaseEntity {
 
