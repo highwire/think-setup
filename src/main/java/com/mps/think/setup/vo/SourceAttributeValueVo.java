@@ -1,7 +1,5 @@
 package com.mps.think.setup.vo;
 
-import com.mps.think.setup.model.SourceAttribute;
-
 public class SourceAttributeValueVo{
 
 	
@@ -13,8 +11,7 @@ public class SourceAttributeValueVo{
 	
 	private String description;
 	
-    private SourceAttribute SourceAttribute;
-
+	private Integer idx;
 
 	public Integer getId() {
 		return id;
@@ -41,21 +38,17 @@ public class SourceAttributeValueVo{
 		this.description = description;
 	}
 
+	public Integer getIdx() {
+		return idx;
+	}
+
+	public void setIdx(Integer idx) {
+		this.idx = idx;
+	}
+
 	
-	public SourceAttribute getSourceAttribute() {
-		return SourceAttribute;
-	}
-
-	public void setSourceAttribute(SourceAttribute sourceAttribute) {
-		SourceAttribute = sourceAttribute;
-	}
-
-	@Override
-	public String toString() {
-		return "SourceAttributeValueVo [id=" + id + ", sourceAttributeValue=" + sourceAttributeValue + ", description="
-				+ description + ", SourceAttribute=" + SourceAttribute + "]";
-	}
-
+	
+	
 
 
 }

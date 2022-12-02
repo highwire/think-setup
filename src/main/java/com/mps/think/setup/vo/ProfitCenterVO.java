@@ -5,7 +5,6 @@ public class ProfitCenterVO {
 	private Integer proftId;
 	private String profitDescription;
 
-	private String profitCenter;
 	private Integer inclTaxLiab;
 	private Integer inclDelLiab;
 	private Integer inclComLiab;
@@ -76,29 +75,12 @@ public class ProfitCenterVO {
 	public void setInclComAr(Integer inclComAr) {
 		this.inclComAr = inclComAr;
 	}
-	
-
-	public String getProfitCenter() {
-		return profitCenter;
-	}
-
-	public void setProfitCenter(String profitCenter) {
-		this.profitCenter = profitCenter;
-	}
 
 	@Override
 	public String toString() {
-		return "ProfitCenterVO [proftId=" + proftId + ", profitDescription=" + profitDescription + ", profitCenter="
-				+ profitCenter + ", inclTaxLiab=" + inclTaxLiab + ", inclDelLiab=" + inclDelLiab + ", inclComLiab="
-				+ inclComLiab + ", inclTaxAr=" + inclTaxAr + ", inclDelAr=" + inclDelAr + ", inclComAr=" + inclComAr
-				+ "]";
+		return "ProfitCenter [proftId=" + proftId + ", profitDescription=" + profitDescription + ", inclTaxLiab="
+				+ inclTaxLiab + ", inclDelLiab=" + inclDelLiab + ", inclComLiab=" + inclComLiab + ", inclTaxAr="
+				+ inclTaxAr + ", inclDelAr=" + inclDelAr + ", inclComAr=" + inclComAr + "]";
 	}
-
-//	@Override
-//	public String toString() {
-//		return "ProfitCenter [proftId=" + proftId + ", profitDescription=" + profitDescription + ", inclTaxLiab="
-//				+ inclTaxLiab + ", inclDelLiab=" + inclDelLiab + ", inclComLiab=" + inclComLiab + ", inclTaxAr="
-//				+ inclTaxAr + ", inclDelAr=" + inclDelAr + ", inclComAr=" + inclComAr + "]";
-//	}
 
 }
