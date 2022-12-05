@@ -9,7 +9,7 @@ public interface LableGroupService {
 
 	public List<LableGroup> findAllLableGroupt();
 
-	public LableGroupVO saveLableGroupt(LableGroupVO lableGroup);
+	public LableGroupVO saveLableGroup(LableGroupVO lableGroup);
 
 	public LableGroupVO updateLableGroup(LableGroupVO lableGroup);
 

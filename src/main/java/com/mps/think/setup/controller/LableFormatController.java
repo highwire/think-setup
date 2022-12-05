@@ -18,8 +18,8 @@ public class LableFormatController {
 	@Autowired
 	LableFormatServiceImp lableFormatServiceImp;
 
-	@GetMapping("/findAllTaxType")
-	public ResponseEntity<?> findAllTaxType() {
+	@GetMapping("/findAllLableFormat")
+	public ResponseEntity<?> findAllLableFormat() {
 		return ResponseEntity.ok(lableFormatServiceImp.findAllLableFormat());
 	}
 

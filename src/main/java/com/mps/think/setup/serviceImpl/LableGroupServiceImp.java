@@ -22,7 +22,7 @@ public class LableGroupServiceImp implements LableGroupService {
 	}
 
 	@Override
-	public LableGroupVO saveLableGroupt(LableGroupVO lableGroupVo) {
+	public LableGroupVO saveLableGroup(LableGroupVO lableGroupVo) {
 		LableGroup lableGroup= new LableGroup();
 		lableGroup.setDescription(lableGroupVo.getDescription());
 		lableGroup.setLableGroups(lableGroupVo.getLableGroups());
