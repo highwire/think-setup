@@ -33,8 +33,8 @@ public class LableGroupController {
 		return ResponseEntity.ok(lableGroupServiceImp.updateLableGroup(lableGroupVO));
 	}
 
-	@PostMapping("/findbyLableGroup")
-	public ResponseEntity<?> findbyLableFormat(@RequestBody Integer lableGroupFormatId) {
+	@PostMapping("/findbyLableGroupId")
+	public ResponseEntity<?> findbyLableFormatId(@RequestBody Integer lableGroupFormatId) {
 		return ResponseEntity.ok(lableGroupServiceImp.findbyLableGroup(lableGroupFormatId));
 	}
 

@@ -33,8 +33,8 @@ public class LableFormatController {
 		return ResponseEntity.ok(lableFormatServiceImp.updateLableFormat(lableFormatVO));
 	}
 
-	@PostMapping("/findbyLableFormat")
-	public ResponseEntity<?> findbyLableFormat(@RequestBody Integer lableFormatId) {
+	@PostMapping("/findbyLableFormatId")
+	public ResponseEntity<?> findbyLableFormatId(@RequestBody Integer lableFormatId) {
 		return ResponseEntity.ok(lableFormatServiceImp.findbyLableFormat(lableFormatId));
 	}
 
