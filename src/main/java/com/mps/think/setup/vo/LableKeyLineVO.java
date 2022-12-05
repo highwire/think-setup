@@ -63,8 +63,8 @@ public class LableKeyLineVO {
 
 	@Override
 	public String toString() {
-		return "LableKeyLine [lableKeylineId=" + lableKeylineId + ", pubId=" + pubId + ", labelKeyline=" + labelKeyline
-				+ ", suppressflag=" + suppressflag + ", description=" + description + "]";
+		return "LableKeyLineVO [lableKeylineId=" + lableKeylineId + ", pubId=" + pubId + ", labelKeyline="
+				+ labelKeyline + ", suppressflag=" + suppressflag + ", description=" + description + "]";
 	}
 
 }
