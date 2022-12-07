@@ -11,7 +11,6 @@ import org.webjars.NotFoundException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mps.think.setup.model.CreditStatus;
 import com.mps.think.setup.model.Publisher;
 import com.mps.think.setup.model.SalesRepresentative;
 import com.mps.think.setup.repo.SalesRepresentativeRepo;
@@ -75,5 +74,17 @@ public class SalesRepresentativeServiceImp implements SalesRepresentativeService
 		  System.out.println(list);
 		  return list;
 		}
+
+	@Override
+	public SalesRepresentativeVO updateSalesRepresentative(SalesRepresentativeVO salesRepresentativeVO) {
+		SalesRepresentative representative=salesRepresentativeRepo.findById(salesRepresentativeVO.getSalesRepID()).get();
+		representative.setSalesRepName(salesRepresentativeVO.getSalesRepName());
+		representative.setStatus(salesRepresentativeVO.getStatus());
+		Publisher publisher=new Publisher();
+		publisher.setId(salesRepresentativeVO.getPubId().getId());
+		representative.setPubId(publisher);
+		representative=salesRepresentativeRepo.saveAndFlush(representative);
+		return salesRepresentativeVO;
+	}
 
 }
