@@ -9,7 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-@Table(name = "subscription_Category1")
+@Table(name = "subscription_Category")
 @Entity
 public class SubscriptionCategory extends BaseEntity {
 
