@@ -33,7 +33,7 @@ public class AppConstants {
 	}
 	
 	public enum VariableType {
-		Customer, CustomerAddress, Order
+		String, Integer, Boolean
 	}
 	
 }
