@@ -18,7 +18,7 @@ public class SubscriptionCategoryController {
 	SubscriptionCategoryService subscriptionCategoryService;
 	
 	@GetMapping("/getAllSubscriptionCategory")
-	public ResponseEntity<?> getAllCancelReasons() {
+	public ResponseEntity<?> getAllSubscriptionCategory() {
 		return ResponseEntity.ok(subscriptionCategoryService.findAllSubscriptionCategory());
 	}
 
