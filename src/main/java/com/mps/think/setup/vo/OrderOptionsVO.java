@@ -1,57 +1,31 @@
-package com.mps.think.setup.model;
+package com.mps.think.setup.vo;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
-@Entity
-@Table(name = "order_options")
-public class OrderOptions extends BaseEntity {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 8228804696918920708L;
+public class OrderOptionsVO {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
 	private Integer id;
 	
-	@Column(name = "publisher_id")
 	private Integer publisherId;
 	
-	@Column(name = "subscription_calculation")
 	private String subscriptionCalculation;
 	
-	@Column(name = "revenue_realised_by")
 	private String revenueRealisedBy;
 	
-	@Column(name = "taxonomy")
 	private String taxonomy;
 	
-	@Column(name = "renewal_card")
 	private String renewalCard;
 	
-	@Column(name = "controlled")
 	private Boolean controlled;
 	
-	@Column(name = "segmented_order")
 	private Boolean segmentedOrder;
 	
-	@Column(name = "media")
 	private String media;
 	
-	@Column(name = "edition")
 	private String edition;
 	
-	@Column(name = "category")
 	private String category;
 	
-	@Column(name = "rotation")
 	private String rotation;
 
 	public Integer getId() {

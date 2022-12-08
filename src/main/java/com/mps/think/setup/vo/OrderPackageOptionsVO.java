@@ -1,36 +1,15 @@
-package com.mps.think.setup.model;
+package com.mps.think.setup.vo;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "order_package_options")
-public class OrderPackageOptions extends BaseEntity {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -8368681123294953547L;
+public class OrderPackageOptionsVO {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
 	private Integer id;
 	
-	@Column(name = "publisher_id")
 	private Integer publisherId;
 	
-	@Column(name = "premium_options")
 	private String premiumOptions;
 	
-	@Column(name = "ship_premium")
 	private String shipPremium;
 	
-	@Column(name = "package_only")
 	private Boolean packageOnly;
 
 	public Integer getId() {
