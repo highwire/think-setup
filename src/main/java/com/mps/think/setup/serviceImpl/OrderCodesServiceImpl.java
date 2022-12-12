@@ -2,6 +2,7 @@ package com.mps.think.setup.serviceImpl;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -69,6 +70,36 @@ public class OrderCodesServiceImpl implements OrderCodesService {
 		orderClass.put("orderOptions", orderOptionsRepository.findByPublisherId(publisherId));
 		orderClass.put("orderPackageOptions", orderPackageOptionsRepository.findByPublisherId(publisherId));
 		return orderClass;
+	}
+
+	@Override
+	public OrderCodes getOrderCodesById(Integer orderCodeID) {
+		Optional<OrderCodes> orderCode = orderCodesRepository.findById(orderCodeID);
+		return orderCode.isPresent() ? orderCode.get() : null;
+	}
+
+	@Override
+	public OrderItemDetails getOrderItemDetailsById(Integer itemDetailsId) {
+		Optional<OrderItemDetails> itemDetail = orderItemDetailsRepository.findById(itemDetailsId);
+		return itemDetail.isPresent() ? itemDetail.get() : null;
+	}
+
+	@Override
+	public OrderOptions getOrderOptionsById(Integer orderOptionsId) {
+		Optional<OrderOptions> orderOption = orderOptionsRepository.findById(orderOptionsId);
+		return orderOption.isPresent() ? orderOption.get() : null;
+	}
+
+	@Override
+	public OrderPackageOptions getOrderPackageOptionsById(Integer orderPkgId) {
+		Optional<OrderPackageOptions> packageOption = orderPackageOptionsRepository.findById(orderPkgId);
+		return packageOption.isPresent() ? packageOption.get() : null;
+	}
+
+	@Override
+	public OrderPaymentOptions getOrderPaymentOptionsById(Integer orderPaymentId) {
+		Optional<OrderPaymentOptions> paymentOption = orderPaymentOptionsRepository.findById(orderPaymentId);
+		return paymentOption.isPresent() ? paymentOption.get() : null;
 	}
 
 }

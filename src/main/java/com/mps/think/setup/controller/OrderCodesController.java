@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,9 +30,34 @@ public class OrderCodesController {
 		return ResponseEntity.ok(orderCodesService.createOrderCodes(orderCodes));
 	}
 	
-	@PatchMapping("/orderCodes")
+	@PutMapping("/orderCodes")
 	public ResponseEntity<?> updateOrderCodes(@RequestBody OrderClassVO orderCodes) {
 		return ResponseEntity.ok(orderCodesService.updateOrderCodes(orderCodes));
+	}
+	
+	@GetMapping("/getOrderCodes/{orderCodeId}")
+	public ResponseEntity<?> getOrderCodesById(Integer orderCodeID) {
+		return ResponseEntity.ok(orderCodesService.getOrderCodesById(orderCodeID));
+	}
+
+	@GetMapping("/getOrderItemDetails/{itemDetailsId}")
+	public ResponseEntity<?> getOrderItemDetailsById(Integer itemDetailsId) {
+		return ResponseEntity.ok(orderCodesService.getOrderItemDetailsById(itemDetailsId));
+	}
+
+	@GetMapping("/getOrderOptions/{orderOptionsId}")
+	public ResponseEntity<?> getOrderOptionsById(Integer orderOptionsId) {
+		return ResponseEntity.ok(orderCodesService.getOrderOptionsById(orderOptionsId));
+	}
+
+	@GetMapping("/getOrderPackageOptions/{orderPkgId}")
+	public ResponseEntity<?> getOrderPackageOptionsById(Integer orderPkgId) {
+		return ResponseEntity.ok(orderCodesService.getOrderPackageOptionsById(orderPkgId));
+	}
+
+	@GetMapping("/getOrderPaymentOptions/{orderPaymentId}")
+	public ResponseEntity<?> getOrderPaymentOptionsById(Integer orderPaymentId) {
+		return ResponseEntity.ok(orderCodesService.getOrderPaymentOptionsById(orderPaymentId));
 	}
 
 }
