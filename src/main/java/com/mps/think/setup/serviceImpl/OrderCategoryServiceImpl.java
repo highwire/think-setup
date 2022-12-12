@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.webjars.NotFoundException;
 import com.mps.think.setup.model.OrderCategory;
 import com.mps.think.setup.model.Publisher;
+import com.mps.think.setup.model.TransportMode;
 import com.mps.think.setup.repo.OrderCategoryRepo;
 import com.mps.think.setup.service.OrderCategoryService;
 
@@ -63,13 +64,14 @@ public class OrderCategoryServiceImpl implements OrderCategoryService {
 		return cc.get();
 	}
 
+	@Override
+	public OrderCategory deleteByOrderCategoryId(Integer orderCategoryId) {
+		OrderCategory Delete = OrderCategoryRepo.findByOrderCategoryId(orderCategoryId);
+		OrderCategoryRepo.delete(Delete);
+		return Delete;
+	}
+
 	
-//	code for delete
-//	 @Override
-//	    public void deleteOrderCategory(Integer OrderCategoryId) {
-//		 OrderCategoryRepo.deleteById(OrderCategoryId);
-//	    }
-//	
 
 	
 

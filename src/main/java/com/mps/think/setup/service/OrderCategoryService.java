@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.mps.think.setup.model.CustomerCategory;
 import com.mps.think.setup.model.OrderCategory;
+import com.mps.think.setup.model.TransportMode;
 import com.mps.think.setup.vo.CustomerCategoryVO;
 import com.mps.think.setup.vo.OrderCategoryVO;
 
@@ -15,9 +16,8 @@ public interface OrderCategoryService {
 	
 	public OrderCategoryVO updateOrderCategory(OrderCategoryVO orderCategory);
 	
-	public OrderCategory findbyOrderCategoryId(Integer OrderCategoryId);
+	public OrderCategory findbyOrderCategoryId(Integer orderCategoryId);
 	
-//	service for delete
-//	  public void   deleteOrderCategory(Integer OrderCategoryId);
+	public OrderCategory deleteByOrderCategoryId(Integer orderCategoryId);
 
 }
