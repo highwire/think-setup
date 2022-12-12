@@ -3,6 +3,7 @@ package com.mps.think.setup.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,18 +24,23 @@ public class CommodityCodesController {
 	}
 	
 	@PostMapping("/saveCommodityCodes")
-	public ResponseEntity<?> savecommodityCodes(@RequestBody CommodityCodesVO Id) {
-		return ResponseEntity.ok(commodityCodesService.saveCommodityCodes(Id));
+	public ResponseEntity<?> savecommodityCodes(@RequestBody CommodityCodesVO id) {
+		return ResponseEntity.ok(commodityCodesService.saveCommodityCodes(id));
 	}
 	
 	@PostMapping("/updateCommodityCodes")
-	public ResponseEntity<?> updatecommodityCodes(@RequestBody CommodityCodesVO Id) {
-		return ResponseEntity.ok(commodityCodesService.updateCommodityCodes(Id));
+	public ResponseEntity<?> updatecommodityCodes(@RequestBody CommodityCodesVO id) {
+		return ResponseEntity.ok(commodityCodesService.updateCommodityCodes(id));
 	}
 	
 	@PostMapping("/findbyCommodityCodesId")
-	public ResponseEntity<?> findbyId(@RequestBody Integer Id) {
-		return ResponseEntity.ok(commodityCodesService.findbyId(Id));
+	public ResponseEntity<?> findbyId(@RequestBody Integer id) {
+		return ResponseEntity.ok(commodityCodesService.findbyId(id));
+	}
+	
+	@DeleteMapping("/deleteByCcId")
+	public ResponseEntity<?> deleteCommodityCodesById(@RequestBody Integer id) {
+		return ResponseEntity.ok(commodityCodesService.deleteCommodityCodesById(id));
 	}
 
 }

@@ -4,15 +4,15 @@ import com.mps.think.setup.model.Publisher;
 
 public class CommodityCodesVO {
 	
-	private Integer Id;
+	private Integer id;
 	private Publisher pubId;
 	private Integer commodityCode;
 	private String description;
 	public Integer getId() {
-		return Id;
+		return id;
 	}
 	public void setId(Integer id) {
-		Id = id;
+		this.id = id;
 	}
 	public Publisher getPubId() {
 		return pubId;
@@ -34,8 +34,10 @@ public class CommodityCodesVO {
 	}
 	@Override
 	public String toString() {
-		return "CommodityCodesVO [Id=" + Id + ", pubId=" + pubId + ", commodityCode=" + commodityCode + ", description="
+		return "CommodityCodesVO [id=" + id + ", pubId=" + pubId + ", commodityCode=" + commodityCode + ", description="
 				+ description + "]";
 	}
+	
+	
 
 }

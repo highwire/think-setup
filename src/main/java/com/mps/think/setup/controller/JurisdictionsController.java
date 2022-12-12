@@ -3,6 +3,7 @@ package com.mps.think.setup.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -35,6 +36,11 @@ public class JurisdictionsController {
 	@PostMapping("/findbyjurisdictionsId")
 	public ResponseEntity<?> findbyId(@RequestBody Integer Id) {
 		return ResponseEntity.ok(jurisdictionsService.findbyId(Id));
+	}
+	
+	@DeleteMapping("/deleteByJurisdictionsId")
+	public ResponseEntity<?> deleteJurisdictionsById(@RequestBody Integer id) {
+		return ResponseEntity.ok(jurisdictionsService.deleteJurisdictionsById(id));
 	}
 
 }

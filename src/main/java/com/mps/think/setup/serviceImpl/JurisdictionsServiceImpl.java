@@ -6,6 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.webjars.NotFoundException;
+
+import com.mps.think.setup.model.CommodityCodes;
 import com.mps.think.setup.model.Jurisdictions;
 import com.mps.think.setup.model.Publisher;
 import com.mps.think.setup.repo.JurisdictionsRepo;
@@ -58,12 +60,19 @@ public class JurisdictionsServiceImpl implements JurisdictionsService {
 	}
 
 	@Override
-	public Jurisdictions findbyId(Integer Id) {
-		Optional<Jurisdictions> jl = jurisdictionsRepo.findById(Id);
+	public Jurisdictions findbyId(Integer id) {
+		Optional<Jurisdictions> jl = jurisdictionsRepo.findById(id);
 		if(!jl.isPresent()) {
-			throw new NotFoundException("Jurisdictions Id : "+ Id +" does not exist!");
+			throw new NotFoundException("Jurisdictions Id : "+ id +" does not exist!");
 		}
 		return jl.get();
+	}
+
+	@Override
+	public Jurisdictions deleteJurisdictionsById(Integer id) {
+		Jurisdictions todelete = jurisdictionsRepo.findJurisdictionsById(id);
+		jurisdictionsRepo.delete(todelete);
+		return todelete;
 	}
 
 }

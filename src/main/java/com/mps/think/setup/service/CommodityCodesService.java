@@ -2,6 +2,7 @@ package com.mps.think.setup.service;
 
 import java.util.List;
 
+
 import com.mps.think.setup.model.CommodityCodes;
 import com.mps.think.setup.vo.CommodityCodesVO;
 
@@ -13,6 +14,8 @@ public interface CommodityCodesService {
 
 	public CommodityCodesVO updateCommodityCodes(CommodityCodesVO commodityCodes);
 
-	public CommodityCodes findbyId(Integer Id);
+	public CommodityCodes findbyId(Integer id);
+	
+	public CommodityCodes deleteCommodityCodesById(Integer id);
 
 }

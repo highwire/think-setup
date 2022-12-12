@@ -68,4 +68,11 @@ public class CancelReasonsServiceImpl implements CancelReasonsService{
 		}
 		return cr.get();
 	}	
+	
+	@Override
+	public CancelReasons deleteByCancelReasonsId(Integer cancelReasonsId) {
+		CancelReasons delete = CancelReasonsRepo.findByCancelReasonsId(cancelReasonsId);
+		CancelReasonsRepo.delete(delete);
+		return delete;
+	}
 }
