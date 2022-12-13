@@ -59,7 +59,7 @@ public class SourceCodeServiceImpl implements SourceCodeService {
 	public SourceCode findbySourceCodeId(Integer sourceCodeId) {
 		 Optional<SourceCode> cc = sourceCodeRepo.findById(sourceCodeId);
 			if(!cc.isPresent()) {
-				throw new NotFoundException("Commodity Codes Id : "+ sourceCodeId +" does not exist!");
+				throw new NotFoundException("Source Code Id : "+ sourceCodeId +" does not exist!");
 			}
 			return cc.get();
 	}
