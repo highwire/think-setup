@@ -93,5 +93,20 @@ public class EnumModelVO {
 	        return displayInstallmentTerm;
 	    }
 	}
+	
+	public static enum source_code_type  {
+
+		Zero("Basic"),One("Package "),Two("Dual "),Three("Catalog"),four("Generic"),five("Shipping ");
+
+	    private final String displaysource_code_type;
+
+	    source_code_type(String displaysource_code_type) {
+	        this.displaysource_code_type = displaysource_code_type;
+	    }
+
+	    public String getDisplayName() {
+	        return displaysource_code_type;
+	    }
+	}
 
 }
