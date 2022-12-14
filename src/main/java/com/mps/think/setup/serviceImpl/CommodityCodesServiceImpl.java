@@ -6,6 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.webjars.NotFoundException;
+
+import com.mps.think.setup.model.CancelReasons;
 import com.mps.think.setup.model.CommodityCodes;
 import com.mps.think.setup.model.Publisher;
 import com.mps.think.setup.repo.CommodityCodesRepo;
@@ -54,12 +56,27 @@ public class CommodityCodesServiceImpl implements CommodityCodesService {
 	}
 
 	@Override
-	public CommodityCodes findbyId(Integer Id) {
-		 Optional<CommodityCodes> cc = commodityCodesRepo.findById(Id);
+	public CommodityCodes findbyId(Integer id) {
+		 Optional<CommodityCodes> cc = commodityCodesRepo.findById(id);
 			if(!cc.isPresent()) {
-				throw new NotFoundException("Commodity Codes Id : "+ Id +" does not exist!");
+				throw new NotFoundException("Commodity Codes Id : "+ id +" does not exist!");
 			}
 			return cc.get();
+	}
+
+	
+
+//	@Override
+//	public CommodityCodes deleteById(Integer Id) {
+//		CommodityCodes delete = commodityCodesRepo.findById(Id);
+//		commodityCodesRepo.delete(delete);
+//		return delete;
+//	}
+	@Override
+	public CommodityCodes deleteCommodityCodesById(Integer id) {
+		CommodityCodes todelete = commodityCodesRepo.findCommodityCodesById(id);
+		commodityCodesRepo.delete(todelete);
+		return todelete;
 	}
 
 }

@@ -15,5 +15,7 @@ public interface TermsService {
 	public TermsVO updateTerms(TermsVO terms);
 
 	public Terms findbytermsId(Integer termsId);
+	
+	public Terms deleteBytermsId(Integer termsId);
 
 }

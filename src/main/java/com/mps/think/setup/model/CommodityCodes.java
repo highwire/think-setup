@@ -20,8 +20,8 @@ public class CommodityCodes extends BaseEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "Id")
-	private Integer Id;
+	@Column(name = "id")
+	private Integer id;
 	
 	@OneToOne
 	@JoinColumn(name = "pub_id", referencedColumnName = "id" )
@@ -34,11 +34,11 @@ public class CommodityCodes extends BaseEntity {
 	private String description;
 
 	public Integer getId() {
-		return Id;
+		return id;
 	}
 
 	public void setId(Integer id) {
-		Id = id;
+		this.id = id;
 	}
 
 	public Publisher getPubId() {
@@ -67,8 +67,10 @@ public class CommodityCodes extends BaseEntity {
 
 	@Override
 	public String toString() {
-		return "CommodityCodes [Id=" + Id + ", pubId=" + pubId + ", commodityCode=" + commodityCode + ", description="
+		return "CommodityCodes [id=" + id + ", pubId=" + pubId + ", commodityCode=" + commodityCode + ", description="
 				+ description + "]";
 	}
+
+	
 
 }

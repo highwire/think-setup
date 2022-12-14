@@ -4,17 +4,17 @@ import com.mps.think.setup.model.Publisher;
 
 public class JurisdictionsVO {
 	
-	private Integer Id;
+	private Integer id;
 	private Publisher pubId;
 	private String stateCode;
 	private String city;
 	private String country;
 	private Integer zipCode;
 	public Integer getId() {
-		return Id;
+		return id;
 	}
 	public void setId(Integer id) {
-		Id = id;
+		this.id = id;
 	}
 	public Publisher getPubId() {
 		return pubId;
@@ -48,7 +48,8 @@ public class JurisdictionsVO {
 	}
 	@Override
 	public String toString() {
-		return "JurisdictionsVO [Id=" + Id + ", pubId=" + pubId + ", stateCode=" + stateCode + ", city=" + city
+		return "JurisdictionsVO [id=" + id + ", pubId=" + pubId + ", stateCode=" + stateCode + ", city=" + city
 				+ ", country=" + country + ", zipCode=" + zipCode + "]";
 	}
+	
 }

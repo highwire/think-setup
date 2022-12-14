@@ -3,6 +3,7 @@ package com.mps.think.setup.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -51,6 +52,11 @@ public class TermsController {
 	@GetMapping("/findAllStartType")
 	public ResponseEntity<?> getAllStartType() {
 		return ResponseEntity.ok(StartType.values());
+	}
+	
+	@DeleteMapping("/deleteByTermsId")
+	public ResponseEntity<?> deleteBytermsId(@RequestBody Integer termsId) {
+		return ResponseEntity.ok(termsService.deleteBytermsId(termsId));
 	}
 
 }

@@ -6,6 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.webjars.NotFoundException;
+
+import com.mps.think.setup.model.CancelReasons;
 import com.mps.think.setup.model.Publisher;
 import com.mps.think.setup.model.Terms;
 import com.mps.think.setup.repo.TermsRepo;
@@ -154,6 +156,13 @@ public class TermsServiceImpl implements TermsService{
 				throw new NotFoundException("Terms  Id : "+ termsId +" does not exist!");
 			}
 			return cr.get();
+	}
+	
+	@Override
+	public Terms deleteBytermsId(Integer termsId) {
+		Terms delete = termsRepo.findBytermsId(termsId);
+		termsRepo.delete(delete);
+		return delete;
 	}
 
 }

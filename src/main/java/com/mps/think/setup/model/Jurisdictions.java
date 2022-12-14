@@ -21,8 +21,8 @@ public class Jurisdictions extends BaseEntity{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "Id")
-	private Integer Id;
+	@Column(name = "id")
+	private Integer id;
 	
 	@OneToOne
 	@JoinColumn(name = "pub_id", referencedColumnName = "id" )
@@ -41,11 +41,11 @@ public class Jurisdictions extends BaseEntity{
 	private Integer zipCode;
 
 	public Integer getId() {
-		return Id;
+		return id;
 	}
 
 	public void setId(Integer id) {
-		Id = id;
+		this.id = id;
 	}
 
 	public Publisher getPubId() {
@@ -90,9 +90,11 @@ public class Jurisdictions extends BaseEntity{
 
 	@Override
 	public String toString() {
-		return "Jurisdictions [Id=" + Id + ", pubId=" + pubId + ", stateCode=" + stateCode + ", city=" + city
+		return "Jurisdictions [id=" + id + ", pubId=" + pubId + ", stateCode=" + stateCode + ", city=" + city
 				+ ", country=" + country + ", zipCode=" + zipCode + "]";
 	}
+
+	
 	
 	
 }
