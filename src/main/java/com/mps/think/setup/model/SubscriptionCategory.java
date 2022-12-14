@@ -20,14 +20,14 @@ public class SubscriptionCategory extends BaseEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "Id")
+	@Column(name = "id")
 	private Integer Id;
 	
 	@OneToOne
 	@JoinColumn(name = "pub_id", referencedColumnName = "id" )
 	private Publisher pubId;
 	
-	@Column(name = "subscriptionCategory")
+	@Column(name = "subscription_category")
 	private String subscriptionCategory;
 
 	@Column(name = "description")

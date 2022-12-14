@@ -9,7 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 @Entity
-@Table(name = "Subscription_Category")
+@Table(name = "subscription_category")
 
 public class SubscriptionCategories extends BaseEntity {
 	
@@ -17,17 +17,17 @@ public class SubscriptionCategories extends BaseEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "Subscription_Category_id")
+	@Column(name = "subscription_category_id")
 	private Integer SubscriptionCategoriesId;
 	
 	 @OneToOne
 	 @JoinColumn(name = "pub_id", referencedColumnName = "id")
 	 private Publisher pubId;
 
-	@Column(name = "Subscription_Category")
+	@Column(name = "subscription_category")
 	private String SubscriptionCategory;
 
-	@Column(name = "Description")
+	@Column(name = "description")
 	private String Description;
 
 	public Integer getSubscriptionCategoriesId() {
