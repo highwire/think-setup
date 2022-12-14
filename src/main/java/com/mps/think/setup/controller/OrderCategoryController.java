@@ -1,12 +1,11 @@
+
 package com.mps.think.setup.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,26 +28,25 @@ public class OrderCategoryController {
 	}
 
 	@PostMapping("/saveorderCategory")
-	public ResponseEntity<?> saveorderCategory(@RequestBody OrderCategoryVO Id) {
-		return ResponseEntity.ok(orderCategoryService.saveOrderCategory(Id));
+	public ResponseEntity<?> saveorderCategory(@RequestBody OrderCategoryVO orderCategoryId) {
+		return ResponseEntity.ok(orderCategoryService.saveOrderCategory(orderCategoryId));
 	}
 	
 	@PostMapping("/updateorderCategory")
-	public ResponseEntity<?> updateorderCategory(@RequestBody OrderCategoryVO Id) {
-		return ResponseEntity.ok(orderCategoryService.updateOrderCategory(Id));
+	public ResponseEntity<?> updateorderCategory(@RequestBody OrderCategoryVO orderCategoryId) {
+		return ResponseEntity.ok(orderCategoryService.updateOrderCategory(orderCategoryId));
 	}
 	
 	@PostMapping("/findbyOrderCategoryId")
-	public ResponseEntity<?> findbyOrderCategoryId(@RequestBody Integer orderCategoryId) {
+	public ResponseEntity<?> findbyorderCategoryId(@RequestBody Integer orderCategoryId) {
 		return ResponseEntity.ok(orderCategoryService.findbyOrderCategoryId(orderCategoryId));
 	}
-//	Controller for delete
 	
-//	 @DeleteMapping("/deleteOrderCategory{id}")
-//	    public ResponseEntity<String> deleteOrderCategory(@PathVariable("id") Integer orderCategoryId){
-//		 orderCategoryService.deleteOrderCategory(orderCategoryId);
-//	        return new ResponseEntity<>("OrderCategory successfully deleted!", HttpStatus.OK);
-//	    }
-//	
+	@DeleteMapping("/deleteOrderCategoryById")
+	public ResponseEntity<?> deleteByOrderCategoryId(@RequestBody Integer orderCategoryId) {
+		return ResponseEntity.ok(orderCategoryService.deleteByOrderCategoryId(orderCategoryId));
+	}
+
 	  
 }
+

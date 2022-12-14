@@ -9,15 +9,16 @@ import com.mps.think.setup.vo.OrderCategoryVO;
 
 public interface OrderCategoryService {
 	
+
 	public List<OrderCategory> findAllOrderCategory();
 	
 	public OrderCategoryVO saveOrderCategory(OrderCategoryVO orderCategory);
 	
 	public OrderCategoryVO updateOrderCategory(OrderCategoryVO orderCategory);
 	
-	public OrderCategory findbyOrderCategoryId(Integer OrderCategoryId);
+	public OrderCategory findbyOrderCategoryId(Integer orderCategoryId);
 	
-//	service for delete
-//	  public void   deleteOrderCategory(Integer OrderCategoryId);
+	public OrderCategory deleteByOrderCategoryId(Integer orderCategoryId);
+
 
 }

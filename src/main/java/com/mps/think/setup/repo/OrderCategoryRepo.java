@@ -7,5 +7,5 @@ import com.mps.think.setup.model.OrderCategory;
 
 @Repository
 public interface OrderCategoryRepo extends JpaRepository<OrderCategory ,Integer> {
-
+	public OrderCategory findByOrderCategoryId(Integer orderCategoryId);
 }

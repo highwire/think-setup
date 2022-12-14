@@ -15,7 +15,6 @@ import com.mps.think.setup.vo.OrderCategoryVO;
 
 @Service
 public class OrderCategoryServiceImpl implements OrderCategoryService {
-	
 	@Autowired
 	OrderCategoryRepo OrderCategoryRepo;
 
@@ -63,15 +62,12 @@ public class OrderCategoryServiceImpl implements OrderCategoryService {
 		return cc.get();
 	}
 
-	
-//	code for delete
-//	 @Override
-//	    public void deleteOrderCategory(Integer OrderCategoryId) {
-//		 OrderCategoryRepo.deleteById(OrderCategoryId);
-//	    }
-//	
-
-	
+	@Override
+	public OrderCategory deleteByOrderCategoryId(Integer orderCategoryId) {
+		OrderCategory Delete = OrderCategoryRepo.findByOrderCategoryId(orderCategoryId);
+		OrderCategoryRepo.delete(Delete);
+		return Delete;
+	}
 
 	
   
