@@ -23,7 +23,7 @@ public class OrderCategoryController {
 	OrderCategoryService orderCategoryService;
 	
 	@GetMapping("/getAllOrderCategory")
-	public ResponseEntity<?> getAllPubliser() {
+	public ResponseEntity<?> getAllOrderCategory() {
 		return ResponseEntity.ok(orderCategoryService.findAllOrderCategory());
 	}
 
