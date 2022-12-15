@@ -21,7 +21,7 @@ public class SubscriptionCategory extends BaseEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	private Integer Id;
+	private Integer id;
 	
 	@OneToOne
 	@JoinColumn(name = "pub_id", referencedColumnName = "id" )
@@ -34,11 +34,11 @@ public class SubscriptionCategory extends BaseEntity {
 	private String description;
 
 	public Integer getId() {
-		return Id;
+		return id;
 	}
 
 	public void setId(Integer id) {
-		Id = id;
+		this.id = id;
 	}
 
 	public Publisher getPubId() {
@@ -67,8 +67,10 @@ public class SubscriptionCategory extends BaseEntity {
 
 	@Override
 	public String toString() {
-		return "SubscriptionCategory [Id=" + Id + ", pubId=" + pubId + ", subscriptionCategory=" + subscriptionCategory
+		return "SubscriptionCategory [id=" + id + ", pubId=" + pubId + ", subscriptionCategory=" + subscriptionCategory
 				+ ", description=" + description + "]";
 	}
+
+	
 
 }
