@@ -1,5 +1,5 @@
 package com.mps.think.setup.model;
-
+//update table column
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
