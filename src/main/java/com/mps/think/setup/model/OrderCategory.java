@@ -71,7 +71,7 @@ private static final long serialVersionUID = 1L;
 				+ orderCategory + ", orderDescription=" + orderDescription + "]";
 	}
 
-	
+//changed table colnum name	
 	
 	
 
