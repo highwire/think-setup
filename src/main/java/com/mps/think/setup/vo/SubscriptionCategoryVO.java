@@ -4,15 +4,15 @@ import com.mps.think.setup.model.Publisher;
 
 public class SubscriptionCategoryVO {
 	
-	private Integer Id;
+	private Integer id;
 	private Publisher pubId;
 	private String subscriptionCategory;
 	private String description;
 	public Integer getId() {
-		return Id;
+		return id;
 	}
 	public void setId(Integer id) {
-		Id = id;
+		this.id = id;
 	}
 	public Publisher getPubId() {
 		return pubId;
@@ -34,8 +34,9 @@ public class SubscriptionCategoryVO {
 	}
 	@Override
 	public String toString() {
-		return "SubscriptionCategoryVO [Id=" + Id + ", pubId=" + pubId + ", subscriptionCategory="
+		return "SubscriptionCategoryVO [id=" + id + ", pubId=" + pubId + ", subscriptionCategory="
 				+ subscriptionCategory + ", description=" + description + "]";
 	}
+	
 
 }

@@ -6,6 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.webjars.NotFoundException;
+
+import com.mps.think.setup.model.CommodityCodes;
 import com.mps.think.setup.model.Publisher;
 import com.mps.think.setup.model.SubscriptionCategory;
 import com.mps.think.setup.repo.SubscriptionCategoryRepo;
@@ -54,12 +56,21 @@ public class SubscriptionCategoryServiceImpl implements SubscriptionCategoryServ
 	}
 
 	@Override
-	public SubscriptionCategory findbyId(Integer Id) {
-		Optional<SubscriptionCategory> sc = subscriptionCategoryRepo.findById(Id);
+	public SubscriptionCategory findbyId(Integer id) {
+		Optional<SubscriptionCategory> sc = subscriptionCategoryRepo.findById(id);
 		if(!sc.isPresent()) {
-			throw new NotFoundException("Subscription Category Id : "+ Id +" does not exist!");
+			throw new NotFoundException("Subscription Category Id : "+ id +" does not exist!");
 		}
 		return sc.get();
+	}
+
+	
+
+	@Override
+	public SubscriptionCategory deleteSubscriptionCategoryById(Integer id) {
+		SubscriptionCategory todelete = subscriptionCategoryRepo.findSubscriptionCategoryById(id);
+		subscriptionCategoryRepo.delete(todelete);
+		return todelete;
 	}	
 
 }
