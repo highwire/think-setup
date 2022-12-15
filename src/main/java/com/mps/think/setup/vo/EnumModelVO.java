@@ -47,6 +47,7 @@ public class EnumModelVO {
 	        return displayTimeZone;
 	    }
 	}
+<<<<<<< HEAD
 	
 	public static enum SubDefStatus {
 		
@@ -63,6 +64,68 @@ public class EnumModelVO {
 		}
 		
 	}
+=======
+	public static enum OrderClasses  {
+>>>>>>> fea2eed3645f3d3d2fb23eafd2ef4a1569100681
 
+		SAMPLE_1("SAMPLE_1"),SAMPLE_2("SAMPLE_2"),SAMPLE_3("SAMPLE_3");
+
+	    private final String displayOrderClasses;
+
+	    OrderClasses(String displayOrderClasses) {
+	        this.displayOrderClasses = displayOrderClasses;
+	    }
+
+	    public String getDisplayName() {
+	        return displayOrderClasses;
+	    }
+	}
+	
+	public static enum StartType  {
+
+		ANY_TIME_START("ANY_TIME_START"),VOLUME_GROUP_START("VOLUME_GROUP_START"),DATA_BASED_WITH_ISSUES("DATA_BASED_WITH_ISSUES")
+	    ,DATA_BASED_WITH_NO_ISSUES("DATA_BASED_WITH_NO_ISSUES"),DATA_BASED_WITH_UNITS("DATA_BASED_WITH_NO_ISSUES"),
+		DATE_BASED_WITH_UNITS("DATE_BASED_WITH_UNITS"), UNIT_BASED_NO_TIME("UNIT_BASED_NO_TIME"),ANY("ANY");
+
+	    private final String displayStartType;
+
+	    StartType(String displayStartType) {
+	        this.displayStartType = displayStartType;
+	    }
+
+	    public String getDisplayName() {
+	        return displayStartType;
+	    }
+	}
+	
+	public static enum InstallmentTerm  {
+
+		MONTHLY("MONTHLY"),YEARLY("YEARLY"),HALF_YEARLY("HALF_YEARLY");
+
+	    private final String displayInstallmentTerm;
+
+	    InstallmentTerm(String displayInstallmentTerm) {
+	        this.displayInstallmentTerm = displayInstallmentTerm;
+	    }
+
+	    public String getDisplayName() {
+	        return displayInstallmentTerm;
+	    }
+	}
+	
+	public static enum source_code_type  {
+
+		Zero("Basic"),One("Package "),Two("Dual "),Three("Catalog"),four("Generic"),five("Shipping ");
+
+	    private final String displaysource_code_type;
+
+	    source_code_type(String displaysource_code_type) {
+	        this.displaysource_code_type = displaysource_code_type;
+	    }
+
+	    public String getDisplayName() {
+	        return displaysource_code_type;
+	    }
+	}
 
 }

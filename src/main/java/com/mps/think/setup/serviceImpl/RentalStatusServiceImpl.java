@@ -34,7 +34,7 @@ public class RentalStatusServiceImpl implements RentalStatusService {
 		data.setRentEmail(rentalStatusVO.getRentEmail());
 		data.setDescription(rentalStatusVO.getDescription());
 		rentalStatusRepo.saveAndFlush(data);
-		
+		data.setRentalStatusId(rentalStatusVO.getRentalStatusId());
 		return rentalStatusVO;
 	}
 

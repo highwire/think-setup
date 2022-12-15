@@ -30,6 +30,12 @@ public class SalesRepresentativeController {
 
 		return ResponseEntity.ok(salesRepresentativeServiceImp.saveSalesRepresentative(salesRepresentativeVO));
 	}
+	
+	@RequestMapping(value = "/updateSalesRepresentative", method = RequestMethod.PUT)
+	public ResponseEntity<?> updateSalesRepresentative(@Valid @RequestBody SalesRepresentativeVO salesRepresentativeVO) {
+
+		return ResponseEntity.ok(salesRepresentativeServiceImp.updateSalesRepresentative(salesRepresentativeVO));
+	}
 
 	@RequestMapping(value = "/findbySalesRepresentativeId", method = RequestMethod.POST)
 	public ResponseEntity<?> findbySalesRepresentativeId(@Valid @RequestBody Integer salesRepresentativeId) {

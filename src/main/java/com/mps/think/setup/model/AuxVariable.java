@@ -2,10 +2,14 @@ package com.mps.think.setup.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.mps.think.setup.utils.AppConstants;
 
 @Table(name = "aux_variable")
 @Entity
@@ -23,14 +27,17 @@ public class AuxVariable extends BaseEntity {
 	@JoinColumn(name = "pub_id", referencedColumnName = "id")
 	private Publisher pubId;
 
+	@Enumerated(EnumType.STRING)
 	@Column(name = "aux_category")
-	private String auxCategory;// need to changes in enum  Customer ,CustomerAddress ,Oder
+	private AppConstants.AuxCategory auxCategory;
 
 	@Column(name = "variable_name")
 	private String variableName;
 
+	@Enumerated(EnumType.STRING)
 	@Column(name = "variable_type")
-	private String variableType;// int string enum
+	private AppConstants.VariableType variableType;
+
 
 	@Column(name = "defult_value")
 	private String defultValue;
@@ -46,11 +53,11 @@ public class AuxVariable extends BaseEntity {
 		this.auxVarId = auxVarId;
 	}
 
-	public String getAuxCategory() {
+	public AppConstants.AuxCategory getAuxCategory() {
 		return auxCategory;
 	}
 
-	public void setAuxCategory(String auxCategory) {
+	public void setAuxCategory(AppConstants.AuxCategory auxCategory) {
 		this.auxCategory = auxCategory;
 	}
 
@@ -62,11 +69,11 @@ public class AuxVariable extends BaseEntity {
 		this.variableName = variableName;
 	}
 
-	public String getVariableType() {
+	public AppConstants.VariableType getVariableType() {
 		return variableType;
 	}
 
-	public void setVariableType(String variableType) {
+	public void setVariableType(AppConstants.VariableType variableType) {
 		this.variableType = variableType;
 	}
 

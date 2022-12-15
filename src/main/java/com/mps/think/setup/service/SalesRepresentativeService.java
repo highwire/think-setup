@@ -10,6 +10,8 @@ public interface SalesRepresentativeService {
 	public List<SalesRepresentative> findAllSalesRepresentative();
 
 	public SalesRepresentativeVO saveSalesRepresentative(SalesRepresentativeVO salesRepresentativeVO);
+	
+	public SalesRepresentativeVO updateSalesRepresentative(SalesRepresentativeVO salesRepresentativeVO);
 
 	public SalesRepresentative findbySalesRepresentativeId(Integer contactId);
 
