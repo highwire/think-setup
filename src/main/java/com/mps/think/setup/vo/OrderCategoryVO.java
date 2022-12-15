@@ -2,15 +2,15 @@ package com.mps.think.setup.vo;
 
 public class OrderCategoryVO {
 	
-	private Integer OrderCategoryId;
+	private Integer orderCategoryId;
 	private PublisherVO pubId;
 	private String orderDescription;
 	private String orderCategory;
 	public Integer getOrderCategoryId() {
-		return OrderCategoryId;
+		return orderCategoryId;
 	}
 	public void setOrderCategoryId(Integer orderCategoryId) {
-		OrderCategoryId = orderCategoryId;
+		this.orderCategoryId = orderCategoryId;
 	}
 	public PublisherVO getPubId() {
 		return pubId;
@@ -32,10 +32,7 @@ public class OrderCategoryVO {
 	}
 	@Override
 	public String toString() {
-		return "OrderCategoryVo [OrderCategoryId=" + OrderCategoryId + ", pubId=" + pubId + ", orderDescription="
+		return "OrderCategoryVO [orderCategoryId=" + orderCategoryId + ", pubId=" + pubId + ", orderDescription="
 				+ orderDescription + ", orderCategory=" + orderCategory + "]";
 	}
-	
-	
-
 }

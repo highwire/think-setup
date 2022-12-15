@@ -16,12 +16,12 @@ public class OrderCategory extends BaseEntity {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "order_category_id")
-	private Integer OrderCategoryId;
+	@Column(name = "ordercategoryId")
+	private Integer orderCategoryId;
 	
 	@OneToOne
 	@JoinColumn(name = "pub_id", referencedColumnName = "id")
@@ -34,11 +34,11 @@ public class OrderCategory extends BaseEntity {
 	private String orderDescription;
 
 	public Integer getOrderCategoryId() {
-		return OrderCategoryId;
+		return orderCategoryId;
 	}
 
 	public void setOrderCategoryId(Integer orderCategoryId) {
-		OrderCategoryId = orderCategoryId;
+		this.orderCategoryId = orderCategoryId;
 	}
 
 	public Publisher getPubId() {
@@ -67,9 +67,11 @@ public class OrderCategory extends BaseEntity {
 
 	@Override
 	public String toString() {
-		return "OrderCategory [OrderCategoryId=" + OrderCategoryId + ", pubId=" + pubId + ", orderCategory="
+		return "OrderCategory [orderCategoryId=" + orderCategoryId + ", pubId=" + pubId + ", orderCategory="
 				+ orderCategory + ", orderDescription=" + orderDescription + "]";
 	}
+
+	
 	
 	
 
