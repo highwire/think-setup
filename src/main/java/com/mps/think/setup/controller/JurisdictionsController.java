@@ -24,18 +24,18 @@ public class JurisdictionsController {
 	}
 	
 	@PostMapping("/savejurisdictions")
-	public ResponseEntity<?> savecommodityCodes(@RequestBody JurisdictionsVO Id) {
-		return ResponseEntity.ok(jurisdictionsService.saveJurisdictions(Id));
+	public ResponseEntity<?> savejurisdictions(@RequestBody JurisdictionsVO id) {
+		return ResponseEntity.ok(jurisdictionsService.saveJurisdictions(id));
 	}
 	
 	@PostMapping("/updatejurisdictions")
-	public ResponseEntity<?> updatecommodityCodes(@RequestBody JurisdictionsVO Id) {
-		return ResponseEntity.ok(jurisdictionsService.updateJurisdictions(Id));
+	public ResponseEntity<?> updatejurisdictions(@RequestBody JurisdictionsVO id) {
+		return ResponseEntity.ok(jurisdictionsService.updateJurisdictions(id));
 	}
 	
 	@PostMapping("/findbyjurisdictionsId")
-	public ResponseEntity<?> findbyId(@RequestBody Integer Id) {
-		return ResponseEntity.ok(jurisdictionsService.findbyId(Id));
+	public ResponseEntity<?> findbyId(@RequestBody Integer id) {
+		return ResponseEntity.ok(jurisdictionsService.findbyId(id));
 	}
 	
 	@DeleteMapping("/deleteByJurisdictionsId")

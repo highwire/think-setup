@@ -14,7 +14,7 @@ public interface JurisdictionsService {
 
 	public JurisdictionsVO updateJurisdictions(JurisdictionsVO jurisdictions);
 
-	public Jurisdictions findbyId(Integer Id);
+	public Jurisdictions findbyId(Integer id);
 	
 	public Jurisdictions deleteJurisdictionsById(Integer id);
 

@@ -37,11 +37,11 @@ public class CancelReasonsController {
 	}
 	
 	@PostMapping("/findbyCancelReasonsId")
-	public ResponseEntity<?> findbyCustomerCategoryId(@RequestBody Integer cancelReasonsId) {
+	public ResponseEntity<?> findbyCancelReasonsId(@RequestBody Integer cancelReasonsId) {
 		return ResponseEntity.ok(cancelReasonsService.findbyCancelReasonsId(cancelReasonsId));
 	}
 	
-	@GetMapping("/findAllCurrency")
+	@GetMapping("/findAllOrderClasses")
 	public ResponseEntity<?> getAllOrderClasses() {
 		return ResponseEntity.ok(OrderClasses.values());
 	}

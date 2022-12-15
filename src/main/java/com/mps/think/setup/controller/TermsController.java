@@ -30,13 +30,13 @@ public class TermsController {
 	}
 	
 	@PostMapping("/saveTerms")
-	public ResponseEntity<?> saveterms(@RequestBody TermsVO Id) {
-		return ResponseEntity.ok(termsService.saveTerms(Id));
+	public ResponseEntity<?> saveterms(@RequestBody TermsVO termsId) {
+		return ResponseEntity.ok(termsService.saveTerms(termsId));
 	}
 	
 	@PostMapping("/updateTerms")
-	public ResponseEntity<?> updateterms(@RequestBody TermsVO Id) {
-		return ResponseEntity.ok(termsService.updateTerms(Id));
+	public ResponseEntity<?> updateterms(@RequestBody TermsVO termsId) {
+		return ResponseEntity.ok(termsService.updateTerms(termsId));
 	}
 	
 	@PostMapping("/findbyTermsId")
