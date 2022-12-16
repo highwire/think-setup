@@ -48,12 +48,12 @@ public class ShippingMethodServiceImpl implements ShippingMethodService {
 		return shippingMethod;
 	}
 
-	@Override
-	public ShippingMethod deleteShippingMethod(ShippingMethod shippingMethod) {
-		ShippingMethod shippingMethodToDelete = shippingMethodRepo.findShippingMethodById(shippingMethod.getId());
-		shippingMethodRepo.delete(shippingMethodToDelete);
-		return shippingMethod;
-	}
+//	@Override
+//	public ShippingMethod deleteShippingMethod(ShippingMethod shippingMethod) {
+//		ShippingMethod shippingMethodToDelete = shippingMethodRepo.findShippingMethodById(shippingMethod.getId());
+//		shippingMethodRepo.delete(shippingMethodToDelete);
+//		return shippingMethod;
+//	}
 
 	@Override
 	public ShippingMethod deleteShippingMethodById(Integer id) {

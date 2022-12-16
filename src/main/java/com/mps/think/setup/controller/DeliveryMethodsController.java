@@ -42,13 +42,13 @@ public class DeliveryMethodsController {
 		return ResponseEntity.ok(deliveryMethodService.getDeliveryMethodById(id));
 	}
 	
-	@DeleteMapping("/deleteDeliveryMethod")
-	public ResponseEntity<?> deleteDeliveryMethod(@RequestBody DeliveryMethodsVO delivery) {
-		return ResponseEntity.ok(deliveryMethodService.deleteDeliveryMethod(delivery));
-	}
+//	@DeleteMapping("/deleteDeliveryMethod")
+//	public ResponseEntity<?> deleteDeliveryMethod(@RequestBody DeliveryMethodsVO delivery) {
+//		return ResponseEntity.ok(deliveryMethodService.deleteDeliveryMethod(delivery));
+//	}
 	
-	@DeleteMapping("/deleteDeliveryMethodById/{id}")
-	public ResponseEntity<?> deleteDeliveryMethodById(@PathVariable Integer id) {
+	@DeleteMapping("/deleteDeliveryMethodById")
+	public ResponseEntity<?> deleteDeliveryMethodById(@RequestBody Integer id) {
 		return ResponseEntity.ok(deliveryMethodService.deleteDeliveryMethodById(id));
 	}
 	

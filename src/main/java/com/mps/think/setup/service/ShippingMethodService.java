@@ -15,7 +15,7 @@ public interface ShippingMethodService {
 	
 	public ShippingMethodVO updateShippingMehtod(ShippingMethodVO shippingMethod);
 	
-	public ShippingMethod deleteShippingMethod(ShippingMethod shippingMethod);
+//	public ShippingMethod deleteShippingMethod(ShippingMethod shippingMethod);
 	
 	public ShippingMethod deleteShippingMethodById(Integer id);
 	

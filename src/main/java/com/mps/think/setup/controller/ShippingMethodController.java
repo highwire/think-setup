@@ -39,12 +39,12 @@ public class ShippingMethodController {
 		return ResponseEntity.ok(shippingMethodService.getShippingMehtodByid(id));
 	}
 	
-	@DeleteMapping("/deleteShippingMethod")
-	public ResponseEntity<?> deleteShippingMethod(@RequestBody ShippingMethod shippingMethod) {
-		return ResponseEntity.ok(shippingMethodService.deleteShippingMethod(shippingMethod));
-	}
+//	@DeleteMapping("/deleteShippingMethod")
+//	public ResponseEntity<?> deleteShippingMethod(@RequestBody ShippingMethod shippingMethod) {
+//		return ResponseEntity.ok(shippingMethodService.deleteShippingMethod(shippingMethod));
+//	}
 	
-	@DeleteMapping("/deleteMappingById")
+	@DeleteMapping("/deleteShippingMethodById")
 	public ResponseEntity<?> deleteShippingMethodById(@RequestBody Integer id) {
 		return ResponseEntity.ok(shippingMethodService.deleteShippingMethodById(id));
 	}
