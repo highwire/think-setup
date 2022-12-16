@@ -10,11 +10,23 @@ public class OrderCodesVO {
 	
 	private String description;
 	
+	/*
+	 * @Enumerated(EnumType.STRING)
+	 * 
+	 * @Column(name = "order_type") private OrderType orderType;
+	 */
+	
 	private String orderType;
 	
 	private String orderCodeId;
 	
 	private String orderClassId;
+
+	private Boolean active;
+	
+	private String rateCard;
+	
+	private String discountCard;
 
 	public Integer getId() {
 		return id;
@@ -22,6 +34,14 @@ public class OrderCodesVO {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public Integer getPublisherId() {
+		return publisherId;
+	}
+
+	public void setPublisherId(Integer publisherId) {
+		this.publisherId = publisherId;
 	}
 
 	public String getOrderCode() {
@@ -64,12 +84,29 @@ public class OrderCodesVO {
 		this.orderClassId = orderClassId;
 	}
 
-	public Integer getPublisherId() {
-		return publisherId;
+	public Boolean getActive() {
+		return active;
 	}
 
-	public void setPublisherId(Integer publisherId) {
-		this.publisherId = publisherId;
+	public void setActive(Boolean active) {
+		this.active = active;
 	}
+
+	public String getRateCard() {
+		return rateCard;
+	}
+
+	public void setRateCard(String rateCard) {
+		this.rateCard = rateCard;
+	}
+
+	public String getDiscountCard() {
+		return discountCard;
+	}
+
+	public void setDiscountCard(String discountCard) {
+		this.discountCard = discountCard;
+	}
+
 
 }

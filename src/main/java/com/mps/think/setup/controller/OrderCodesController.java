@@ -3,6 +3,7 @@ package com.mps.think.setup.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -58,6 +59,16 @@ public class OrderCodesController {
 	@GetMapping("/getOrderPaymentOptions/{orderPaymentId}")
 	public ResponseEntity<?> getOrderPaymentOptionsById(Integer orderPaymentId) {
 		return ResponseEntity.ok(orderCodesService.getOrderPaymentOptionsById(orderPaymentId));
+	}
+	
+	@GetMapping("/getOrderCodesRecord")
+	public ResponseEntity<?> getAllOrderCodes() {
+		return ResponseEntity.ok(orderCodesService.getAllOrderCodes());
+	}
+	
+	@DeleteMapping("/deleteOrderCode")
+	public ResponseEntity<?> deleteOrderCode(@RequestBody Integer id) {
+		return ResponseEntity.ok(orderCodesService.deleteOrderCode(id));
 	}
 
 }

@@ -32,14 +32,14 @@ public class OrderItemDetails extends BaseEntity {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date effectiveDate;
 	
+	@Column(name = "item_type")
+	private String itemType;
+	
 	@Column(name = "item_url")
 	private String itemUrl;
 	
 	@Column(name = "item_image")
 	private String itemImage;
-
-	@Column(name = "grace_quantity")
-	private String graceQuantity;
 	
 	@Column(name = "price")
 	private String price;
@@ -49,15 +49,6 @@ public class OrderItemDetails extends BaseEntity {
 	
 	@Column(name = "commodity_code")
 	private String commodityCode;
-	
-	@Column(name = "media")
-	private String media;
-	
-	@Column(name = "edition")
-	private String edition;
-	
-	@Column(name = "category")
-	private String category;
 
 	public Integer getId() {
 		return id;
@@ -67,12 +58,28 @@ public class OrderItemDetails extends BaseEntity {
 		this.id = id;
 	}
 
+	public Integer getPublisherId() {
+		return publisherId;
+	}
+
+	public void setPublisherId(Integer publisherId) {
+		this.publisherId = publisherId;
+	}
+
 	public Date getEffectiveDate() {
 		return effectiveDate;
 	}
 
 	public void setEffectiveDate(Date effectiveDate) {
 		this.effectiveDate = effectiveDate;
+	}
+
+	public String getItemType() {
+		return itemType;
+	}
+
+	public void setItemType(String itemType) {
+		this.itemType = itemType;
 	}
 
 	public String getItemUrl() {
@@ -89,14 +96,6 @@ public class OrderItemDetails extends BaseEntity {
 
 	public void setItemImage(String itemImage) {
 		this.itemImage = itemImage;
-	}
-
-	public String getGraceQuantity() {
-		return graceQuantity;
-	}
-
-	public void setGraceQuantity(String graceQuantity) {
-		this.graceQuantity = graceQuantity;
 	}
 
 	public String getPrice() {
@@ -123,36 +122,5 @@ public class OrderItemDetails extends BaseEntity {
 		this.commodityCode = commodityCode;
 	}
 
-	public String getMedia() {
-		return media;
-	}
-
-	public void setMedia(String media) {
-		this.media = media;
-	}
-
-	public String getEdition() {
-		return edition;
-	}
-
-	public void setEdition(String edition) {
-		this.edition = edition;
-	}
-
-	public String getCategory() {
-		return category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
-	}
-
-	public Integer getPublisherId() {
-		return publisherId;
-	}
-
-	public void setPublisherId(Integer publisherId) {
-		this.publisherId = publisherId;
-	}
 	
 }

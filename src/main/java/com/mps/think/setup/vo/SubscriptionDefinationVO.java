@@ -2,20 +2,10 @@ package com.mps.think.setup.vo;
 
 
 public class SubscriptionDefinationVO {
-
-	private SubscriptionDefOrderCodesVO orderCodes;
 	
 	private SubscriptionDefKeyInfoVO keyInfo;
 	
 	private SubscriptionItemDetailsVO itemDetails;
-
-	public SubscriptionDefOrderCodesVO getOrderCodes() {
-		return orderCodes;
-	}
-
-	public void setOrderCodes(SubscriptionDefOrderCodesVO orderCodes) {
-		this.orderCodes = orderCodes;
-	}
 
 	public SubscriptionDefKeyInfoVO getKeyInfo() {
 		return keyInfo;

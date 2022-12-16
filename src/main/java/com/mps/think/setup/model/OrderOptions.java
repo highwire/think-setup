@@ -42,6 +42,12 @@ public class OrderOptions extends BaseEntity {
 	@Column(name = "segmented_order")
 	private Boolean segmentedOrder;
 	
+	@Column(name = "grace_quantity")
+	private String graceQuanitity;
+	
+	@Column(name = "trial_type")
+	private String trialType;
+	
 	@Column(name = "media")
 	private String media;
 	
@@ -53,7 +59,10 @@ public class OrderOptions extends BaseEntity {
 	
 	@Column(name = "rotation")
 	private String rotation;
-
+	
+	@Column(name = "number_of_issues")
+	private String numOfIssues;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -148,6 +157,30 @@ public class OrderOptions extends BaseEntity {
 
 	public void setRotation(String rotation) {
 		this.rotation = rotation;
+	}
+
+	public String getGraceQuanitity() {
+		return graceQuanitity;
+	}
+
+	public void setGraceQuanitity(String graceQuanitity) {
+		this.graceQuanitity = graceQuanitity;
+	}
+
+	public String getTrialType() {
+		return trialType;
+	}
+
+	public void setTrialType(String trialType) {
+		this.trialType = trialType;
+	}
+
+	public String getNumOfIssues() {
+		return numOfIssues;
+	}
+
+	public void setNumOfIssues(String numOfIssues) {
+		this.numOfIssues = numOfIssues;
 	}
 
 }

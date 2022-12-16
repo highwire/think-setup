@@ -1,15 +1,16 @@
 package com.mps.think.setup.vo;
 
+
 public class OrderPackageOptionsVO {
-	
+
 	private Integer id;
-	
+
 	private Integer publisherId;
-	
+
 	private String premiumOptions;
-	
+
 	private String shipPremium;
-	
+
 	private Boolean packageOnly;
 
 	public Integer getId() {
@@ -18,6 +19,14 @@ public class OrderPackageOptionsVO {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public Integer getPublisherId() {
+		return publisherId;
+	}
+
+	public void setPublisherId(Integer publisherId) {
+		this.publisherId = publisherId;
 	}
 
 	public String getPremiumOptions() {
@@ -43,13 +52,5 @@ public class OrderPackageOptionsVO {
 	public void setPackageOnly(Boolean packageOnly) {
 		this.packageOnly = packageOnly;
 	}
-
-	public Integer getPublisherId() {
-		return publisherId;
-	}
-
-	public void setPublisherId(Integer publisherId) {
-		this.publisherId = publisherId;
-	}
-
+	
 }

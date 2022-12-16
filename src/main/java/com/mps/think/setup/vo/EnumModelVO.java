@@ -47,7 +47,7 @@ public class EnumModelVO {
 	        return displayTimeZone;
 	    }
 	}
-<<<<<<< HEAD
+
 	
 	public static enum SubDefStatus {
 		
@@ -64,9 +64,8 @@ public class EnumModelVO {
 		}
 		
 	}
-=======
+
 	public static enum OrderClasses  {
->>>>>>> fea2eed3645f3d3d2fb23eafd2ef4a1569100681
 
 		SAMPLE_1("SAMPLE_1"),SAMPLE_2("SAMPLE_2"),SAMPLE_3("SAMPLE_3");
 

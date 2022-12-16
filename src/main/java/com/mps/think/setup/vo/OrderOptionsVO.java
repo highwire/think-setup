@@ -1,32 +1,36 @@
 package com.mps.think.setup.vo;
 
-import javax.persistence.Column;
-
 public class OrderOptionsVO {
-	
+
 	private Integer id;
-	
+
 	private Integer publisherId;
-	
+
 	private String subscriptionCalculation;
-	
+
 	private String revenueRealisedBy;
-	
+
 	private String taxonomy;
-	
+
 	private String renewalCard;
-	
+
 	private Boolean controlled;
-	
+
 	private Boolean segmentedOrder;
-	
+
+	private String graceQuanitity;
+
+	private String trialType;
+
 	private String media;
-	
+
 	private String edition;
-	
+
 	private String category;
-	
+
 	private String rotation;
+
+	private String numOfIssues;
 
 	public Integer getId() {
 		return id;
@@ -34,6 +38,14 @@ public class OrderOptionsVO {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public Integer getPublisherId() {
+		return publisherId;
+	}
+
+	public void setPublisherId(Integer publisherId) {
+		this.publisherId = publisherId;
 	}
 
 	public String getSubscriptionCalculation() {
@@ -84,12 +96,20 @@ public class OrderOptionsVO {
 		this.segmentedOrder = segmentedOrder;
 	}
 
-	public Integer getPublisherId() {
-		return publisherId;
+	public String getGraceQuanitity() {
+		return graceQuanitity;
 	}
 
-	public void setPublisherId(Integer publisherId) {
-		this.publisherId = publisherId;
+	public void setGraceQuanitity(String graceQuanitity) {
+		this.graceQuanitity = graceQuanitity;
+	}
+
+	public String getTrialType() {
+		return trialType;
+	}
+
+	public void setTrialType(String trialType) {
+		this.trialType = trialType;
 	}
 
 	public String getMedia() {
@@ -122,6 +142,14 @@ public class OrderOptionsVO {
 
 	public void setRotation(String rotation) {
 		this.rotation = rotation;
+	}
+
+	public String getNumOfIssues() {
+		return numOfIssues;
+	}
+
+	public void setNumOfIssues(String numOfIssues) {
+		this.numOfIssues = numOfIssues;
 	}
 
 }

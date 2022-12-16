@@ -33,9 +33,6 @@ public class OrderPaymentOptions extends BaseEntity {
 	@Column(name = "installment_billing")
 	private String installmentBilling;
 	
-	@Column(name = "is_active")
-	private Boolean active;
-	
 	@Column(name = "prepayment_required")
 	private Boolean prepaymentRequired;
 	
@@ -78,14 +75,6 @@ public class OrderPaymentOptions extends BaseEntity {
 
 	public void setInstallmentBilling(String installmentBilling) {
 		this.installmentBilling = installmentBilling;
-	}
-
-	public Boolean getActive() {
-		return active;
-	}
-
-	public void setActive(Boolean active) {
-		this.active = active;
 	}
 
 	public Boolean getPrepaymentRequired() {

@@ -3,6 +3,7 @@ package com.mps.think.setup.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -35,11 +36,6 @@ public class SubscriptionDefinationController {
 		return ResponseEntity.ok(subscriptionDefService.getSubscriptionDefByPublisherId(publisherId));
 	}
 	
-	@GetMapping("/getSubscriptionDefOrderCode/{id}")
-	public ResponseEntity<?> getSubscriptionDefOrderCodeById(@PathVariable Integer id) {
-		return ResponseEntity.ok(subscriptionDefService.getSubscriptionDefOrderCodesById(id));
-	}
-	
 	@GetMapping("/getSubscriptionDefKeyInfo/{id}")
 	public ResponseEntity<?> getSubscriptionDefKeyInfoById(@PathVariable Integer id) {
 		return ResponseEntity.ok(subscriptionDefService.getSubscriptionDefKeyInfoById(id));
@@ -48,6 +44,16 @@ public class SubscriptionDefinationController {
 	@GetMapping("/getSubscriptionItemDetails/{id}")
 	public ResponseEntity<?> getSubscriptionItemDetailsById(@PathVariable Integer id) {
 		return ResponseEntity.ok(subscriptionDefService.getSubscriptionItemDetailsById(id));
+	}
+	
+	@GetMapping("/getAllOrderCodesUnderSubDef")
+	public ResponseEntity<?> getAllSubscriptionDefRecords() {
+		return ResponseEntity.ok(subscriptionDefService.getAllOrderCodesUnderSubDef());
+	}
+	
+	@DeleteMapping("deleteSubscriptionDefination")
+	public ResponseEntity<?> deleteSubscriptionDefination(@RequestBody Integer id) {
+		return ResponseEntity.ok(subscriptionDefService.deleteSubscriptionDefinationById(id));
 	}
 	
 }

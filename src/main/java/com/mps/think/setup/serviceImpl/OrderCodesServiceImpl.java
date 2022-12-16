@@ -1,12 +1,14 @@
 package com.mps.think.setup.serviceImpl;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mps.think.setup.model.OrderCodes;
 import com.mps.think.setup.model.OrderItemDetails;
@@ -20,6 +22,11 @@ import com.mps.think.setup.repo.OrderPackageOptionsRepository;
 import com.mps.think.setup.repo.OrderPaymentOptionsRepository;
 import com.mps.think.setup.service.OrderCodesService;
 import com.mps.think.setup.vo.OrderClassVO;
+import com.mps.think.setup.vo.OrderCodesVO;
+import com.mps.think.setup.vo.OrderItemDetailsVO;
+import com.mps.think.setup.vo.OrderOptionsVO;
+import com.mps.think.setup.vo.OrderPackageOptionsVO;
+import com.mps.think.setup.vo.OrderPaymentOptionsVO;
 
 @Service
 public class OrderCodesServiceImpl implements OrderCodesService {
@@ -100,6 +107,49 @@ public class OrderCodesServiceImpl implements OrderCodesService {
 	public OrderPaymentOptions getOrderPaymentOptionsById(Integer orderPaymentId) {
 		Optional<OrderPaymentOptions> paymentOption = orderPaymentOptionsRepository.findById(orderPaymentId);
 		return paymentOption.isPresent() ? paymentOption.get() : null;
+	}
+
+	@Override
+	public List<OrderCodes> getAllOrderCodes() {
+		return orderCodesRepository.findAll();
+	}
+
+	@Override
+	public OrderClassVO deleteOrderCode(Integer id) {
+		
+		Optional<OrderCodes> orderCode = orderCodesRepository.findById(id);
+		Optional<OrderItemDetails> orderItemDetail = orderItemDetailsRepository.findById(id);
+		Optional<OrderOptions> orderOption = orderOptionsRepository.findById(id);
+		Optional<OrderPackageOptions> orderPackageOption = orderPackageOptionsRepository.findById(id);
+		Optional<OrderPaymentOptions> orderPaymentOption = orderPaymentOptionsRepository.findById(id);
+		
+		OrderClassVO deletedOrderCode = new OrderClassVO();
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
+		
+		if (orderCode.isPresent()) {
+			deletedOrderCode.setOrderCodes(mapper.convertValue(orderCode.get(), OrderCodesVO.class));
+			orderCodesRepository.delete(orderCode.get());
+		}
+		if (orderItemDetail.isPresent()) {
+			deletedOrderCode.setOrderItemDetails(mapper.convertValue(orderItemDetail.get(), OrderItemDetailsVO.class));
+			orderItemDetailsRepository.delete(orderItemDetail.get());
+		}
+		if (orderOption.isPresent()) {
+			deletedOrderCode.setOrderOptions(mapper.convertValue(orderOption.get(), OrderOptionsVO.class));
+			orderOptionsRepository.delete(orderOption.get());
+		}
+		if (orderPackageOption.isPresent()) {
+			deletedOrderCode.setOrderPackageOptions(mapper.convertValue(orderPackageOption.get(), OrderPackageOptionsVO.class));
+			orderPackageOptionsRepository.delete(orderPackageOption.get());
+		}
+		if (orderPaymentOption.isPresent()) {
+			deletedOrderCode.setOrderPaymentOptions(mapper.convertValue(orderPaymentOption.get(), OrderPaymentOptionsVO.class));
+			orderPaymentOptionsRepository.delete(orderPaymentOption.get());
+		}
+		
+		return deletedOrderCode;
+		
 	}
 
 }

@@ -3,7 +3,7 @@ package com.mps.think.setup.vo;
 public class OrderPaymentOptionsVO {
 
 	private Integer id;
-	
+
 	private Integer publisherId;
 
 	private String proformaOptions;
@@ -11,8 +11,6 @@ public class OrderPaymentOptionsVO {
 	private String creditCardProcessing;
 
 	private String installmentBilling;
-
-	private Boolean active;
 
 	private Boolean prepaymentRequired;
 
@@ -28,6 +26,14 @@ public class OrderPaymentOptionsVO {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public Integer getPublisherId() {
+		return publisherId;
+	}
+
+	public void setPublisherId(Integer publisherId) {
+		this.publisherId = publisherId;
 	}
 
 	public String getProformaOptions() {
@@ -52,14 +58,6 @@ public class OrderPaymentOptionsVO {
 
 	public void setInstallmentBilling(String installmentBilling) {
 		this.installmentBilling = installmentBilling;
-	}
-
-	public Boolean getActive() {
-		return active;
-	}
-
-	public void setActive(Boolean active) {
-		this.active = active;
 	}
 
 	public Boolean getPrepaymentRequired() {
@@ -93,13 +91,7 @@ public class OrderPaymentOptionsVO {
 	public void setTaxable(Boolean taxable) {
 		this.taxable = taxable;
 	}
-
-	public Integer getPublisherId() {
-		return publisherId;
-	}
-
-	public void setPublisherId(Integer publisherId) {
-		this.publisherId = publisherId;
-	}
-
+	
+	
+	
 }

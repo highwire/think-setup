@@ -2,31 +2,26 @@ package com.mps.think.setup.vo;
 
 import java.util.Date;
 
+
 public class OrderItemDetailsVO {
 
 	private Integer id;
-	
+
 	private Integer publisherId;
-	
+
 	private Date effectiveDate;
-	
+
+	private String itemType;
+
 	private String itemUrl;
-	
+
 	private String itemImage;
 
-	private String graceQuantity;
-	
 	private String price;
-	
+
 	private String shippingWeight;
-	
+
 	private String commodityCode;
-	
-	private String media;
-	
-	private String edition;
-	
-	private String category;
 
 	public Integer getId() {
 		return id;
@@ -36,12 +31,28 @@ public class OrderItemDetailsVO {
 		this.id = id;
 	}
 
+	public Integer getPublisherId() {
+		return publisherId;
+	}
+
+	public void setPublisherId(Integer publisherId) {
+		this.publisherId = publisherId;
+	}
+
 	public Date getEffectiveDate() {
 		return effectiveDate;
 	}
 
 	public void setEffectiveDate(Date effectiveDate) {
 		this.effectiveDate = effectiveDate;
+	}
+
+	public String getItemType() {
+		return itemType;
+	}
+
+	public void setItemType(String itemType) {
+		this.itemType = itemType;
 	}
 
 	public String getItemUrl() {
@@ -58,14 +69,6 @@ public class OrderItemDetailsVO {
 
 	public void setItemImage(String itemImage) {
 		this.itemImage = itemImage;
-	}
-
-	public String getGraceQuantity() {
-		return graceQuantity;
-	}
-
-	public void setGraceQuantity(String graceQuantity) {
-		this.graceQuantity = graceQuantity;
 	}
 
 	public String getPrice() {
@@ -92,36 +95,4 @@ public class OrderItemDetailsVO {
 		this.commodityCode = commodityCode;
 	}
 
-	public String getMedia() {
-		return media;
-	}
-
-	public void setMedia(String media) {
-		this.media = media;
-	}
-
-	public String getEdition() {
-		return edition;
-	}
-
-	public void setEdition(String edition) {
-		this.edition = edition;
-	}
-
-	public String getCategory() {
-		return category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
-	}
-
-	public Integer getPublisherId() {
-		return publisherId;
-	}
-
-	public void setPublisherId(Integer publisherId) {
-		this.publisherId = publisherId;
-	}
-	
 }
