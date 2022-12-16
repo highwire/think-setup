@@ -15,7 +15,7 @@ public interface DeliveryMethodsService {
 	
 	public DeliveryMethods getDeliveryMethodById(Integer deliveryMethodsId);
 	
-	public DeliveryMethodsVO deleteDeliveryMethod(DeliveryMethodsVO delivery);
+//	public DeliveryMethodsVO deleteDeliveryMethod(DeliveryMethodsVO delivery);
 	
 	public DeliveryMethods deleteDeliveryMethodById(Integer id);
 	

@@ -47,6 +47,24 @@ public class EnumModelVO {
 	        return displayTimeZone;
 	    }
 	}
+
+	
+	public static enum SubDefStatus {
+		
+		ACTIVE("ACTIVE"), INACTIVE("INACTIVE");
+		
+		private final String status;
+		
+		private SubDefStatus(String status) {
+			this.status = status;
+		}
+		
+		public String getStatus() {
+			return status;
+		}
+		
+	}
+
 	public static enum OrderClasses  {
 
 		SAMPLE_1("SAMPLE_1"),SAMPLE_2("SAMPLE_2"),SAMPLE_3("SAMPLE_3");
