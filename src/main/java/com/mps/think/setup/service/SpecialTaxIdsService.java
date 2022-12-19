@@ -17,6 +17,8 @@ public interface SpecialTaxIdsService {
 	public SpecialTaxIdsVO updateSpecialTaxIds(SpecialTaxIdsVO specialTaxIds);
 
 	public SpecialTaxIds findbySpecialTaxIdsId(Integer SpecialTaxIdsId);
+	
+	public SpecialTaxIds deleteBySpecialTaxIdsId(Integer id);
 
 
 }

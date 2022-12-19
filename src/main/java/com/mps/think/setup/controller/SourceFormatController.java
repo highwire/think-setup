@@ -5,6 +5,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,5 +42,10 @@ public class SourceFormatController {
 	public ResponseEntity<?> findbySourceFormatId(@Valid @RequestBody Integer sourceFormatId) {
 
 		return ResponseEntity.ok(SourceformatServiceImpl.findbySourceFormatId(sourceFormatId));
+	}
+	
+	@DeleteMapping("/deleteBySourceFormatId")
+	public ResponseEntity<?> deleteBySourceFormatId(@RequestBody Integer id) {
+		return ResponseEntity.ok(SourceformatServiceImpl.deleteBySourceFormatId(id));
 	}
 }
