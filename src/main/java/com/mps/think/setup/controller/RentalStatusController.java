@@ -3,6 +3,7 @@ package com.mps.think.setup.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -35,6 +36,11 @@ public class RentalStatusController {
 	@PostMapping("/findbyRentalStatusId")
 	public ResponseEntity<?> findbyRentalStatusId(@RequestBody Integer rentalStatusId) {
 		return ResponseEntity.ok(rentalStatusService.findbyRentalStatusId(rentalStatusId));
+	}
+	
+	@DeleteMapping("/deleteByRentalStatusId")
+	public ResponseEntity<?> deleteByRentalStatusId(@RequestBody Integer rentalStatusId) {
+		return ResponseEntity.ok(rentalStatusService.deleteByRentalStatusId(rentalStatusId));
 	}
 
 }
