@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mps.think.setup.model.SpecialTaxIds;
+import com.mps.think.setup.model.TaxRateCategory;
 import com.mps.think.setup.model.UnitBasedSubscription;
 import com.mps.think.setup.repo.SpecialTaxIdsRepo;
 import com.mps.think.setup.service.SpecialTaxIdsService;
@@ -56,6 +57,13 @@ public class SpecialTaxIdsServiceImpl implements SpecialTaxIdsService{
 			}
 		}
 		return null;
+	}
+
+	@Override
+	public SpecialTaxIds deleteBySpecialTaxIdsId(Integer id) {
+		SpecialTaxIds delete = findbySpecialTaxIdsId(id);
+		specialTaxIdsRepo.delete(delete);
+		return delete;
 	}
 
 }

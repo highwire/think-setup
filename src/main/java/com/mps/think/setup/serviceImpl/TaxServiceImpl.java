@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import com.mps.think.setup.model.Publisher;
 import com.mps.think.setup.model.TaxType;
 import com.mps.think.setup.repo.TaxTypeRepo;
@@ -50,6 +51,13 @@ public class TaxServiceImpl implements TaxService {
 	@Override
 	public TaxType findbyTaxType(Integer taxId) {
 		return taxTypeRepo.findById(taxId).get();
+	}
+
+	@Override
+	public TaxType deleteByTaxTypeId(Integer taxId) {
+		TaxType delete = taxTypeRepo.findByTaxId(taxId);
+		taxTypeRepo.delete(delete);
+		return delete;
 	}
 
 }

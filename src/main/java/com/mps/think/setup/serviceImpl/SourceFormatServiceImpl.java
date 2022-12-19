@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mps.think.setup.model.SourceFormat;
+import com.mps.think.setup.model.SpecialTaxIds;
 import com.mps.think.setup.repo.SourceFormatRepo;
 import com.mps.think.setup.service.SourceFormatService;
 import com.mps.think.setup.vo.SourceFormatVo;
@@ -48,6 +49,13 @@ public class SourceFormatServiceImpl implements SourceFormatService {
 	@Override
 	public SourceFormat findbySourceFormatId(Integer SourceFormatId) {
 		return sourceFormatRepo.findById(SourceFormatId).get();
+	}
+
+	@Override
+	public SourceFormat deleteBySourceFormatId(Integer id) {
+		SourceFormat delete = findbySourceFormatId(id);
+		sourceFormatRepo.delete(delete);
+		return delete;
 	}
 
 }

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mps.think.setup.model.TaxRateCategory;
+import com.mps.think.setup.model.TaxType;
 import com.mps.think.setup.repo.TaxRateCategoryRepo;
 import com.mps.think.setup.service.TaxRateCategoryService;
 import com.mps.think.setup.vo.TaxRateCategoryVO;
@@ -52,6 +53,13 @@ public class TaxRateCategoryServiceImpl implements TaxRateCategoryService{
 			}
 		}
 		return null;
+	}
+
+	@Override
+	public TaxRateCategory deleteByTaxRateCategoryId(Integer id) {
+		TaxRateCategory delete = findbyTaxRateCategoryId(id);
+		taxRateCategoryRepo.delete(delete);
+		return delete;
 	}
 
 }
