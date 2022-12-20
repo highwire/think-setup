@@ -52,4 +52,11 @@ public class LableGroupServiceImp implements LableGroupService {
 		return lableGroupRepo.findById(lableGroupId).get();
 	}
 
+	@Override
+	public LableGroup deleteByLableGroupId(Integer lableGroupId) {
+		LableGroup delete = findbyLableGroup(lableGroupId);
+		lableGroupRepo.delete(delete);
+		return delete;
+	}
+
 }
