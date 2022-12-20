@@ -53,4 +53,11 @@ public class LableFormatServiceImp implements LableFormatService {
 		return lableFormatRepo.findById(lableFormatId).get();
 	}
 
+	@Override
+	public LableFormat deleteByLableFormatId(Integer lableFormatId) {
+		LableFormat delete = findbyLableFormat(lableFormatId); 
+		lableFormatRepo.delete(delete);
+		return delete;
+	}
+
 }

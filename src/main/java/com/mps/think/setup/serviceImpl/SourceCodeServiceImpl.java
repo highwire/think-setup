@@ -89,12 +89,12 @@ public class SourceCodeServiceImpl implements SourceCodeService {
 		return sourceCode;
 	}
 
-//	@Override
-//	public SourceCode deleteSourceCodeById(Integer sourceCodeId) {
-//		SourceCode delete = sourceCodeRepo.findSourceCodeById(sourceCodeId);
-//		sourceCodeRepo.delete(delete);
-//		return delete;
-//	}
+	@Override
+	public SourceCode deleteSourceCodeById(Integer sourceCodeId) {
+		SourceCode delete = findbySourceCodeId(sourceCodeId);
+		sourceCodeRepo.delete(delete);
+		return delete;
+	}
 
 	
 

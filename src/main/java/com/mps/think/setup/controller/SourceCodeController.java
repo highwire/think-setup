@@ -44,10 +44,10 @@ public class SourceCodeController {
 		return ResponseEntity.ok(sourceCodeService.findbySourceCodeId(sourceCodeId));
 	}
 	
-//	@DeleteMapping("/deleteSourceCode")
-//	public ResponseEntity<?> deleteSourceCode(@RequestBody Integer sourceCodeId) {
-//		return ResponseEntity.ok(sourceCodeService.deleteSourceCodeById(sourceCodeId));
-//	}
+	@DeleteMapping("/deleteSourceCodebyId")
+	public ResponseEntity<?> deleteSourceCode(@RequestBody Integer sourceCodeId) {
+		return ResponseEntity.ok(sourceCodeService.deleteSourceCodeById(sourceCodeId));
+	}
 	
 	@GetMapping("/findAllsource_code_type")
 	public ResponseEntity<?> getAllsource_code_type() {

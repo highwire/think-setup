@@ -3,6 +3,7 @@ package com.mps.think.setup.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -36,6 +37,11 @@ public class LableGroupController {
 	@PostMapping("/findbyLableGroupId")
 	public ResponseEntity<?> findbyLableFormatId(@RequestBody Integer lableGroupFormatId) {
 		return ResponseEntity.ok(lableGroupServiceImp.findbyLableGroup(lableGroupFormatId));
+	}
+	
+	@DeleteMapping("/deleteByLableGroupId")
+	public ResponseEntity<?> deleteByLableGroupId(@RequestBody Integer lableGroupId) {
+		return ResponseEntity.ok(lableGroupServiceImp.deleteByLableGroupId(lableGroupId));
 	}
 
 }

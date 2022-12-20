@@ -2,6 +2,7 @@ package com.mps.think.setup.service;
 
 import java.util.List;
 
+
 import com.mps.think.setup.model.LableKeyLine;
 import com.mps.think.setup.vo.LableKeyLineVO;
 
@@ -14,5 +15,7 @@ public interface LableKeyLineService {
 	public LableKeyLineVO updateLableKeyLine(LableKeyLineVO lableKeyLine);
 
 	public LableKeyLine findbyLableKeyLine(Integer lableKeyLineId);
+	
+	public LableKeyLine deleteByLableKeyLineId(Integer lableKeyLineId);
 
 }

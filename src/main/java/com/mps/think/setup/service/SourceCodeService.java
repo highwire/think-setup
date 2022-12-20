@@ -15,7 +15,7 @@ public interface SourceCodeService {
 
 	public SourceCodeVO updateSourceCode(SourceCodeVO sourceCodeId);
 	
-//	public SourceCode deleteSourceCodeById(Integer sourceCodeId);
+	public SourceCode deleteSourceCodeById(Integer sourceCodeId);
 
 	public SourceCode findbySourceCodeId(Integer sourceCodeId);
 

@@ -55,4 +55,11 @@ public class LableKeyLineServiceImpl implements LableKeyLineService {
 		return lableKeyLineRepo.findById(lableKeyLineId).get();
 	}
 
+	@Override
+	public LableKeyLine deleteByLableKeyLineId(Integer lableKeyLineId) {
+		LableKeyLine delete = findbyLableKeyLine(lableKeyLineId);
+		lableKeyLineRepo.delete(delete);
+		return delete;
+	}
+
 }

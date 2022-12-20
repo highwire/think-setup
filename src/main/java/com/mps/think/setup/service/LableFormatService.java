@@ -2,6 +2,7 @@ package com.mps.think.setup.service;
 
 import java.util.List;
 
+
 import com.mps.think.setup.model.LableFormat;
 import com.mps.think.setup.vo.LableFormatVO;
 
@@ -14,5 +15,7 @@ public interface LableFormatService {
 	public LableFormatVO updateLableFormat(LableFormatVO lableFormat);
 
 	public LableFormat findbyLableFormat(Integer lableFormatId);
+	
+	public  LableFormat deleteByLableFormatId(Integer lableFormatId);
 
 }
