@@ -10,6 +10,7 @@ import org.webjars.NotFoundException;
 import com.mps.think.setup.model.CreditStatus;
 import com.mps.think.setup.model.CustomerCategory;
 import com.mps.think.setup.model.Publisher;
+import com.mps.think.setup.model.TaxType;
 import com.mps.think.setup.repo.CustomerCategoryRepo;
 import com.mps.think.setup.service.CustomerCategoryService;
 import com.mps.think.setup.vo.CustomerCategoryVO;
@@ -63,6 +64,13 @@ public class CustomerCategoryServiceImpl implements CustomerCategoryService {
 			throw new NotFoundException("Customer category Id : "+customerCategoryId+" does not exist!");
 		}
 		return cc.get();
+	}
+
+	@Override
+	public CustomerCategory deleteByCustomerCategoryId(Integer customerCategoryId) {
+		CustomerCategory delete = findbyCustomerCategoryId(customerCategoryId);
+		CustomerCategoryRepo.delete(delete);
+		return delete;
 	}
 
 }
