@@ -3,6 +3,7 @@ package com.mps.think.setup.service;
 import java.util.List;
 
 import com.mps.think.setup.model.CustomerCategory;
+import com.mps.think.setup.model.TaxType;
 import com.mps.think.setup.vo.CustomerCategoryVO;
 
 public interface CustomerCategoryService {
@@ -14,5 +15,7 @@ public interface CustomerCategoryService {
 	public CustomerCategoryVO updateCustomerCategory(CustomerCategoryVO customerCategory);
 
 	public CustomerCategory findbyCustomerCategoryId(Integer customerCategoryId);
+	
+	public CustomerCategory deleteByCustomerCategoryId(Integer customerCategoryId);
 
 }
