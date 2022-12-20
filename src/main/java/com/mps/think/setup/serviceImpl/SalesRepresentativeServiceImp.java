@@ -87,4 +87,11 @@ public class SalesRepresentativeServiceImp implements SalesRepresentativeService
 		return salesRepresentativeVO;
 	}
 
+	@Override
+	public SalesRepresentative deleteBySalesRepresentativeId(Integer salesRepID) {
+		SalesRepresentative delete = findbySalesRepresentativeId(salesRepID);
+		salesRepresentativeRepo.delete(delete);
+		return delete;
+	}
+
 }

@@ -5,6 +5,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -41,5 +42,10 @@ public class SalesRepresentativeController {
 	public ResponseEntity<?> findbySalesRepresentativeId(@Valid @RequestBody Integer salesRepresentativeId) {
 
 		return ResponseEntity.ok(salesRepresentativeServiceImp.findbySalesRepresentativeId(salesRepresentativeId));
+	}
+	
+	@DeleteMapping("/deleteBySalesRepresentativeId")
+	public ResponseEntity<?> deleteBySalesRepresentativeId(@RequestBody Integer salesRepID) {
+		return ResponseEntity.ok(salesRepresentativeServiceImp.deleteBySalesRepresentativeId(salesRepID));
 	}
 }
