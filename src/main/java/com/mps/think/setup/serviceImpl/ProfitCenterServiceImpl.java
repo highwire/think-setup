@@ -81,4 +81,11 @@ public class ProfitCenterServiceImpl implements ProfitCenterService {
 		return cs.get();
 	}
 
+	@Override
+	public ProfitCenter deleteByproftIdId(Integer proftId) {
+		ProfitCenter delete = findbycreditId(proftId);
+		profitCenterRepo.delete(delete);
+		return delete;
+	}
+
 }

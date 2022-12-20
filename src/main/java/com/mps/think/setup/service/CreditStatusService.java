@@ -3,6 +3,7 @@ package com.mps.think.setup.service;
 import java.util.List;
 
 import com.mps.think.setup.model.CreditStatus;
+
 import com.mps.think.setup.vo.CreditStatusVO;
 
 public interface CreditStatusService {
@@ -14,5 +15,7 @@ public interface CreditStatusService {
 	public CreditStatusVO updatecreditStatus(CreditStatusVO creditStatus);
 
 	public CreditStatus findbycreditId(Integer creditId);
+	
+	public CreditStatus deleteBycreditId(Integer creditId);
 
 }

@@ -62,4 +62,11 @@ public class VolumeGroupServiceImpl implements VolumeGroupService {
 		return cs.get();
 	}
 
+	@Override
+	public VolumeGroup deleteByVolumeGroupId(Integer volumeGroupId) {
+		VolumeGroup delete = findbyVolumeGroupId(volumeGroupId);
+		volumeGroupRepo.delete(delete);
+		return delete;
+	}
+
 }

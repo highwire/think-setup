@@ -62,5 +62,12 @@ public class CreditStatusServiceImpl implements CreditStatusService {
 		}
 		return cs.get();
 	}
+
+	@Override
+	public CreditStatus deleteBycreditId(Integer creditId) {
+		CreditStatus delete = findbycreditId(creditId);
+		creditStatusRepo.delete(delete);
+		return delete;
+	}
 }
 
