@@ -40,7 +40,7 @@ public class AuxServiceImpl implements AuxService {
 	@Override
 	public AuxVariableVO updateAuxVariable(AuxVariableVO auxStatusVO) {
 		AuxVariable auxVariable = new AuxVariable();
-		auxVariable.setAuxStatus(auxStatusVO.getAuxVarId());
+		auxVariable.setAuxVarId(auxStatusVO.getAuxVarId());
 		Publisher publisher = new Publisher();
 		publisher.setId(auxStatusVO.getPubId().getId());
 		auxVariable.setPubId(publisher);
