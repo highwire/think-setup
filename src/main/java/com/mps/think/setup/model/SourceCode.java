@@ -40,6 +40,10 @@ public class SourceCode extends BaseEntity {
 	
 	@Column(name = "orderCodeType")
 	private String orderCodeType;
+	
+	@Column(name = "quantity")
+	private String quantity;
+	
 //	=====================================================================================================	
 //	need to change integer to order class name and join column with order class id
 	@Column(name="oc_id")
@@ -174,26 +178,21 @@ public class SourceCode extends BaseEntity {
 		this.sCodeType = sCodeType;
 	}
 
+	
+	public String getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(String quantity) {
+		this.quantity = quantity;
+	}
+
 	@Override
 	public String toString() {
 		return "SourceCode [sourceCodeId=" + sourceCodeId + ", pubId=" + pubId + ", description=" + description
-				+ ", orderCode=" + orderCode + ", orderCodeType=" + orderCodeType + ", ocId=" + ocId + ", isActive="
-				+ isActive + ", state_Break=" + state_Break + ", cost=" + cost + ", generic_agency=" + generic_agency
-				+ ", is_ddp=" + is_ddp + ", sourceCode=" + sourceCode + ", sCodeType=" + sCodeType + "]";
+				+ ", orderCode=" + orderCode + ", orderCodeType=" + orderCodeType + ", quantity=" + quantity + ", ocId="
+				+ ocId + ", isActive=" + isActive + ", state_Break=" + state_Break + ", cost=" + cost
+				+ ", generic_agency=" + generic_agency + ", is_ddp=" + is_ddp + ", sourceCode=" + sourceCode
+				+ ", sCodeType=" + sCodeType + "]";
 	}
-
-	
-	
-	
-	
-	
-	
-	
-	
-
-
-
-
-
-
 }

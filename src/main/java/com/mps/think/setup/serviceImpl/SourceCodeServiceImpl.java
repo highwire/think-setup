@@ -37,6 +37,7 @@ public class SourceCodeServiceImpl implements SourceCodeService {
 		data.setOrderCodeType(sourceCode.getOrderCodeType());
 		data.setOcId(sourceCode.getOcId());
 		data.setIsActive(sourceCode.getIsActive());
+		data.setQuantity(sourceCode.getQuantity());
 //		data.setGenerated(sourceCode.getGenerated());
 		data.setGeneric_agency(sourceCode.getGeneric_agency());
 		data.setIs_ddp(sourceCode.getIs_ddp());
@@ -74,6 +75,7 @@ public class SourceCodeServiceImpl implements SourceCodeService {
 		data.setDescription(sourceCode.getDescription());
 		data.setOrderCode(sourceCode.getOrderCode());
 		data.setOrderCodeType(sourceCode.getOrderCodeType());
+		data.setQuantity(sourceCode.getQuantity());
 		data.setOcId(sourceCode.getOcId());
 		data.setIsActive(sourceCode.getIsActive());
 //		data.setGenerated(sourceCode.getGenerated());
