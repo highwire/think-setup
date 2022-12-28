@@ -26,28 +26,45 @@ public class RenewalCardServiceImpl implements RenewalCardService {
 	@Override
 	public RenewalCardVO saveRenewalCard(RenewalCardVO renewalCardVO) {
 		RenewalCard data = new RenewalCard();
-		Publisher publisher = new Publisher();
-		publisher.setId(renewalCardVO.getPubId().getId());
-		data.setPubId(publisher);
-		data.setOcId(renewalCardVO.getOcId());
-		data.setRenewal_card(renewalCardVO.getRenewal_card());
+		data.setRenewal_card(renewalCardVO.getRenewalCard());
 		data.setDescription(renewalCardVO.getDescription());
+		data.setEffortFrom(renewalCardVO.getEffortFrom());
+		data.setEffortTo(renewalCardVO.getEffortTo());
+		data.setOffersdescription(renewalCardVO.getOffersDescription());
+		data.setOrderCodeId(renewalCardVO.getOrderCodeId());
+		data.setSourceCodeId(renewalCardVO.getSourceCodeId());
+		data.setSubscriptionDefId(renewalCardVO.getSubscriptionDefId());
+		data.setPkgDefId(renewalCardVO.getPkgDefId());
+		data.setRateClassId(renewalCardVO.getRateClassId());
+		data.setDiscountClassId(renewalCardVO.getDiscountClassId());
+		data.setParentId(renewalCardVO.getParentId());
+		data.setChildId(renewalCardVO.getChildId());
+		data.setSubChildId(renewalCardVO.getSubChildId());
 		renewalCardRepo.saveAndFlush(data);
-		data.setRenewalCardId(data.getRenewalCardId());
+		renewalCardVO.setRenewalCardId(data.getRenewalCardId());
 		return renewalCardVO;
 	}
 
 	@Override
-	public RenewalCardVO updateRenewalCard(RenewalCardVO renewalCard) {
-		RenewalCard renewalCardId= renewalCardRepo.findById(renewalCard.getRenewalCardId()).get();
-		Publisher publisher = new Publisher();
-		publisher.setId(renewalCard.getPubId().getId());
-		renewalCardId.setPubId(publisher);
-		renewalCardId.setOcId(renewalCard.getOcId());
-		renewalCardId.setRenewal_card(renewalCard.getRenewal_card());
-		renewalCardId.setDescription(renewalCard.getDescription());
-		renewalCardId=renewalCardRepo.saveAndFlush(renewalCardId);
-		return renewalCard;
+	public RenewalCardVO updateRenewalCard(RenewalCardVO renewalCardVO) {
+		RenewalCard data = new RenewalCard();
+		data.setRenewalCardId(renewalCardVO.getRenewalCardId());
+		data.setRenewal_card(renewalCardVO.getRenewalCard());
+		data.setDescription(renewalCardVO.getDescription());
+		data.setEffortFrom(renewalCardVO.getEffortFrom());
+		data.setEffortTo(renewalCardVO.getEffortTo());
+		data.setOffersdescription(renewalCardVO.getOffersDescription());
+		data.setOrderCodeId(renewalCardVO.getOrderCodeId());
+		data.setSourceCodeId(renewalCardVO.getSourceCodeId());
+		data.setSubscriptionDefId(renewalCardVO.getSubscriptionDefId());
+		data.setPkgDefId(renewalCardVO.getPkgDefId());
+		data.setRateClassId(renewalCardVO.getRateClassId());
+		data.setDiscountClassId(renewalCardVO.getDiscountClassId());
+		data.setParentId(renewalCardVO.getParentId());
+		data.setChildId(renewalCardVO.getChildId());
+		data.setSubChildId(renewalCardVO.getSubChildId());
+		renewalCardRepo.saveAndFlush(data);
+		return renewalCardVO;
 	}
 		
 
