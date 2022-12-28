@@ -190,7 +190,7 @@ public class EnumModelVO {
 		
 	    public static enum ConfigurationOptionsforOrders {
 			
-	    	Bundle_Discounts("Bundle Discounts"),Bill_To_Agency("Bill to Agency"),Renew_To_Agency("Renew to Agency");
+	    	BundleDiscounts("Bundle Discounts"),BillToAgency("Bill to Agency"),RenewToAgency("Renew to Agency");
 
 			    private final String displayConfigurationOptionsforOrders;
 
@@ -206,7 +206,7 @@ public class EnumModelVO {
 	    
 	 public static enum PaymentOptions {
 			
-		 Pay_Commission_to_Agency("Pay Commission to Agency"),Agency_Remits_Net_Payment("Agency Remits Net Payment");
+		 PayCommissionToAgency("Pay Commission to Agency"),AgencyRemitsNetPayment("Agency Remits Net Payment");
 
 			    private final String displayPaymentOptions;
 
@@ -222,7 +222,7 @@ public class EnumModelVO {
 	 
 	 public static enum ChargeTaxOn {
 			
-		 Pay_Commission_to_Agency("Pay Commission to Agency"),Agency_Remits_Net_Payment("Agency Remits Net Payment");
+		 AgencyPaysTax("Agency Pays Tax"),TaxChargedOnGross("Tax Charged On Gross"),TaxChargedOnNet("Tax Charged On Net");
 
 			    private final String displayChargeTaxOn;
 
