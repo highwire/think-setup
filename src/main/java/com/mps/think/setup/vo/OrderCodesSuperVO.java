@@ -1,7 +1,7 @@
 package com.mps.think.setup.vo;
 
-public class OrderClassVO {
-	
+public class OrderCodesSuperVO {
+
 	private OrderCodesVO orderCodes;
 	
 	private OrderItemDetailsVO orderItemDetails;

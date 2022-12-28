@@ -10,14 +10,13 @@ import com.mps.think.setup.model.OrderItemDetails;
 import com.mps.think.setup.model.OrderOptions;
 import com.mps.think.setup.model.OrderPackageOptions;
 import com.mps.think.setup.model.OrderPaymentOptions;
-import com.mps.think.setup.vo.OrderClassVO;
-import com.mps.think.setup.vo.OrderCodesVO;
+import com.mps.think.setup.vo.OrderCodesSuperVO;
 
 @Service
 public interface OrderCodesService {
 	
-	public OrderClassVO createOrderCodes(OrderClassVO orderCodes);
-	public OrderClassVO updateOrderCodes(OrderClassVO orderCodes);
+	public OrderCodesSuperVO createOrderCodes(OrderCodesSuperVO orderCodes);
+	public OrderCodesSuperVO updateOrderCodes(OrderCodesSuperVO orderCodes);
 	public Map<String, Object> getOrderByPublisherId(Integer publisherId);
 
 	public OrderCodes getOrderCodesById(Integer orderCodeID);
@@ -30,6 +29,6 @@ public interface OrderCodesService {
 	public List<OrderCodes> getAllOrderCodes();
 	
 	// to delete the order
-	public OrderClassVO deleteOrderCode(Integer id);
+	public OrderCodesSuperVO deleteOrderCode(Integer id);
 	
 }
