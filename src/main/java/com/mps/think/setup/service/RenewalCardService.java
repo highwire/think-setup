@@ -10,7 +10,7 @@ public interface RenewalCardService {
 
 	public RenewalCardVO saveRenewalCard(RenewalCardVO renewalCardVO);
 
-	public RenewalCardVO updateRenewalCard(RenewalCardVO renewalCard);
+	public RenewalCardVO updateRenewalCard(RenewalCardVO renewalCardVO);
 	
 	public RenewalCard deleteRenewalCard(Integer renewalCardId);
 
