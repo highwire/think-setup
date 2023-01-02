@@ -27,9 +27,9 @@ public class EffectiveDatesForDiscountVO {
 
 	private String unitType;
 	
-//	private DiscountCardKeyInfo discountCard;
-	
-	private Integer discountCardId;
+	private DiscountCardKeyInfo discountCardId;
+
+//	private Integer discountCardId;
 
 	public Integer getId() {
 		return id;
@@ -111,14 +111,15 @@ public class EffectiveDatesForDiscountVO {
 		this.unitType = unitType;
 	}
 
-	public Integer getDiscountCardId() {
+	public DiscountCardKeyInfo getDiscountCardId() {
 		return discountCardId;
 	}
 
-	public void setDiscountCardId(Integer discountCardId) {
+	public void setDiscountCardId(DiscountCardKeyInfo discountCardId) {
 		this.discountCardId = discountCardId;
 	}
+	
 
-
-
+	
+	
 }

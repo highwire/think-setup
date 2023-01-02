@@ -39,14 +39,11 @@ public class DiscountCardKeyInfoServiceImpl implements DiscountCardKeyInfoServic
 	}
 
 	@Override
-	public DiscountCardKeyInfo deleteDiscountCardById(Integer id) {
-		Optional<DiscountCardKeyInfo> discountCard = discountCardKeyInfoRepo.findById(id);
+	public DiscountCardKeyInfo deleteDiscountCardById(Integer discountCardId) {
+		Optional<DiscountCardKeyInfo> discountCard = discountCardKeyInfoRepo.findById(discountCardId);
 		if (discountCard.isPresent()) {
+			effectiveDateService.deleteEffectiveDatesForDiscountCard(discountCardId);
 			discountCardKeyInfoRepo.delete(discountCard.get());
-			List<EffectiveDatesForDiscount> effectiveDates = effectiveDateService.getEffectiveDatesForDiscountCard(id);
-			for(EffectiveDatesForDiscount effectiveDate : effectiveDates) {
-				effectiveDateService.deleteEffectiveDatesForDiscountById(effectiveDate.getId());
-			}
 			return discountCard.get();
 		}
 		return null;

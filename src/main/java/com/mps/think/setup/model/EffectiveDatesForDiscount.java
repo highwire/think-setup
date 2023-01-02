@@ -60,14 +60,12 @@ public class EffectiveDatesForDiscount extends BaseEntity {
 	@Column(name = "unit_type")
 	private String unitType;
 	
-//	@ManyToOne
-//	@JoinColumn(name = "discount_card_id", referencedColumnName = "id")
-//	@OnDelete(action = OnDeleteAction.CASCADE)
-//	@JsonIgnore
-//	private DiscountCardKeyInfo discountCard;
+	@ManyToOne
+	@JoinColumn(name = "discount_card_id", referencedColumnName = "id")
+	private DiscountCardKeyInfo discountCardId;
 	
-	@Column(name = "discount_card_id")
-	private Integer discountCardId;
+//	@Column(name = "discount_card_id")
+//	private Integer discountCardId;
 
 	public Integer getId() {
 		return id;
@@ -149,13 +147,13 @@ public class EffectiveDatesForDiscount extends BaseEntity {
 		this.unitType = unitType;
 	}
 
-	public Integer getDiscountCardId() {
+	public DiscountCardKeyInfo getDiscountCardId() {
 		return discountCardId;
 	}
 
-	public void setDiscountCardId(Integer discountCardId) {
+	public void setDiscountCardId(DiscountCardKeyInfo discountCardId) {
 		this.discountCardId = discountCardId;
 	}
-
+	
 	
 }

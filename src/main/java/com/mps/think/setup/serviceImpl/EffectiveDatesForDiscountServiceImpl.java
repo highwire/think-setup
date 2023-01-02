@@ -1,7 +1,11 @@
 package com.mps.think.setup.serviceImpl;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collector;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -46,7 +50,24 @@ public class EffectiveDatesForDiscountServiceImpl implements EffectiveDatesForDi
 
 	@Override
 	public List<EffectiveDatesForDiscount> getEffectiveDatesForDiscountCard(Integer discountCardInfoId) {
-		return effectiveDatesForDiscountRepo.findByDiscountCardId(discountCardInfoId, Sort.by(Sort.Direction.ASC, "effectiveDate"));
+//		return effectiveDatesForDiscountRepo.findByDiscountCardId(discountCardInfoId, Sort.by(Sort.Direction.ASC, "effectiveDate"));
+		List<EffectiveDatesForDiscount> effectiveDates = new ArrayList<>();
+		for(EffectiveDatesForDiscount effectiveDate : effectiveDatesForDiscountRepo.findAll()) {
+			if (effectiveDate.getDiscountCardId().getId().equals(discountCardInfoId)) effectiveDates.add(effectiveDate);
+		}
+		Collections.sort(effectiveDates, new Comparator<EffectiveDatesForDiscount>() {
+		    public int compare(EffectiveDatesForDiscount m1, EffectiveDatesForDiscount m2) {
+		        return m1.getEffectiveDate().compareTo(m2.getEffectiveDate());
+		    }
+		});
+		return effectiveDates;
+	}
+
+	@Override
+	public void deleteEffectiveDatesForDiscountCard(Integer discountCardId) {
+		for (EffectiveDatesForDiscount effectiveDate : getEffectiveDatesForDiscountCard(discountCardId)) {
+			deleteEffectiveDatesForDiscountById(effectiveDate.getId());
+		}
 	}
 
 }
