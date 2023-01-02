@@ -20,6 +20,6 @@ public interface AddressService {
 	
 	public Addresses deleteByAddressesId(Integer addressesId);
 	
-//	public List<Addresses> getAllAddressesByCustomerId(Integer cusId);
+	public List<Addresses> getAllAddressesByCustomerId(Integer cusId);
 
 }

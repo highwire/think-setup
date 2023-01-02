@@ -34,9 +34,9 @@ public class Addresses  extends BaseEntity{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer addressId;
 	
-//	@OneToOne
-//	@JoinColumn(name = "cus_id", referencedColumnName = "customerId")
-//	private CustomerDetails cusId;
+	@OneToOne
+	@JoinColumn(name = "cus_id", referencedColumnName = "customerId")
+	private CustomerDetails cusId;
 	
 	@NotBlank
 	@Column(name = "addressName")
@@ -109,13 +109,13 @@ public class Addresses  extends BaseEntity{
 		this.addressId = addressId;
 	}
 
-//	public CustomerDetails getCusId() {
-//		return cusId;
-//	}
-//
-//	public void setCusId(CustomerDetails cusId) {
-//		this.cusId = cusId;
-//	}
+	public CustomerDetails getCusId() {
+		return cusId;
+	}
+
+	public void setCusId(CustomerDetails cusId) {
+		this.cusId = cusId;
+	}
 
 	public String getAddressName() {
 		return addressName;
@@ -271,25 +271,14 @@ public class Addresses  extends BaseEntity{
 
 	@Override
 	public String toString() {
-		return "Addresses [addressId=" + addressId + ", addressName=" + addressName + ", addressType=" + addressType
-				+ ", addressCategory=" + addressCategory + ", status=" + status + ", primaryAddress=" + primaryAddress
-				+ ", name=" + name + ", addressLine1=" + addressLine1 + ", addressLine2=" + addressLine2 + ", zipCode="
-				+ zipCode + ", city=" + city + ", state=" + state + ", country=" + country + ", countryCode="
-				+ countryCode + ", phone=" + phone + ", validFrom=" + validFrom + ", validTo=" + validTo
-				+ ", frequency=" + frequency + ", selectionFrom=" + selectionFrom + ", selectionTo=" + selectionTo
-				+ "]";
+		return "Addresses [addressId=" + addressId + ", cusId=" + cusId + ", addressName=" + addressName
+				+ ", addressType=" + addressType + ", addressCategory=" + addressCategory + ", status=" + status
+				+ ", primaryAddress=" + primaryAddress + ", name=" + name + ", addressLine1=" + addressLine1
+				+ ", addressLine2=" + addressLine2 + ", zipCode=" + zipCode + ", city=" + city + ", state=" + state
+				+ ", country=" + country + ", countryCode=" + countryCode + ", phone=" + phone + ", validFrom="
+				+ validFrom + ", validTo=" + validTo + ", frequency=" + frequency + ", selectionFrom=" + selectionFrom
+				+ ", selectionTo=" + selectionTo + "]";
 	}
-
-//	@Override
-//	public String toString() {
-//		return "Addresses [addressId=" + addressId + ", cusId=" + cusId + ", addressName=" + addressName
-//				+ ", addressType=" + addressType + ", addressCategory=" + addressCategory + ", status=" + status
-//				+ ", primaryAddress=" + primaryAddress + ", name=" + name + ", addressLine1=" + addressLine1
-//				+ ", addressLine2=" + addressLine2 + ", zipCode=" + zipCode + ", city=" + city + ", state=" + state
-//				+ ", country=" + country + ", countryCode=" + countryCode + ", phone=" + phone + ", validFrom="
-//				+ validFrom + ", validTo=" + validTo + ", frequency=" + frequency + ", selectionFrom=" + selectionFrom
-//				+ ", selectionTo=" + selectionTo + "]";
-//	}
 
 
 }

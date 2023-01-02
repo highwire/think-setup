@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import com.mps.think.setup.model.Addresses;
 import com.mps.think.setup.model.CustomerDetails;
 import com.mps.think.setup.repo.AddressesRepo;
-import com.mps.think.setup.repo.CustomerDetailsRepo;
 import com.mps.think.setup.service.AddressService;
 import com.mps.think.setup.vo.AddressesVO;
 import com.mps.think.setup.vo.EnumModelVO.Frequency;
@@ -20,9 +19,6 @@ public class AddressesServiceImpl implements AddressService  {
 	
 	@Autowired
 	private AddressesRepo addressRepo;
-	
-	@Autowired
-	CustomerDetailsServiceImpl customerDetailsServiceImpl;
 	
 	@Override
 	public List<Addresses> getAllAddress() {
@@ -57,11 +53,10 @@ public class AddressesServiceImpl implements AddressService  {
 			data.setSelectionTo(addresses.getSelectionTo());
 		}
 		addresses.setAddressId(data.getAddressId());
-//		CustomerDetails customerDetails = new CustomerDetails();
-//		customerDetails.setCustomerId(addresses.get);
-//		data.setCusId(customerDetails);
+		CustomerDetails customerDetails = new CustomerDetails();
+		customerDetails.setCustomerId(addresses.getCusId().getCustomerId());
+		data.setCusId(customerDetails);
 		addressRepo.saveAndFlush(data);
-		addresses.setAddressId(data.getAddressId());
 		return addresses;
 	}
 
@@ -69,9 +64,9 @@ public class AddressesServiceImpl implements AddressService  {
 	public AddressesVO updateAddresses(AddressesVO addresses) {
 		Addresses data = new Addresses();
 		data.setAddressId(addresses.getAddressId());
-//		CustomerDetails customerDetails = new CustomerDetails();
-//		customerDetails.setCustomerId(addresses.getCusId().getCustomerId());
-//		data.setCusId(customerDetails);
+		CustomerDetails customerDetails = new CustomerDetails();
+		customerDetails.setCustomerId(addresses.getCusId().getCustomerId());
+		data.setCusId(customerDetails);
 		data.setAddressName(addresses.getAddressName());
 		data.setAddressType(addresses.getAddressType());
 		data.setAddressCategory(addresses.getAddressCategory());
@@ -110,15 +105,15 @@ public class AddressesServiceImpl implements AddressService  {
 		return delete;
 	}
 
-//	@Override
-//	public List<Addresses> getAllAddressesByCustomerId(Integer cusId) {
-//		List<Addresses> output = new ArrayList<>();
-////		for (Addresses address : addressRepo.findAll()) {
-////			if (address.getCusId().getCustomerId().equals(cusId)) {
-////				output.add(address);
-////			}
-////		}
-//		return output;
-//	}
+	@Override
+	public List<Addresses> getAllAddressesByCustomerId(Integer cusId) {
+		List<Addresses> output = new ArrayList<>();
+		for (Addresses address : addressRepo.findAll()) {
+			if (address.getCusId().getCustomerId().equals(cusId)) {
+				output.add(address);
+			}
+		}
+		return output;
+	}
 
 }
