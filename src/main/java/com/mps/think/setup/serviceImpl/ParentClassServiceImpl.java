@@ -26,9 +26,9 @@ public class ParentClassServiceImpl implements ParentClassService{
 	public ParentClassVO saveParentClass(ParentClassVO parentClassVO) {
 		ParentClass data=new ParentClass();
 		data.setParentName(parentClassVO.getParentName());
-		Publisher pub=new Publisher();
-		pub.setId(parentClassVO.getPubId().getId());
-		data.setPubId(pub);
+//		Publisher pub=new Publisher();
+//		pub.setId(parentClassVO.getPubId().getId());
+//		data.setPubId(pub);
 		parentClassRepo.saveAndFlush(data);
 		parentClassVO.setParentID(data.getParentID());
 		return parentClassVO;
@@ -40,9 +40,9 @@ public class ParentClassServiceImpl implements ParentClassService{
 		ParentClass data=new ParentClass();
 		data.setParentID(parentClassVO.getParentID());
 		data.setParentName(parentClassVO.getParentName());
-		Publisher pub=new Publisher();
-		pub.setId(parentClassVO.getPubId().getId());
-		data.setPubId(pub);
+//		Publisher pub=new Publisher();
+//		pub.setId(parentClassVO.getPubId().getId());
+//		data.setPubId(pub);
 		parentClassRepo.saveAndFlush(data);
 		return parentClassVO;
 	}

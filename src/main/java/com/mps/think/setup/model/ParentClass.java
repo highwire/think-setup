@@ -21,9 +21,9 @@ public class ParentClass {
 	@Column(name = "parent_name")
 	private String parentName;
 	
-	@OneToOne
-	@JoinColumn(name = "pub_id", referencedColumnName = "id")
-	private Publisher pubId;
+//	@OneToOne
+//	@JoinColumn(name = "pub_id", referencedColumnName = "id")
+//	private Publisher pubId;
 
 	public Integer getParentID() {
 		return parentID;
@@ -41,17 +41,22 @@ public class ParentClass {
 		this.parentName = parentName;
 	}
 
-	public Publisher getPubId() {
-		return pubId;
-	}
-
-	public void setPubId(Publisher pubId) {
-		this.pubId = pubId;
-	}
-
 	@Override
 	public String toString() {
-		return "ParentClass [parentID=" + parentID + ", parentName=" + parentName + ", pubId=" + pubId + "]";
+		return "ParentClass [parentID=" + parentID + ", parentName=" + parentName + "]";
 	}
+
+//	public Publisher getPubId() {
+//		return pubId;
+//	}
+//
+//	public void setPubId(Publisher pubId) {
+//		this.pubId = pubId;
+//	}
+//
+//	@Override
+//	public String toString() {
+//		return "ParentClass [parentID=" + parentID + ", parentName=" + parentName + ", pubId=" + pubId + "]";
+//	}
 	
 }
