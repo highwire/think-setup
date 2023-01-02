@@ -66,6 +66,7 @@ public class ParentClass {
 		this.parentName = parentName;
 	}
 
+
 	public String getLabel() {
 		return label;
 	}
