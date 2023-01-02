@@ -2,15 +2,11 @@ package com.mps.think.setup.serviceImpl;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mps.think.setup.model.Addresses;
-import com.mps.think.setup.model.CustomerAddresses;
 import com.mps.think.setup.model.CustomerDetails;
-import com.mps.think.setup.repo.CustomerAddressesRepo;
 import com.mps.think.setup.repo.CustomerDetailsRepo;
 import com.mps.think.setup.service.CustomerDetailsService;
 import com.mps.think.setup.vo.CustomerDetailsVO;
@@ -20,12 +16,6 @@ public class CustomerDetailsServiceImpl implements CustomerDetailsService {
 	
 	@Autowired
 	private CustomerDetailsRepo customerDetailsRepo;
-	
-	@Autowired
-	CustomerAddressesRepo customerAddressesRepo;
-	
-	@Autowired
-	AddressesServiceImpl addressesServiceImpl;
 
 	@Override
 	public List<CustomerDetails> getAllCustomerDetails() {
@@ -68,17 +58,8 @@ public class CustomerDetailsServiceImpl implements CustomerDetailsService {
 		cd.setPaymentOptions(customerDetails.getPaymentOptions());
 		cd.setChargeTaxOn(customerDetails.getChargeTaxOn());
 //==============================================================================================================			
-//		customerDetails.setCustomerId(cd.getCustomerId());	
+		customerDetails.setCustomerId(cd.getCustomerId());	
 		customerDetailsRepo.saveAndFlush(cd);
-		customerDetails.setCustomerId(cd.getCustomerId());
-		
-//		CustomerDetails customertemp = customerDetailsRepo.findByemail(customerDetails.getEmail());
-		for (CustomerAddresses customerAddresses : customerDetails.getCustomerAddresses()) {
-			CustomerAddresses cust = new CustomerAddresses();
-			cust.setCustomerId(customerDetails.getCustomerId());
-			cust.setAddressesId(customerAddresses.getAddressesId());
-			customerAddressesRepo.save(cust);
-		}
 		return customerDetails;
 	}
 
@@ -120,39 +101,13 @@ public class CustomerDetailsServiceImpl implements CustomerDetailsService {
 		cd.setPaymentOptions(customerDetails.getPaymentOptions());
 		cd.setChargeTaxOn(customerDetails.getChargeTaxOn());
 		customerDetailsRepo.saveAndFlush(cd);
-		
-		for (CustomerAddresses customerAddresses : customerDetails.getCustomerAddresses()) {
-			CustomerAddresses cust = new CustomerAddresses();
-			if (customerAddresses.getId() == null) {
-				cust.setId(customerAddresses.getId());
-			cust.setCustomerId(customerDetails.getCustomerId());
-			cust.setAddressesId(customerAddresses.getAddressesId());
-			customerAddressesRepo.save(cust);
-			}
-		}
 		return customerDetails;
 	}
 
-//	@Override
-//	public CustomerDetails findbyCustomerDetailsId(Integer customerId) {
-//		 Optional<CustomerDetails> cr = customerDetailsRepo.findById(customerId);
-//			return cr.get();
-//	}
-	
 	@Override
 	public CustomerDetails findbyCustomerDetailsId(Integer customerId) {
-//		 Optional<CustomerDetails> cr = customerDetailsRepo.findById(customerId);
-		 CustomerDetails tempCustomer = customerDetailsRepo.findById(customerId).get();
-			List<CustomerAddresses> tempCustomerAddress = tempCustomer.getCustomerAddresses();
-			for (CustomerAddresses customerAddressTemp : tempCustomerAddress) {
-				CopyOnWriteArrayList<Addresses> tempAddress = new CopyOnWriteArrayList<Addresses>();
-				Addresses contactDetails = addressesServiceImpl.findbyAddressesId(customerAddressTemp.getAddressesId());
-				tempAddress.add(contactDetails);
-				customerAddressTemp.setAddressess(tempAddress);
-
-			}
-			tempCustomer.setCustomerAddresses(tempCustomerAddress);
-			return tempCustomer;
+		 Optional<CustomerDetails> cr = customerDetailsRepo.findById(customerId);
+			return cr.get();
 	}
 
 }

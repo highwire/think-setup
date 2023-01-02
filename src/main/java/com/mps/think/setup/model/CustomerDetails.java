@@ -1,7 +1,5 @@
 package com.mps.think.setup.model;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -9,9 +7,6 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -19,8 +14,8 @@ import javax.validation.constraints.Pattern;
 
 import com.mps.think.setup.vo.EnumModelVO.ChargeTaxOn;
 import com.mps.think.setup.vo.EnumModelVO.ConfigurationOptionsforOrders;
-import com.mps.think.setup.vo.EnumModelVO.CustomerCategory;
 import com.mps.think.setup.vo.EnumModelVO.PaymentOptions;
+import com.mps.think.setup.vo.EnumModelVO.CustomerCategory;
 
 @Entity
 @Table(name = "customer")
@@ -32,7 +27,7 @@ public class CustomerDetails  extends BaseEntity{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@Column(name = "id")
+	@Column(name = "customerId")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer customerId;
 	
@@ -132,12 +127,6 @@ public class CustomerDetails  extends BaseEntity{
 	
 	@Column(name = "paymentThreshold")
 	private String paymentThreshold;
-	
-	@OneToMany
-	@JoinTable(name = "customer_addresses", joinColumns = {
-			@JoinColumn(name = "customer_id", insertable = false, updatable = false) }, inverseJoinColumns = {
-					@JoinColumn(name = "id", insertable = false, updatable = false) })
-	private List<CustomerAddresses> customerAddresses;
 
 	public Integer getCustomerId() {
 		return customerId;
@@ -371,14 +360,6 @@ public class CustomerDetails  extends BaseEntity{
 		this.paymentThreshold = paymentThreshold;
 	}
 
-	public List<CustomerAddresses> getCustomerAddresses() {
-		return customerAddresses;
-	}
-
-	public void setCustomerAddresses(List<CustomerAddresses> customerAddresses) {
-		this.customerAddresses = customerAddresses;
-	}
-
 	@Override
 	public String toString() {
 		return "CustomerDetails [customerId=" + customerId + ", customerCategory=" + customerCategory + ", salutation="
@@ -391,8 +372,8 @@ public class CustomerDetails  extends BaseEntity{
 				+ ", parentInstitutionalId=" + parentInstitutionalId + ", chargeTaxOn=" + chargeTaxOn
 				+ ", paymentOptions=" + paymentOptions + ", configurationOptionsforOrders="
 				+ configurationOptionsforOrders + ", newOrderCommission=" + newOrderCommission + ", renewalCommission="
-				+ renewalCommission + ", paymentThreshold=" + paymentThreshold + ", customerAddresses="
-				+ customerAddresses + "]";
+				+ renewalCommission + ", paymentThreshold=" + paymentThreshold + "]";
 	}
+	
 
 }

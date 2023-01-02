@@ -63,9 +63,9 @@ public class AddressesController {
 	}
 //	=============================================================================
 	
-//	@PostMapping("/findAllAddressesByCustomerId")
-//	public ResponseEntity<?> findAllAddressesByCustId(@RequestBody Integer id) {
-//		return ResponseEntity.ok(addressService.getAllAddressesByCustomerId(id));
-//	}
+	@PostMapping("/findAllAddressesByCustomerId")
+	public ResponseEntity<?> findAllAddressesByCustId(@RequestBody Integer id) {
+		return ResponseEntity.ok(addressService.getAllAddressesByCustomerId(id));
+	}
 
 }
