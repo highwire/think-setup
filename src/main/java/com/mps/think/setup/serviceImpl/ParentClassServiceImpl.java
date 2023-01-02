@@ -49,6 +49,7 @@ public class ParentClassServiceImpl implements ParentClassService{
 		ParentClass data=new ParentClass();
 		data.setParentID(parentClassVO.getParentID());
 		data.setParentName(parentClassVO.getParentName());
+
 		data.setLabel(parentClassVO.getLabel());
 		data.setDescription(parentClassVO.getDescription());
 		data.setSourceCode(parentClassVO.getSourceCode());
