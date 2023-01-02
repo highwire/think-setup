@@ -10,7 +10,7 @@ import com.mps.think.setup.vo.EnumModelVO.Frequency;
 public class AddressesVO {
 	
 	private Integer addressId;
-	private CustomerDetails cusId;
+//	private CustomerDetails cusId;
 	private String addressName;
 	private AddressType addressType;
 	private AddressCategory addressCategory;
@@ -36,12 +36,12 @@ public class AddressesVO {
 	public void setAddressId(Integer addressId) {
 		this.addressId = addressId;
 	}
-	public CustomerDetails getCusId() {
-		return cusId;
-	}
-	public void setCusId(CustomerDetails cusId) {
-		this.cusId = cusId;
-	}
+//	public CustomerDetails getCusId() {
+//		return cusId;
+//	}
+//	public void setCusId(CustomerDetails cusId) {
+//		this.cusId = cusId;
+//	}
 
 	public String getAddressName() {
 		return addressName;
@@ -157,17 +157,18 @@ public class AddressesVO {
 	public void setSelectionTo(Date selectionTo) {
 		this.selectionTo = selectionTo;
 	}
-	
 	@Override
 	public String toString() {
-		return "AddressesVO [addressId=" + addressId + ", cusId=" + cusId + ", addressName=" + addressName
-				+ ", addressType=" + addressType + ", addressCategory=" + addressCategory + ", status=" + status
-				+ ", primaryAddress=" + primaryAddress + ", name=" + name + ", addressLine1=" + addressLine1
-				+ ", addressLine2=" + addressLine2 + ", zipCode=" + zipCode + ", city=" + city + ", state=" + state
-				+ ", country=" + country + ", countryCode=" + countryCode + ", phone=" + phone + ", validFrom="
-				+ validFrom + ", validTo=" + validTo + ", frequency=" + frequency + ", selectionFrom=" + selectionFrom
-				+ ", selectionTo=" + selectionTo + "]";
+		return "AddressesVO [addressId=" + addressId + ", addressName=" + addressName + ", addressType=" + addressType
+				+ ", addressCategory=" + addressCategory + ", status=" + status + ", primaryAddress=" + primaryAddress
+				+ ", name=" + name + ", addressLine1=" + addressLine1 + ", addressLine2=" + addressLine2 + ", zipCode="
+				+ zipCode + ", city=" + city + ", state=" + state + ", country=" + country + ", countryCode="
+				+ countryCode + ", phone=" + phone + ", validFrom=" + validFrom + ", validTo=" + validTo
+				+ ", frequency=" + frequency + ", selectionFrom=" + selectionFrom + ", selectionTo=" + selectionTo
+				+ "]";
 	}
+	
+
 	
 	
 
