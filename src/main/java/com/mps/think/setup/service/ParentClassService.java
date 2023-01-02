@@ -15,5 +15,7 @@ public interface ParentClassService {
 	public ParentClassVO updateParentClass(ParentClassVO parentClassVO);
 	
 	public ParentClass findbyParentClassId(Integer parentClassId);
+	
+//	public ParentClass findByParentId(Integer parentId);
 
 }

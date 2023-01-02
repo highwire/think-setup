@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mps.think.setup.service.OrderCodesService;
-import com.mps.think.setup.vo.OrderClassVO;
+import com.mps.think.setup.vo.OrderCodesSuperVO;
 
 @RestController
 @CrossOrigin
@@ -27,12 +27,12 @@ public class OrderCodesController {
 	}
 	
 	@PostMapping("/orderCodes")
-	public ResponseEntity<?> createOrderCodes(@RequestBody OrderClassVO orderCodes) {
+	public ResponseEntity<?> createOrderCodes(@RequestBody OrderCodesSuperVO orderCodes) {
 		return ResponseEntity.ok(orderCodesService.createOrderCodes(orderCodes));
 	}
 	
 	@PutMapping("/orderCodes")
-	public ResponseEntity<?> updateOrderCodes(@RequestBody OrderClassVO orderCodes) {
+	public ResponseEntity<?> updateOrderCodes(@RequestBody OrderCodesSuperVO orderCodes) {
 		return ResponseEntity.ok(orderCodesService.updateOrderCodes(orderCodes));
 	}
 	

@@ -1,55 +1,26 @@
 package com.mps.think.setup.vo;
 
+import com.mps.think.setup.model.Publisher;
+
 public class OrderClassVO {
 	
-	private OrderCodesVO orderCodes;
-	
-	private OrderItemDetailsVO orderItemDetails;
-	
-	private OrderPaymentOptionsVO orderPaymentOptions;
-	
-	private OrderOptionsVO orderOptions;
-	
-	private OrderPackageOptionsVO orderPackageOptions;
-
-	public OrderCodesVO getOrderCodes() {
-		return orderCodes;
+	private Integer ocId;
+	private Publisher pubId;
+	public Integer getOcId() {
+		return ocId;
 	}
-
-	public void setOrderCodes(OrderCodesVO orderCodes) {
-		this.orderCodes = orderCodes;
+	public void setOcId(Integer ocId) {
+		this.ocId = ocId;
 	}
-
-	public OrderItemDetailsVO getOrderItemDetails() {
-		return orderItemDetails;
+	public Publisher getPubId() {
+		return pubId;
 	}
-
-	public void setOrderItemDetails(OrderItemDetailsVO orderItemDetails) {
-		this.orderItemDetails = orderItemDetails;
+	public void setPubId(Publisher pubId) {
+		this.pubId = pubId;
 	}
-
-	public OrderPaymentOptionsVO getOrderPaymentOptions() {
-		return orderPaymentOptions;
-	}
-
-	public void setOrderPaymentOptions(OrderPaymentOptionsVO orderPaymentOptions) {
-		this.orderPaymentOptions = orderPaymentOptions;
-	}
-
-	public OrderOptionsVO getOrderOptions() {
-		return orderOptions;
-	}
-
-	public void setOrderOptions(OrderOptionsVO orderOptions) {
-		this.orderOptions = orderOptions;
-	}
-
-	public OrderPackageOptionsVO getOrderPackageOptions() {
-		return orderPackageOptions;
-	}
-
-	public void setOrderPackageOptions(OrderPackageOptionsVO orderPackageOptions) {
-		this.orderPackageOptions = orderPackageOptions;
+	@Override
+	public String toString() {
+		return "OrderClassVO [ocId=" + ocId + ", pubId=" + pubId + "]";
 	}
 	
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.mps.think.setup.model.OrderClass;
 import com.mps.think.setup.model.ParentClass;
 import com.mps.think.setup.model.Publisher;
 import com.mps.think.setup.repo.ParentClassRepo;
@@ -26,9 +27,17 @@ public class ParentClassServiceImpl implements ParentClassService{
 	public ParentClassVO saveParentClass(ParentClassVO parentClassVO) {
 		ParentClass data=new ParentClass();
 		data.setParentName(parentClassVO.getParentName());
-//		Publisher pub=new Publisher();
-//		pub.setId(parentClassVO.getPubId().getId());
-//		data.setPubId(pub);
+		data.setLabel(parentClassVO.getLabel());
+		data.setDescription(parentClassVO.getDescription());
+		data.setSourceCode(parentClassVO.getSourceCode());
+		data.setSourceCodeFormat(parentClassVO.getSourceCodeFormat());
+		data.setRenewalSCFormat(parentClassVO.getRenewalSCFormat());
+		data.setProfitCenter(parentClassVO.getProfitCenter());
+		data.setPaymentThreshold(parentClassVO.getPaymentThreshold());
+		data.setReasonableGap(parentClassVO.getReasonableGap());
+		OrderClass oc=new OrderClass();
+		oc.setOcId(parentClassVO.getOcId().getOcId());
+		data.setOcId(oc);
 		parentClassRepo.saveAndFlush(data);
 		parentClassVO.setParentID(data.getParentID());
 		return parentClassVO;
@@ -40,9 +49,18 @@ public class ParentClassServiceImpl implements ParentClassService{
 		ParentClass data=new ParentClass();
 		data.setParentID(parentClassVO.getParentID());
 		data.setParentName(parentClassVO.getParentName());
-//		Publisher pub=new Publisher();
-//		pub.setId(parentClassVO.getPubId().getId());
-//		data.setPubId(pub);
+
+		data.setLabel(parentClassVO.getLabel());
+		data.setDescription(parentClassVO.getDescription());
+		data.setSourceCode(parentClassVO.getSourceCode());
+		data.setSourceCodeFormat(parentClassVO.getSourceCodeFormat());
+		data.setRenewalSCFormat(parentClassVO.getRenewalSCFormat());
+		data.setProfitCenter(parentClassVO.getProfitCenter());
+		data.setPaymentThreshold(parentClassVO.getPaymentThreshold());
+		data.setReasonableGap(parentClassVO.getReasonableGap());
+		OrderClass oc=new OrderClass();
+		oc.setOcId(parentClassVO.getOcId().getOcId());
+		data.setOcId(oc);
 		parentClassRepo.saveAndFlush(data);
 		return parentClassVO;
 	}
@@ -52,6 +70,14 @@ public class ParentClassServiceImpl implements ParentClassService{
 		ParentClass details=parentClassRepo.findById(parentClassId).get();
 		return details;
 	}
+
+//	@Override
+//	public ParentClass findByParentId(Integer parentId) {
+//
+//		ParentClass data=parentClassRepo.findByParentId(parentId);
+//		
+//		return data;
+//	}
 	
 	
 }

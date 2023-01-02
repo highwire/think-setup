@@ -21,7 +21,7 @@ import com.mps.think.setup.repo.OrderOptionsRepository;
 import com.mps.think.setup.repo.OrderPackageOptionsRepository;
 import com.mps.think.setup.repo.OrderPaymentOptionsRepository;
 import com.mps.think.setup.service.OrderCodesService;
-import com.mps.think.setup.vo.OrderClassVO;
+import com.mps.think.setup.vo.OrderCodesSuperVO;
 import com.mps.think.setup.vo.OrderCodesVO;
 import com.mps.think.setup.vo.OrderItemDetailsVO;
 import com.mps.think.setup.vo.OrderOptionsVO;
@@ -47,7 +47,7 @@ public class OrderCodesServiceImpl implements OrderCodesService {
 	private OrderPaymentOptionsRepository orderPaymentOptionsRepository;
 	
 	@Override
-	public OrderClassVO createOrderCodes(OrderClassVO orderCodes) {
+	public OrderCodesSuperVO createOrderCodes(OrderCodesSuperVO orderCodes) {
 		ObjectMapper m = new ObjectMapper();
 		orderCodesRepository.saveAndFlush(m.convertValue(orderCodes.getOrderCodes(), OrderCodes.class));
 		orderItemDetailsRepository.saveAndFlush(m.convertValue(orderCodes.getOrderItemDetails(), OrderItemDetails.class));
@@ -58,7 +58,7 @@ public class OrderCodesServiceImpl implements OrderCodesService {
 	}
 
 	@Override
-	public OrderClassVO updateOrderCodes(OrderClassVO orderCodes) {
+	public OrderCodesSuperVO updateOrderCodes(OrderCodesSuperVO orderCodes) {
 		ObjectMapper m = new ObjectMapper();
 		orderCodesRepository.saveAndFlush(m.convertValue(orderCodes.getOrderCodes(), OrderCodes.class));
 		orderItemDetailsRepository.saveAndFlush(m.convertValue(orderCodes.getOrderItemDetails(), OrderItemDetails.class));
@@ -115,7 +115,7 @@ public class OrderCodesServiceImpl implements OrderCodesService {
 	}
 
 	@Override
-	public OrderClassVO deleteOrderCode(Integer id) {
+	public OrderCodesSuperVO deleteOrderCode(Integer id) {
 		
 		Optional<OrderCodes> orderCode = orderCodesRepository.findById(id);
 		Optional<OrderItemDetails> orderItemDetail = orderItemDetailsRepository.findById(id);
@@ -123,7 +123,7 @@ public class OrderCodesServiceImpl implements OrderCodesService {
 		Optional<OrderPackageOptions> orderPackageOption = orderPackageOptionsRepository.findById(id);
 		Optional<OrderPaymentOptions> orderPaymentOption = orderPaymentOptionsRepository.findById(id);
 		
-		OrderClassVO deletedOrderCode = new OrderClassVO();
+		OrderCodesSuperVO deletedOrderCode = new OrderCodesSuperVO();
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
 		
