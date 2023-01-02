@@ -1,6 +1,9 @@
 package com.mps.think.setup.vo;
 
 
+import java.util.List;
+
+import com.mps.think.setup.model.CustomerAddresses;
 import com.mps.think.setup.vo.EnumModelVO.ChargeTaxOn;
 import com.mps.think.setup.vo.EnumModelVO.ConfigurationOptionsforOrders;
 import com.mps.think.setup.vo.EnumModelVO.CustomerCategory;
@@ -37,6 +40,8 @@ public class CustomerDetailsVO {
 	private String newOrderCommission;
 	private String renewalCommission;
 	private String paymentThreshold;
+	private List<CustomerAddresses> customerAddresses;
+	
 	public Integer getCustomerId() {
 		return customerId;
 	}
@@ -211,6 +216,12 @@ public class CustomerDetailsVO {
 	public void setPaymentThreshold(String paymentThreshold) {
 		this.paymentThreshold = paymentThreshold;
 	}
+	public List<CustomerAddresses> getCustomerAddresses() {
+		return customerAddresses;
+	}
+	public void setCustomerAddresses(List<CustomerAddresses> customerAddresses) {
+		this.customerAddresses = customerAddresses;
+	}
 	@Override
 	public String toString() {
 		return "CustomerDetailsVO [customerId=" + customerId + ", customerCategory=" + customerCategory
@@ -224,7 +235,7 @@ public class CustomerDetailsVO {
 				+ parentInstitutionalId + ", chargeTaxOn=" + chargeTaxOn + ", paymentOptions=" + paymentOptions
 				+ ", configurationOptionsforOrders=" + configurationOptionsforOrders + ", newOrderCommission="
 				+ newOrderCommission + ", renewalCommission=" + renewalCommission + ", paymentThreshold="
-				+ paymentThreshold + "]";
+				+ paymentThreshold + ", customerAddresses=" + customerAddresses + "]";
 	}
-
+	
 }
