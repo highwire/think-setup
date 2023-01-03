@@ -21,40 +21,41 @@ public class UnitBasedSubscriptionServiceImpl implements UnitBasedSubscriptionSe
 
 	@Override
 	public List<UnitBasedSubscription> findAllUnitBasedSubscription() {
-		// TODO Auto-generated method stub
 		return UnitBasedSubscriptionRepo.findAll();
 	}
 
 	@Override
 	public UnitBasedSubscriptionVO saveUnitBasedSubscription(UnitBasedSubscriptionVO UnitBasedSubscription) {
 		UnitBasedSubscription data=new UnitBasedSubscription();
-//		data.setUbsid(UnitBasedSubscription.getUbsid());
 		data.setLabel(UnitBasedSubscription.getLabel());
 		data.setDiscription(UnitBasedSubscription.getDiscription());
+		Publisher publisher=new Publisher();
+		publisher.setId(UnitBasedSubscription.getPubId().getId());
+		data.setPubId(publisher);
 		UnitBasedSubscriptionRepo.saveAndFlush(data);
 		return UnitBasedSubscription;
 	}
 
 	@Override
-	public UnitBasedSubscriptionVO updateUnitBasedSubscription(UnitBasedSubscriptionVO UnitBasedSubscription) {
-		for (UnitBasedSubscription curr : UnitBasedSubscriptionRepo.findAll()) {
-			if (curr.getUbsid().equals(UnitBasedSubscription.getUbsid())) {
-				curr.setDiscription(UnitBasedSubscription.getDiscription());
-				curr.setLabel(UnitBasedSubscription.getLabel());
-				return UnitBasedSubscription;
-			}
-			}
-		return null;
+	public UnitBasedSubscriptionVO updateUnitBasedSubscription(UnitBasedSubscriptionVO unitBasedSubscription) {
+		UnitBasedSubscription data=new UnitBasedSubscription();
+		data.setUbsid(unitBasedSubscription.getUbsid());
+		Publisher publisher=new Publisher();
+		publisher.setId(unitBasedSubscription.getPubId().getId());
+		data.setPubId(publisher);
+		data.setLabel(unitBasedSubscription.getLabel());
+		data.setDiscription(unitBasedSubscription.getDiscription());
+		UnitBasedSubscriptionRepo.saveAndFlush(data);
+		return unitBasedSubscription;
 	}
 	
 	@Override
 	public UnitBasedSubscription findbyUnitBasedSubscriptionId(Integer UnitBasedSubscriptionId) {
-		for (UnitBasedSubscription curr : UnitBasedSubscriptionRepo.findAll()) {
-			if (curr.getUbsid().equals(UnitBasedSubscriptionId)) {
-				return curr;
-			}
+		Optional<UnitBasedSubscription> cr = UnitBasedSubscriptionRepo.findById(UnitBasedSubscriptionId);
+		if(!cr.isPresent()) {
+			throw new NotFoundException("Unit Based Subscription Id : "+ UnitBasedSubscriptionId +" does not exist!");
 		}
-		return null;
+		return cr.get();
 	}
 
 	
