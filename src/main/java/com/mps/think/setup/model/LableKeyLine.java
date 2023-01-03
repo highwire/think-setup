@@ -43,6 +43,16 @@ description
 	
 	@Column(name = "description")
 	private String description;
+	
+	
+	@Column(name = "currenct_issue")
+	private String currenctIssue;
+
+	@Column(name = "currenct_volume")
+	private boolean currenctVolume;
+	
+	@Column(name = "text")
+	private String text;
 
 
 	public Integer getLableKeylineId() {
