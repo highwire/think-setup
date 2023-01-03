@@ -49,7 +49,7 @@ description
 	private String currentIssue;
 
 	@Column(name = "current_volume")
-	private boolean currentVolume;
+	private String currentVolume;
 	
 	@Column(name = "text")
 	private String text;
@@ -115,12 +115,12 @@ description
 	}
 
 
-	public boolean isCurrentVolume() {
+	public String getCurrentVolume() {
 		return currentVolume;
 	}
 
 
-	public void setCurrentVolume(boolean currentVolume) {
+	public void setCurrentVolume(String currentVolume) {
 		this.currentVolume = currentVolume;
 	}
 
@@ -138,7 +138,8 @@ description
 	@Override
 	public String toString() {
 		return "LableKeyLine [lableKeylineId=" + lableKeylineId + ", pubId=" + pubId + ", labelKeyline=" + labelKeyline
-				+ ", suppressflag=" + suppressflag + ", description=" + description + "]";
+				+ ", suppressflag=" + suppressflag + ", description=" + description + ", currentIssue=" + currentIssue
+				+ ", currentVolume=" + currentVolume + ", text=" + text + "]";
 	}
 
 	

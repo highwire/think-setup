@@ -1,7 +1,5 @@
 package com.mps.think.setup.vo;
 
-import javax.persistence.Column;
-
 public class LableKeyLineVO {
 
 	/**
@@ -25,7 +23,7 @@ public class LableKeyLineVO {
 	
 	private String currentIssue;
 
-	private boolean currentVolume;
+	private String currentVolume;
 	
 	private String text;
 
@@ -79,11 +77,12 @@ public class LableKeyLineVO {
 		this.currentIssue = currentIssue;
 	}
 
-	public boolean isCurrentVolume() {
+
+	public String getCurrentVolume() {
 		return currentVolume;
 	}
 
-	public void setCurrentVolume(boolean currentVolume) {
+	public void setCurrentVolume(String currentVolume) {
 		this.currentVolume = currentVolume;
 	}
 
