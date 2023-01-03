@@ -45,11 +45,11 @@ description
 	private String description;
 	
 	
-	@Column(name = "currenct_issue")
-	private String currenctIssue;
+	@Column(name = "current_issue")
+	private String currentIssue;
 
-	@Column(name = "currenct_volume")
-	private boolean currenctVolume;
+	@Column(name = "current_volume")
+	private boolean currentVolume;
 	
 	@Column(name = "text")
 	private String text;
@@ -102,6 +102,36 @@ description
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+
+	public String getCurrentIssue() {
+		return currentIssue;
+	}
+
+
+	public void setCurrentIssue(String currentIssue) {
+		this.currentIssue = currentIssue;
+	}
+
+
+	public boolean isCurrentVolume() {
+		return currentVolume;
+	}
+
+
+	public void setCurrentVolume(boolean currentVolume) {
+		this.currentVolume = currentVolume;
+	}
+
+
+	public String getText() {
+		return text;
+	}
+
+
+	public void setText(String text) {
+		this.text = text;
 	}
 
 

@@ -23,9 +23,9 @@ public class LableKeyLineVO {
 
 	private String description;
 	
-	private String currenctIssue;
+	private String currentIssue;
 
-	private boolean currenctVolume;
+	private boolean currentVolume;
 	
 	private String text;
 
@@ -70,20 +70,21 @@ public class LableKeyLineVO {
 	}
 
 	
-	public String getCurrenctIssue() {
-		return currenctIssue;
+
+	public String getCurrentIssue() {
+		return currentIssue;
 	}
 
-	public void setCurrenctIssue(String currenctIssue) {
-		this.currenctIssue = currenctIssue;
+	public void setCurrentIssue(String currentIssue) {
+		this.currentIssue = currentIssue;
 	}
 
-	public boolean isCurrenctVolume() {
-		return currenctVolume;
+	public boolean isCurrentVolume() {
+		return currentVolume;
 	}
 
-	public void setCurrenctVolume(boolean currenctVolume) {
-		this.currenctVolume = currenctVolume;
+	public void setCurrentVolume(boolean currentVolume) {
+		this.currentVolume = currentVolume;
 	}
 
 	public String getText() {
@@ -97,8 +98,8 @@ public class LableKeyLineVO {
 	@Override
 	public String toString() {
 		return "LableKeyLineVO [lableKeylineId=" + lableKeylineId + ", pubId=" + pubId + ", labelKeyline="
-				+ labelKeyline + ", suppressflag=" + suppressflag + ", description=" + description + ", currenctIssue="
-				+ currenctIssue + ", currenctVolume=" + currenctVolume + ", text=" + text + "]";
+				+ labelKeyline + ", suppressflag=" + suppressflag + ", description=" + description + ", currentIssue="
+				+ currentIssue + ", currentVolume=" + currentVolume + ", text=" + text + "]";
 	}
 
 }
