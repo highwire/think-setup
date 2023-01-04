@@ -27,14 +27,6 @@ public class ParentClassServiceImpl implements ParentClassService{
 	public ParentClassVO saveParentClass(ParentClassVO parentClassVO) {
 		ParentClass data=new ParentClass();
 		data.setParentName(parentClassVO.getParentName());
-		data.setLabel(parentClassVO.getLabel());
-		data.setDescription(parentClassVO.getDescription());
-		data.setSourceCode(parentClassVO.getSourceCode());
-		data.setSourceCodeFormat(parentClassVO.getSourceCodeFormat());
-		data.setRenewalSCFormat(parentClassVO.getRenewalSCFormat());
-		data.setProfitCenter(parentClassVO.getProfitCenter());
-		data.setPaymentThreshold(parentClassVO.getPaymentThreshold());
-		data.setReasonableGap(parentClassVO.getReasonableGap());
 		OrderClass oc=new OrderClass();
 		oc.setOcId(parentClassVO.getOcId().getOcId());
 		data.setOcId(oc);
@@ -49,14 +41,6 @@ public class ParentClassServiceImpl implements ParentClassService{
 		ParentClass data=new ParentClass();
 		data.setParentID(parentClassVO.getParentID());
 		data.setParentName(parentClassVO.getParentName());
-		data.setLabel(parentClassVO.getLabel());
-		data.setDescription(parentClassVO.getDescription());
-		data.setSourceCode(parentClassVO.getSourceCode());
-		data.setSourceCodeFormat(parentClassVO.getSourceCodeFormat());
-		data.setRenewalSCFormat(parentClassVO.getRenewalSCFormat());
-		data.setProfitCenter(parentClassVO.getProfitCenter());
-		data.setPaymentThreshold(parentClassVO.getPaymentThreshold());
-		data.setReasonableGap(parentClassVO.getReasonableGap());
 		OrderClass oc=new OrderClass();
 		oc.setOcId(parentClassVO.getOcId().getOcId());
 		data.setOcId(oc);
