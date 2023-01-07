@@ -38,4 +38,9 @@ public class ParentClassController {
 	public ResponseEntity<?> findbyCParentClassId(@RequestBody Integer parentClassId) {
 		return ResponseEntity.ok(parentClassService.findbyParentClassId(parentClassId));
 	}
+	
+//	@PostMapping("/findByParentId")
+//	public ResponseEntity<?> findByParentId(@RequestBody Integer parentClassId) {
+//		return ResponseEntity.ok(parentClassService.findByParentId(parentClassId));
+//	}
 }

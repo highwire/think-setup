@@ -7,12 +7,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Table(name = "child_class")
 @Entity
-public class ChildClass {
+public class ChildClass extends BaseEntity {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6887006749375450877L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

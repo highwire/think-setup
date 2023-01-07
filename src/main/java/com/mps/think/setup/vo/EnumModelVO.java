@@ -126,5 +126,114 @@ public class EnumModelVO {
 	        return displaysource_code_type;
 	    }
 	}
+//	======================================================================================
+	public static enum AddressType {
+		
+		 Business("Business"),Residential("Residential");
+
+		    private final String displayAddressType;
+
+		    AddressType(String displayAddressType) {
+		        this.displayAddressType = displayAddressType;
+		    }
+
+		    public String getDisplayName() {
+		        return displayAddressType;
+		    }
+
+	}
+		public static enum AddressCategory {
+			
+			ShippingAddress("ShippingAddress") ,BillingAddress("BillingAddress"),RenewalAddress("RenewalAddress"),AlternateAddress("AlternateAddress");
+
+			    private final String displayAddressCategory;
+
+			    AddressCategory(String displayAddressCategory) {
+			        this.displayAddressCategory = displayAddressCategory;
+			    }
+
+			    public String getDisplayName() {
+			        return displayAddressCategory;
+			    }
+
+		}
+		public static enum Frequency {
+			
+			 EveryYear("EveryYear"),None("None");
+
+			    private final String displayFrequency;
+
+			    Frequency(String displayFrequency) {
+			        this.displayFrequency = displayFrequency;
+			    }
+
+			    public String getDisplayName() {
+			        return displayFrequency;
+			    }
+
+		}
+		public static enum CustomerCategory {
+			
+			Agency("Agency"),Individual("Individual"),Institutional("Institutional");
+
+			    private final String displayCustomerCategory;
+
+			    CustomerCategory(String displayCustomerCategory) {
+			        this.displayCustomerCategory = displayCustomerCategory;
+			    }
+
+			    public String getDisplayName() {
+			        return displayCustomerCategory;
+			    }
+
+		}
+		
+	    public static enum ConfigurationOptionsforOrders {
+			
+	    	BundleDiscounts("Bundle Discounts"),BillToAgency("Bill to Agency"),RenewToAgency("Renew to Agency");
+
+			    private final String displayConfigurationOptionsforOrders;
+
+			    ConfigurationOptionsforOrders(String displayConfigurationOptionsforOrders) {
+			        this.displayConfigurationOptionsforOrders = displayConfigurationOptionsforOrders;
+			    }
+
+			    public String getDisplayName() {
+			        return displayConfigurationOptionsforOrders;
+			    }
+
+		}
+	    
+	 public static enum PaymentOptions {
+			
+		 PayCommissionToAgency("Pay Commission to Agency"),AgencyRemitsNetPayment("Agency Remits Net Payment");
+
+			    private final String displayPaymentOptions;
+
+			    PaymentOptions(String displayPaymentOptions) {
+			        this.displayPaymentOptions = displayPaymentOptions;
+			    }
+
+			    public String getDisplayName() {
+			        return displayPaymentOptions;
+			    }
+
+		}
+	 
+	 public static enum ChargeTaxOn {
+			
+		 AgencyPaysTax("Agency Pays Tax"),TaxChargedOnGross("Tax Charged On Gross"),TaxChargedOnNet("Tax Charged On Net");
+
+			    private final String displayChargeTaxOn;
+
+			    ChargeTaxOn(String displayChargeTaxOn) {
+			        this.displayChargeTaxOn = displayChargeTaxOn;
+			    }
+
+			    public String getDisplayName() {
+			        return displayChargeTaxOn;
+			    }
+
+		}
 
 }

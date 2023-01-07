@@ -1,6 +1,5 @@
 package com.mps.think.setup.vo;
 
-
 import com.mps.think.setup.model.ParentClass;
 
 public class ChildClassVO {
@@ -39,6 +38,7 @@ public class ChildClassVO {
 	public String toString() {
 		return "ChildClassVO [childId=" + childId + ", childName=" + childName + ", parentId=" + parentId + "]";
 	}
+
 	
 	
 }

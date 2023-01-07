@@ -58,4 +58,11 @@ public class AuxServiceImpl implements AuxService {
 		return auxRepo.findById(auxId).get();
 	}
 
+	@Override
+	public AuxVariable deleteByAuxVariableId(Integer auxId) {
+		AuxVariable data=findbyAuxId(auxId);
+		auxRepo.delete(data);
+		return data;
+	}
+
 }

@@ -11,6 +11,7 @@ public class SourceCodeVO {
 	private String description;
 	private String orderCode;
 	private String orderCodeType;
+	private String quantity;
 	private Integer ocId;
 	private Boolean isActive;
 	private Boolean state_Break;
@@ -98,19 +99,20 @@ public class SourceCodeVO {
 	public void setSourceCode(String sourceCode) {
 		this.sourceCode = sourceCode;
 	}
+	
+	public String getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(String quantity) {
+		this.quantity = quantity;
+	}
 	@Override
 	public String toString() {
 		return "SourceCodeVO [sourceCodeId=" + sourceCodeId + ", pubId=" + pubId + ", description=" + description
-				+ ", orderCode=" + orderCode + ", orderCodeType=" + orderCodeType + ", ocId=" + ocId + ", isActive="
-				+ isActive + ", state_Break=" + state_Break + ", cost=" + cost + ", generic_agency=" + generic_agency
-				+ ", is_ddp=" + is_ddp + ", sCodeType=" + sCodeType + ", sourceCode=" + sourceCode + "]";
+				+ ", orderCode=" + orderCode + ", orderCodeType=" + orderCodeType + ", quantity=" + quantity + ", ocId="
+				+ ocId + ", isActive=" + isActive + ", state_Break=" + state_Break + ", cost=" + cost
+				+ ", generic_agency=" + generic_agency + ", is_ddp=" + is_ddp + ", sCodeType=" + sCodeType
+				+ ", sourceCode=" + sourceCode + "]";
 	}
 	
-	
-	
-	
-
-	
-	
-
 }

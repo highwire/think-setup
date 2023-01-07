@@ -6,12 +6,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Table(name = "parent_class")
 @Entity
-public class ParentClass {
+public class ParentClass extends BaseEntity {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8512972382629759954L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,8 +28,8 @@ public class ParentClass {
 	private String parentName;
 	
 	@OneToOne
-	@JoinColumn(name = "pub_id", referencedColumnName = "id")
-	private Publisher pubId;
+	@JoinColumn(name = "oc_id", referencedColumnName = "oc_id")
+	private OrderClass ocId;
 
 	public Integer getParentID() {
 		return parentID;
@@ -41,17 +47,17 @@ public class ParentClass {
 		this.parentName = parentName;
 	}
 
-	public Publisher getPubId() {
-		return pubId;
+	public OrderClass getOcId() {
+		return ocId;
 	}
 
-	public void setPubId(Publisher pubId) {
-		this.pubId = pubId;
+	public void setOcId(OrderClass ocId) {
+		this.ocId = ocId;
 	}
 
 	@Override
 	public String toString() {
-		return "ParentClass [parentID=" + parentID + ", parentName=" + parentName + ", pubId=" + pubId + "]";
+		return "ParentClass [parentID=" + parentID + ", parentName=" + parentName + ", ocId=" + ocId + "]";
 	}
-	
+
 }
