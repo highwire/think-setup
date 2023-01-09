@@ -16,9 +16,9 @@ public class SourceFormatVo  {
 
 	private Integer mruSourceFormatSegmentSeq;
 
-	@Enumerated(EnumType.STRING)
-	private AppConstants.codeGen codeGenType;
-//	private String codeGenType;
+//	@Enumerated(EnumType.STRING)
+//	private AppConstants.codeGen codeGenType;
+	private String codeGenType;
 
 	public Integer getId() {
 		return id;
@@ -53,11 +53,11 @@ public class SourceFormatVo  {
 	}
 
 	
-	public AppConstants.codeGen getCodeGenType() {
+	public String getCodeGenType() {
 		return codeGenType;
 	}
 
-	public void setCodeGenType(AppConstants.codeGen codeGenType) {
+	public void setCodeGenType(String codeGenType) {
 		this.codeGenType = codeGenType;
 	}
 

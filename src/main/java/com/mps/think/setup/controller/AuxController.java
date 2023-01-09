@@ -1,5 +1,8 @@
 package com.mps.think.setup.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -9,7 +12,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mps.think.setup.serviceImpl.AuxServiceImpl;
+import com.mps.think.setup.utils.AppConstants.AuxCategory;
+import com.mps.think.setup.utils.AppConstants.GenerationMethod;
+import com.mps.think.setup.utils.AppConstants.VariableType;
+import com.mps.think.setup.utils.AppConstants.codeGen;
 import com.mps.think.setup.vo.AuxVariableVO;
+import com.mps.think.setup.vo.EnumModelVO.ConfigurationOptionsforOrders;
 
 @RestController
 @CrossOrigin
@@ -38,5 +46,21 @@ public class AuxController {
 		return ResponseEntity.ok(auxServiceImpl.findbyAuxId(auxId));
 	}
 	
-
+	@GetMapping("/getAllAuxCategory")
+	public ResponseEntity<?> getAllAuxCategory() {
+		List<String> list= new ArrayList<>();
+		for(AuxCategory data:AuxCategory.values()) {
+			list.add(data.displayName());
+		}
+		return ResponseEntity.ok(list);
+	}
+	
+	@GetMapping("/getAllVariableType")
+	public ResponseEntity<?> getAllVariableType() {
+		List<String> list= new ArrayList<>();
+		for(VariableType data:VariableType.values()) {
+			list.add(data.displayName());
+		}
+		return ResponseEntity.ok(list);
+	}
 }

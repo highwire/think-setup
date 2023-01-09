@@ -30,9 +30,10 @@ public class AuxVariable extends BaseEntity {
 	@JoinColumn(name = "pub_id", referencedColumnName = "id")
 	private Publisher pubId;
 
-	@Enumerated(EnumType.STRING)
+//	@Enumerated(EnumType.STRING)
 	@Column(name = "aux_category")
-	private AppConstants.AuxCategory auxCategory;
+	private String auxCategory;
+//	private AppConstants.AuxCategory auxCategory;
 
 	@Column(name = "variable_name")
 	private String variableName;
@@ -56,16 +57,24 @@ public class AuxVariable extends BaseEntity {
 		this.auxVarId = auxVarId;
 	}
 
-	public AppConstants.AuxCategory getAuxCategory() {
-		return auxCategory;
-	}
-
-	public void setAuxCategory(AppConstants.AuxCategory auxCategory) {
-		this.auxCategory = auxCategory;
-	}
+//	public AppConstants.AuxCategory getAuxCategory() {
+//		return auxCategory;
+//	}
+//
+//	public void setAuxCategory(AppConstants.AuxCategory auxCategory) {
+//		this.auxCategory = auxCategory;
+//	}
 
 	public String getVariableName() {
 		return variableName;
+	}
+
+	public String getAuxCategory() {
+		return auxCategory;
+	}
+
+	public void setAuxCategory(String auxCategory) {
+		this.auxCategory = auxCategory;
 	}
 
 	public void setVariableName(String variableName) {
