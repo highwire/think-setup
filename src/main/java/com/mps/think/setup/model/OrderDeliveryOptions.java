@@ -26,6 +26,12 @@ public class OrderDeliveryOptions extends BaseEntity {
 	
 	@Column(name = "proforma_payment")
 	private Boolean proformaPayment;
+	
+	@Column(name = "send_renewal_notice")
+	private Boolean sendRenewalNotice;
+	
+	@Column(name = "auto_renewal")
+	private Boolean autoRenewal;
 
 	public Integer getId() {
 		return id;
@@ -49,6 +55,22 @@ public class OrderDeliveryOptions extends BaseEntity {
 
 	public void setProformaPayment(Boolean proformaPayment) {
 		this.proformaPayment = proformaPayment;
+	}
+
+	public Boolean getSendRenewalNotice() {
+		return sendRenewalNotice;
+	}
+
+	public void setSendRenewalNotice(Boolean sendRenewalNotice) {
+		this.sendRenewalNotice = sendRenewalNotice;
+	}
+
+	public Boolean getAutoRenewal() {
+		return autoRenewal;
+	}
+
+	public void setAutoRenewal(Boolean autoRenewal) {
+		this.autoRenewal = autoRenewal;
 	}
 
 }

@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mps.think.setup.service.AddOrderService;
+import com.mps.think.setup.vo.EnumModelVO.OrderStatus;
+import com.mps.think.setup.vo.EnumModelVO.OrderType;
+import com.mps.think.setup.vo.EnumModelVO.PaymentStatus;
 import com.mps.think.setup.vo.OrderVO;
 
 @RestController
@@ -37,6 +40,21 @@ public class AddOrderController {
 	@GetMapping("/getAllOrderByCustomerId/{customerId}")
 	public ResponseEntity<?> getAllOrderByCustomerId(@PathVariable Integer customerId) throws Exception {
 		return ResponseEntity.ok(addOrderService.getAllOrderByCustomerId(customerId));
+	}
+	
+	@GetMapping("/findAllPaymentStatus")
+	public ResponseEntity<?> getAllPaymentStatus() {
+		return ResponseEntity.ok(PaymentStatus.values());
+	}
+	
+	@GetMapping("/findAllOrderStatus")
+	public ResponseEntity<?> getAllOrderStatus() {
+		return ResponseEntity.ok(OrderStatus.values());
+	}
+	
+	@GetMapping("/findAllOrderType")
+	public ResponseEntity<?> getAllOrderType() {
+		return ResponseEntity.ok(OrderType.values());
 	}
 
 }

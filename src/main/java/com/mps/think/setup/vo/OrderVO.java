@@ -1,12 +1,17 @@
 package com.mps.think.setup.vo;
 
+import com.mps.think.setup.vo.EnumModelVO.OrderStatus;
+import com.mps.think.setup.vo.EnumModelVO.OrderType;
+
 public class OrderVO {
 	
 	private Integer orderId;
 	
 	private Integer customerId;
 	
-	private Integer orderType;
+	private OrderType orderType;
+	
+	private OrderStatus orderStatus;
 	
 	private OrderKeyInformationVO keyOrderInformation;
 	
@@ -36,12 +41,20 @@ public class OrderVO {
 		this.customerId = customerId;
 	}
 
-	public Integer getOrderType() {
+	public OrderType getOrderType() {
 		return orderType;
 	}
 
-	public void setOrderType(Integer orderType) {
+	public void setOrderType(OrderType orderType) {
 		this.orderType = orderType;
+	}
+
+	public OrderStatus getOrderStatus() {
+		return orderStatus;
+	}
+
+	public void setOrderStatus(OrderStatus orderStatus) {
+		this.orderStatus = orderStatus;
 	}
 
 	public OrderKeyInformationVO getKeyOrderInformation() {
@@ -91,5 +104,9 @@ public class OrderVO {
 	public void setAuxiliaryInformation(OrderAuxiliaryInformationVO auxiliaryInformation) {
 		this.auxiliaryInformation = auxiliaryInformation;
 	}
+	
+	
+
+	
 
 }

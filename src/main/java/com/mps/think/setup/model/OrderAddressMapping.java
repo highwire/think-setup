@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Table(name = "order_address_mapping")
@@ -21,8 +24,12 @@ public class OrderAddressMapping extends BaseEntity {
 	@Column(name = "id")
 	private Integer id;
 	
-	@Column(name = "address_id")
-	private Integer addressId;
+//	@Column(name = "address_id")
+//	private Integer addressId;]
+	
+	@OneToOne
+	@JoinColumn(name = "address", referencedColumnName = "address_id")
+	private Addresses address;
 	
 	@Column(name = "shipping_address")
 	private Boolean shippingAddress;
@@ -32,6 +39,9 @@ public class OrderAddressMapping extends BaseEntity {
 	
 	@Column(name = "alternate_address")
 	private Boolean alternateAddress;
+	
+	@Column(name = "renewal_address")
+	private Boolean renewalAddress;
 
 	public Integer getId() {
 		return id;
@@ -41,13 +51,13 @@ public class OrderAddressMapping extends BaseEntity {
 		this.id = id;
 	}
 
-	public Integer getAddressId() {
-		return addressId;
-	}
-
-	public void setAddressId(Integer addressId) {
-		this.addressId = addressId;
-	}
+//	public Integer getAddressId() {
+//		return addressId;
+//	}
+//
+//	public void setAddressId(Integer addressId) {
+//		this.addressId = addressId;
+//	}
 
 	public Boolean getShippingAddress() {
 		return shippingAddress;
@@ -71,6 +81,22 @@ public class OrderAddressMapping extends BaseEntity {
 
 	public void setAlternateAddress(Boolean alternateAddress) {
 		this.alternateAddress = alternateAddress;
+	}
+
+	public Addresses getAddress() {
+		return address;
+	}
+
+	public void setAddress(Addresses address) {
+		this.address = address;
+	}
+
+	public Boolean getRenewalAddress() {
+		return renewalAddress;
+	}
+
+	public void setRenewalAddress(Boolean renewalAddress) {
+		this.renewalAddress = renewalAddress;
 	}
 
 }

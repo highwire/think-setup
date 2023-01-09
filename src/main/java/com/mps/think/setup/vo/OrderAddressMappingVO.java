@@ -1,16 +1,21 @@
 package com.mps.think.setup.vo;
 
+
+import com.mps.think.setup.model.Addresses;
+
 public class OrderAddressMappingVO {
 	
 	private Integer id;
 	
-	private Integer addressId;
+	private Addresses address;
 	
 	private Boolean shippingAddress;
 	
 	private Boolean billingAddress;
 	
 	private Boolean alternateAddress;
+	
+	private Boolean renewalAddress;
 
 	public Integer getId() {
 		return id;
@@ -18,14 +23,6 @@ public class OrderAddressMappingVO {
 
 	public void setId(Integer id) {
 		this.id = id;
-	}
-
-	public Integer getAddressId() {
-		return addressId;
-	}
-
-	public void setAddressId(Integer addressId) {
-		this.addressId = addressId;
 	}
 
 	public Boolean getShippingAddress() {
@@ -50,6 +47,22 @@ public class OrderAddressMappingVO {
 
 	public void setAlternateAddress(Boolean alternateAddress) {
 		this.alternateAddress = alternateAddress;
+	}
+
+	public Addresses getAddress() {
+		return address;
+	}
+
+	public void setAddress(Addresses address) {
+		this.address = address;
+	}
+
+	public Boolean getRenewalAddress() {
+		return renewalAddress;
+	}
+
+	public void setRenewalAddress(Boolean renewalAddress) {
+		this.renewalAddress = renewalAddress;
 	}
 
 }

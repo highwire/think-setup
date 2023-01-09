@@ -25,9 +25,11 @@ public class OrderKeyInformation extends BaseEntity {
 	@Column(name = "id")
 	private Integer id;
 	
+	// need to mapped to order code entity
 	@Column(name = "order_code")
 	private String orderCode;
 	
+	// need to mapped to source code entity
 	@Column(name = "source_code")
 	private String sourceCode;
 	
@@ -43,6 +45,12 @@ public class OrderKeyInformation extends BaseEntity {
 
 	@Column(name = "purchase_order")
 	private String purchaseOrder;
+	
+	@Column(name = "agent")
+	private String agent;
+	
+	@Column(name = "agent_reference_number")
+	private Long agentReferenceNum;
 
 	public Integer getId() {
 		return id;
@@ -98,6 +106,22 @@ public class OrderKeyInformation extends BaseEntity {
 
 	public void setPurchaseOrder(String purchaseOrder) {
 		this.purchaseOrder = purchaseOrder;
+	}
+
+	public String getAgent() {
+		return agent;
+	}
+
+	public void setAgent(String agent) {
+		this.agent = agent;
+	}
+
+	public Long getAgentReferenceNum() {
+		return agentReferenceNum;
+	}
+
+	public void setAgentReferenceNum(Long agentReferenceNum) {
+		this.agentReferenceNum = agentReferenceNum;
 	}
 
 }

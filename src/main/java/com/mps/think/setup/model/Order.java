@@ -3,12 +3,19 @@ package com.mps.think.setup.model;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.mps.think.setup.vo.EnumModelVO.OrderStatus;
+import com.mps.think.setup.vo.EnumModelVO.OrderType;
+
+
 
 @Table(name = "order_parent")
 @Entity
@@ -27,8 +34,13 @@ public class Order extends BaseEntity {
 	@Column(name = "customer_id")
 	private Integer customerId;
 	
+	@Enumerated(EnumType.STRING)
 	@Column(name = "order_type")
-	private Integer orderType;
+	private OrderType orderType;
+	
+	@Enumerated(EnumType.STRING)
+	@Column(name = "orderStatus")
+	private OrderStatus orderStatus;
 	
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "key_order_information_id", referencedColumnName = "id" )
@@ -70,12 +82,20 @@ public class Order extends BaseEntity {
 		this.customerId = customerId;
 	}
 
-	public Integer getOrderType() {
+	public OrderType getOrderType() {
 		return orderType;
 	}
 
-	public void setOrderType(Integer orderType) {
+	public void setOrderType(OrderType orderType) {
 		this.orderType = orderType;
+	}
+
+	public OrderStatus getOrderStatus() {
+		return orderStatus;
+	}
+
+	public void setOrderStatus(OrderStatus orderStatus) {
+		this.orderStatus = orderStatus;
 	}
 
 	public OrderKeyInformation getKeyOrderInformation() {
@@ -125,5 +145,6 @@ public class Order extends BaseEntity {
 	public void setAuxiliaryInformation(OrderAuxiliaryInformation auxiliaryInformation) {
 		this.auxiliaryInformation = auxiliaryInformation;
 	}
-
+	
+	
 }

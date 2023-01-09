@@ -18,6 +18,10 @@ public class OrderKeyInformationVO {
 
 	private String purchaseOrder;
 
+	private String agent;
+
+	private Long agentReferenceNum;
+
 	public Integer getId() {
 		return id;
 	}
@@ -72,6 +76,22 @@ public class OrderKeyInformationVO {
 
 	public void setPurchaseOrder(String purchaseOrder) {
 		this.purchaseOrder = purchaseOrder;
+	}
+
+	public String getAgent() {
+		return agent;
+	}
+
+	public void setAgent(String agent) {
+		this.agent = agent;
+	}
+
+	public Long getAgentReferenceNum() {
+		return agentReferenceNum;
+	}
+
+	public void setAgentReferenceNum(Long agentReferenceNum) {
+		this.agentReferenceNum = agentReferenceNum;
 	}
 
 }
