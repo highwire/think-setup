@@ -38,4 +38,10 @@ public class AddOrderServiceImpl implements AddOrderService {
 		return addOrderRepo.findAllByCustomerId(customerId);
 	}
 
+	@Override
+	public Order updateOrder(OrderVO order) throws Exception {
+		ObjectMapper mapper = new ObjectMapper();
+		return addOrderRepo.saveAndFlush(mapper.convertValue(order, Order.class));
+	}
+
 }

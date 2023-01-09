@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,6 +26,11 @@ public class AddOrderController {
 	@PostMapping("/saveOrder")
 	public ResponseEntity<?> saveOrder(@RequestBody OrderVO order) throws Exception {
 		return ResponseEntity.ok(addOrderService.saveOrder(order));
+	}
+	
+	@PutMapping("/updateOrder")
+	public ResponseEntity<?> updateOrder(@RequestBody OrderVO order) throws Exception {
+		return ResponseEntity.ok(addOrderService.updateOrder(order));
 	}
 	
 	@GetMapping("/getAllOrders")
