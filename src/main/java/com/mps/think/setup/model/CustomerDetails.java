@@ -67,7 +67,7 @@ public class CustomerDetails  extends BaseEntity{
 	@Column(name = "email")
 	private String email;
 	
-	@NotBlank
+//	@NotBlank
 	@Column(name = "country_code")
 	private String countryCode;
 	

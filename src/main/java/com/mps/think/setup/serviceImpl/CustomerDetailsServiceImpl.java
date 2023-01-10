@@ -123,12 +123,19 @@ public class CustomerDetailsServiceImpl implements CustomerDetailsService {
 		
 		for (CustomerAddresses customerAddresses : customerDetails.getCustomerAddresses()) {
 			CustomerAddresses cust = new CustomerAddresses();
-			if (customerAddresses.getId() == null) {
-				cust.setId(customerAddresses.getId());
+			if (customerAddresses.getId()!=0) {
+			cust.setId(customerAddresses.getId());
 			cust.setCustomerId(customerDetails.getCustomerId());
 			cust.setAddressesId(customerAddresses.getAddressesId());
-			customerAddressesRepo.save(cust);
+//			customerAddressesRepo.save(cust);
+			}else {
+				cust.setCustomerId(customerDetails.getCustomerId());
+				cust.setAddressesId(customerAddresses.getAddressesId());
+//				customerAddressesRepo.save(cust);
 			}
+			customerAddressesRepo.save(cust);
+//			}
+//			}
 		}
 		return customerDetails;
 	}
@@ -149,7 +156,6 @@ public class CustomerDetailsServiceImpl implements CustomerDetailsService {
 				Addresses contactDetails = addressesServiceImpl.findbyAddressesId(customerAddressTemp.getAddressesId());
 				tempAddress.add(contactDetails);
 				customerAddressTemp.setAddressess(tempAddress);
-
 			}
 			tempCustomer.setCustomerAddresses(tempCustomerAddress);
 			return tempCustomer;

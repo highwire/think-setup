@@ -253,7 +253,6 @@ public class Addresses  extends BaseEntity{
 		this.frequency = frequency;
 	}
 
-	
 	public String getSelectionFrom() {
 		return selectionFrom;
 	}
