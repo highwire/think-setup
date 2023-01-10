@@ -280,6 +280,8 @@ public class Addresses  extends BaseEntity{
 				+ "]";
 	}
 
+	
+
 //	@Override
 //	public String toString() {
 //		return "Addresses [addressId=" + addressId + ", cusId=" + cusId + ", addressName=" + addressName

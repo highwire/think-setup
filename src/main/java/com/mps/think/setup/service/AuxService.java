@@ -3,6 +3,7 @@ package com.mps.think.setup.service;
 import java.util.List;
 
 import com.mps.think.setup.model.AuxVariable;
+import com.mps.think.setup.model.CustomerCategory;
 import com.mps.think.setup.vo.AuxVariableVO;
 
 public interface AuxService {
@@ -14,5 +15,7 @@ public interface AuxService {
 	public AuxVariableVO updateAuxVariable(AuxVariableVO auxStatus);
 
 	public AuxVariable findbyAuxId(Integer auxId);
+	
+	public AuxVariable deleteByAuxVariableId(Integer auxId);
 
 }

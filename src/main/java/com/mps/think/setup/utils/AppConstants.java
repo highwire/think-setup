@@ -16,7 +16,8 @@ public class AppConstants {
 	public static final String Email_Semi="-:";
 	
 	public enum codeGen {
-		None("None"), Renewals("Renewals"), Promotions("Promotions");
+
+		None("None"), Renewals("Renewals"), Promotions("Promotions"),MediaType("MediaType"),Year("Year");
 		
 		private String displayName;
 

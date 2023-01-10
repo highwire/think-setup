@@ -36,13 +36,6 @@ public class AddressesVO {
 	public void setAddressId(Integer addressId) {
 		this.addressId = addressId;
 	}
-//	public CustomerDetails getCusId() {
-//		return cusId;
-//	}
-//	public void setCusId(CustomerDetails cusId) {
-//		this.cusId = cusId;
-//	}
-
 	public String getAddressName() {
 		return addressName;
 	}
@@ -168,7 +161,6 @@ public class AddressesVO {
 				+ "]";
 	}
 	
-
 	
 	
 

@@ -1,5 +1,5 @@
 package com.mps.think.setup.model;
-
+// customer details
 import java.util.List;
 
 import javax.persistence.Column;

@@ -43,6 +43,16 @@ description
 	
 	@Column(name = "description")
 	private String description;
+	
+	
+	@Column(name = "current_issue")
+	private String currentIssue;
+
+	@Column(name = "current_volume")
+	private String currentVolume;
+	
+	@Column(name = "text")
+	private String text;
 
 
 	public Integer getLableKeylineId() {
@@ -95,10 +105,41 @@ description
 	}
 
 
+	public String getCurrentIssue() {
+		return currentIssue;
+	}
+
+
+	public void setCurrentIssue(String currentIssue) {
+		this.currentIssue = currentIssue;
+	}
+
+
+	public String getCurrentVolume() {
+		return currentVolume;
+	}
+
+
+	public void setCurrentVolume(String currentVolume) {
+		this.currentVolume = currentVolume;
+	}
+
+
+	public String getText() {
+		return text;
+	}
+
+
+	public void setText(String text) {
+		this.text = text;
+	}
+
+
 	@Override
 	public String toString() {
 		return "LableKeyLine [lableKeylineId=" + lableKeylineId + ", pubId=" + pubId + ", labelKeyline=" + labelKeyline
-				+ ", suppressflag=" + suppressflag + ", description=" + description + "]";
+				+ ", suppressflag=" + suppressflag + ", description=" + description + ", currentIssue=" + currentIssue
+				+ ", currentVolume=" + currentVolume + ", text=" + text + "]";
 	}
 
 	

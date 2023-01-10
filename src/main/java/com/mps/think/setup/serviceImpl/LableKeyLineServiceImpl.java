@@ -28,6 +28,9 @@ public class LableKeyLineServiceImpl implements LableKeyLineService {
 		lableKeyLine.setDescription(lableKeyLineVo.getDescription());
 		lableKeyLine.setLabelKeyline(lableKeyLineVo.getLabelKeyline());
 		lableKeyLine.setSuppressflag(lableKeyLineVo.isSuppressflag());
+		lableKeyLine.setCurrentIssue(lableKeyLineVo.getCurrentIssue());
+		lableKeyLine.setCurrentVolume(lableKeyLineVo.getCurrentVolume());
+		lableKeyLine.setText(lableKeyLineVo.getText());
 		Publisher publisher = new Publisher();
 		publisher.setId(lableKeyLineVo.getPubId().getId());
 		lableKeyLine.setPubId(publisher);
@@ -43,6 +46,9 @@ public class LableKeyLineServiceImpl implements LableKeyLineService {
 		lableKeyLine.setDescription(lableKeyLineVo.getDescription());
 		lableKeyLine.setLabelKeyline(lableKeyLineVo.getLabelKeyline());
 		lableKeyLine.setSuppressflag(lableKeyLineVo.isSuppressflag());
+		lableKeyLine.setCurrentIssue(lableKeyLineVo.getCurrentIssue());
+		lableKeyLine.setCurrentVolume(lableKeyLineVo.getCurrentVolume());
+		lableKeyLine.setText(lableKeyLineVo.getText());
 		Publisher publisher = new Publisher();
 		publisher.setId(lableKeyLineVo.getPubId().getId());
 		lableKeyLine.setPubId(publisher);
