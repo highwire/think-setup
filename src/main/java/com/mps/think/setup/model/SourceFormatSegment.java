@@ -35,9 +35,10 @@ public class SourceFormatSegment extends BaseEntity {
 	@JoinColumn(name = "Source_format_id", referencedColumnName = "id")
 	private SourceFormat sourceFormat;
 
-	@Enumerated(EnumType.STRING)
+//	@Enumerated(EnumType.STRING)
 	@Column(name = "generation_method")
-	private AppConstants.GenerationMethod generationMethod;
+	private String generationMethod;
+//	private AppConstants.GenerationMethod generationMethod;
 
 	@Column(name = "fixed_value")
 	private String fixedValue;
@@ -45,9 +46,10 @@ public class SourceFormatSegment extends BaseEntity {
 	@Column(name = "gen_func_parm")
 	private String genFuncParm;
 
-	@Enumerated(EnumType.STRING)
+//	@Enumerated(EnumType.STRING)
 	@Column(name = "generation_function")
-	private AppConstants.GenerationFunction generationFunction;
+	private String generationFunction;
+//	private AppConstants.GenerationFunction generationFunction;
 
 	public Integer getId() {
 		return id;
@@ -75,11 +77,11 @@ public class SourceFormatSegment extends BaseEntity {
 		this.sourceFormat = sourceFormat;
 	}
 
-	public AppConstants.GenerationMethod getGenerationMethod() {
+	public String getGenerationMethod() {
 		return generationMethod;
 	}
 
-	public void setGenerationMethod(AppConstants.GenerationMethod generationMethod) {
+	public void setGenerationMethod(String generationMethod) {
 		this.generationMethod = generationMethod;
 	}
 
@@ -101,11 +103,11 @@ public class SourceFormatSegment extends BaseEntity {
 
 	
 
-	public AppConstants.GenerationFunction getGenerationFunction() {
+	public String getGenerationFunction() {
 		return generationFunction;
 	}
 
-	public void setGenerationFunction(AppConstants.GenerationFunction generationFunction) {
+	public void setGenerationFunction(String generationFunction) {
 		this.generationFunction = generationFunction;
 	}
 

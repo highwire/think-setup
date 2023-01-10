@@ -11,8 +11,9 @@ public class SourceFormatSegmentVo {
 
 	private SourceAttributeVo sourceAttribute;
 
-	@Enumerated(EnumType.STRING)
-	private AppConstants.GenerationMethod generationMethod;
+//	@Enumerated(EnumType.STRING)
+//	private AppConstants.GenerationMethod generationMethod;
+	private String generationMethod;
 
 	private String fixedValue;
 
@@ -20,8 +21,9 @@ public class SourceFormatSegmentVo {
 
 	private Integer demQuestionId;
 
-	@Enumerated(EnumType.STRING)
-	private AppConstants.GenerationFunction generationFunction;
+//	@Enumerated(EnumType.STRING)
+//	private AppConstants.GenerationFunction generationFunction;
+	private String generationFunction;
 	
 	private SourceFormatVo SourceFormatVo;
 
@@ -65,19 +67,19 @@ public class SourceFormatSegmentVo {
 		this.demQuestionId = demQuestionId;
 	}
 
-	public AppConstants.GenerationMethod getGenerationMethod() {
+	public String getGenerationMethod() {
 		return generationMethod;
 	}
 
-	public void setGenerationMethod(AppConstants.GenerationMethod generationMethod) {
+	public void setGenerationMethod(String generationMethod) {
 		this.generationMethod = generationMethod;
 	}
 
-	public AppConstants.GenerationFunction getGenerationFunction() {
+	public String getGenerationFunction() {
 		return generationFunction;
 	}
 
-	public void setGenerationFunction(AppConstants.GenerationFunction generationFunction) {
+	public void setGenerationFunction(String generationFunction) {
 		this.generationFunction = generationFunction;
 	}
 	

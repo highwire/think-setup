@@ -33,9 +33,10 @@ public class SourceFormat extends BaseEntity {
 	@Column(name = "mru_source_format_segment_seq")
 	private Integer mruSourceFormatSegmentSeq;
 
-	@Enumerated(EnumType.STRING)
+//	@Enumerated(EnumType.STRING)
 	@Column(name = "code_gen_type")
-	private AppConstants.codeGen codeGenType;
+	private String codeGenType;
+//	private AppConstants.codeGen codeGenType;
 
 	public Integer getId() {
 		return id;
@@ -69,11 +70,11 @@ public class SourceFormat extends BaseEntity {
 		this.mruSourceFormatSegmentSeq = mruSourceFormatSegmentSeq;
 	}
 
-	public AppConstants.codeGen getCodeGenType() {
+	public String getCodeGenType() {
 		return codeGenType;
 	}
 
-	public void setCodeGenType(AppConstants.codeGen codeGenType) {
+	public void setCodeGenType(String codeGenType) {
 		this.codeGenType = codeGenType;
 	}
 

@@ -13,8 +13,9 @@ public class AuxVariableVO {
 
 	private Publisher pubId;
 
-	@Enumerated(EnumType.STRING)
-	private AppConstants.AuxCategory auxCategory;
+//	@Enumerated(EnumType.STRING)
+//	private AppConstants.AuxCategory auxCategory;
+	private String auxCategory;
 
 	private String variableName;
 
@@ -34,16 +35,24 @@ public class AuxVariableVO {
 		this.auxVarId = auxVarId;
 	}
 
-	public AppConstants.AuxCategory getAuxCategory() {
-		return auxCategory;
-	}
-
-	public void setAuxCategory(AppConstants.AuxCategory auxCategory) {
-		this.auxCategory = auxCategory;
-	}
+//	public AppConstants.AuxCategory getAuxCategory() {
+//		return auxCategory;
+//	}
+//
+//	public void setAuxCategory(AppConstants.AuxCategory auxCategory) {
+//		this.auxCategory = auxCategory;
+//	}
 
 	public String getVariableName() {
 		return variableName;
+	}
+
+	public String getAuxCategory() {
+		return auxCategory;
+	}
+
+	public void setAuxCategory(String auxCategory) {
+		this.auxCategory = auxCategory;
 	}
 
 	public void setVariableName(String variableName) {
