@@ -28,8 +28,8 @@ public class AddressesVO {
 	private Date validFrom;
 	private Date validTo;
 	private Frequency frequency;
-	private Date selectionFrom;
-	private Date selectionTo;
+	private String selectionFrom;
+	private String selectionTo;
 	public Integer getAddressId() {
 		return addressId;
 	}
@@ -145,16 +145,16 @@ public class AddressesVO {
 	public void setFrequency(Frequency frequency) {
 		this.frequency = frequency;
 	}
-	public Date getSelectionFrom() {
+	public String getSelectionFrom() {
 		return selectionFrom;
 	}
-	public void setSelectionFrom(Date selectionFrom) {
+	public void setSelectionFrom(String selectionFrom) {
 		this.selectionFrom = selectionFrom;
 	}
-	public Date getSelectionTo() {
+	public String getSelectionTo() {
 		return selectionTo;
 	}
-	public void setSelectionTo(Date selectionTo) {
+	public void setSelectionTo(String selectionTo) {
 		this.selectionTo = selectionTo;
 	}
 	@Override
