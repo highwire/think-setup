@@ -1,0 +1,127 @@
+package com.mps.think.setup.model;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@Table(name = "order_key_information")
+@Entity
+public class OrderKeyInformation extends BaseEntity {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6518651567508298610L;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
+	private Integer id;
+	
+	// need to mapped to order code entity
+	@Column(name = "order_code")
+	private String orderCode;
+	
+	// need to mapped to source code entity
+	@Column(name = "source_code")
+	private String sourceCode;
+	
+	@Column(name = "order_category")
+	private String orderCategory;
+	
+	@Column(name = "order_status")
+	private String orderStatus;
+	
+	@Column(name = "order_date")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date orderDate;
+
+	@Column(name = "purchase_order")
+	private String purchaseOrder;
+	
+	@Column(name = "agent")
+	private String agent;
+	
+	@Column(name = "agent_reference_number")
+	private Long agentReferenceNum;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getOrderCode() {
+		return orderCode;
+	}
+
+	public void setOrderCode(String orderCode) {
+		this.orderCode = orderCode;
+	}
+
+	public String getSourceCode() {
+		return sourceCode;
+	}
+
+	public void setSourceCode(String sourceCode) {
+		this.sourceCode = sourceCode;
+	}
+
+	public String getOrderCategory() {
+		return orderCategory;
+	}
+
+	public void setOrderCategory(String orderCategory) {
+		this.orderCategory = orderCategory;
+	}
+
+	public String getOrderStatus() {
+		return orderStatus;
+	}
+
+	public void setOrderStatus(String orderStatus) {
+		this.orderStatus = orderStatus;
+	}
+
+	public Date getOrderDate() {
+		return orderDate;
+	}
+
+	public void setOrderDate(Date orderDate) {
+		this.orderDate = orderDate;
+	}
+
+	public String getPurchaseOrder() {
+		return purchaseOrder;
+	}
+
+	public void setPurchaseOrder(String purchaseOrder) {
+		this.purchaseOrder = purchaseOrder;
+	}
+
+	public String getAgent() {
+		return agent;
+	}
+
+	public void setAgent(String agent) {
+		this.agent = agent;
+	}
+
+	public Long getAgentReferenceNum() {
+		return agentReferenceNum;
+	}
+
+	public void setAgentReferenceNum(Long agentReferenceNum) {
+		this.agentReferenceNum = agentReferenceNum;
+	}
+
+}

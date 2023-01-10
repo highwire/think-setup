@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -46,6 +47,7 @@ public class AuxController {
 		return ResponseEntity.ok(auxServiceImpl.findbyAuxId(auxId));
 	}
 	
+
 	@GetMapping("/getAllAuxCategory")
 	public ResponseEntity<?> getAllAuxCategory() {
 		List<String> list= new ArrayList<>();
@@ -63,4 +65,10 @@ public class AuxController {
 		}
 		return ResponseEntity.ok(list);
 	}
+
+	@DeleteMapping("/deleteBycAuxId")
+	public ResponseEntity<?> deleteBycreditId(@RequestBody Integer auxId) {
+		return ResponseEntity.ok(auxServiceImpl.deleteByAuxVariableId(auxId));
+	}
+
 }
