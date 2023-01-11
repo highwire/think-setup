@@ -2,8 +2,7 @@ package com.mps.think.setup.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,7 +12,7 @@ import javax.persistence.OneToOne;
 //import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.mps.think.setup.vo.EnumModelVO.OrderClasses;
+
 
 @Table(name = "cancel_reasons")
 @Entity
@@ -39,9 +38,8 @@ public class CancelReasons extends BaseEntity {
 	@Column(name = "description")
 	private String description;
 	
-	@Enumerated(EnumType.STRING)
 	@Column(name = "order_Classes")
-	private OrderClasses ordClasses;
+	private String ordClasses;
 
 	public Integer getCancelReasonsId() {
 		return cancelReasonsId;
@@ -75,11 +73,11 @@ public class CancelReasons extends BaseEntity {
 		this.description = description;
 	}
 
-	public OrderClasses getOrdClasses() {
+	public String getOrdClasses() {
 		return ordClasses;
 	}
 
-	public void setOrdClasses(OrderClasses ordClasses) {
+	public void setOrdClasses(String ordClasses) {
 		this.ordClasses = ordClasses;
 	}
 
@@ -88,6 +86,7 @@ public class CancelReasons extends BaseEntity {
 		return "CancelReasons [cancelReasonsId=" + cancelReasonsId + ", pubId=" + pubId + ", cancelReason="
 				+ cancelReason + ", description=" + description + ", ordClasses=" + ordClasses + "]";
 	}
+
 	
 
 }

@@ -1,7 +1,7 @@
 package com.mps.think.setup.vo;
 
 import com.mps.think.setup.model.Publisher;
-import com.mps.think.setup.vo.EnumModelVO.OrderClasses;
+
 
 public class CancelReasonsVO {
 	
@@ -9,7 +9,7 @@ public class CancelReasonsVO {
 	private Publisher pubId;
 	private String cancelReason;
 	private String description;
-	private OrderClasses ordClasses;
+	private String ordClasses;
 	
 	public Integer getCancelReasonsId() {
 		return cancelReasonsId;
@@ -35,10 +35,10 @@ public class CancelReasonsVO {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public OrderClasses getOrdClasses() {
+	public String getOrdClasses() {
 		return ordClasses;
 	}
-	public void setOrdClasses(OrderClasses ordClasses) {
+	public void setOrdClasses(String ordClasses) {
 		this.ordClasses = ordClasses;
 	}
 	@Override
@@ -47,5 +47,5 @@ public class CancelReasonsVO {
 				+ cancelReason + ", description=" + description + ", ordClasses=" + ordClasses + "]";
 	}
 	
-
+	
 }

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.mps.think.setup.service.CancelReasonsService;
 import com.mps.think.setup.vo.CancelReasonsVO;
-import com.mps.think.setup.vo.EnumModelVO.OrderClasses;
+
 
 
 @RestController
@@ -41,10 +41,6 @@ public class CancelReasonsController {
 		return ResponseEntity.ok(cancelReasonsService.findbyCancelReasonsId(cancelReasonsId));
 	}
 	
-	@GetMapping("/findAllOrderClasses")
-	public ResponseEntity<?> getAllOrderClasses() {
-		return ResponseEntity.ok(OrderClasses.values());
-	}
 	
 	@DeleteMapping("/deleteByCrId")
 	public ResponseEntity<?> deleteByCancelReasonsId(@RequestBody Integer cancelReasonsId) {
