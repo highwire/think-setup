@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mps.think.setup.model.Addresses;
+import com.mps.think.setup.model.CustomerAddresses;
 import com.mps.think.setup.model.CustomerDetails;
 import com.mps.think.setup.repo.AddressesRepo;
 import com.mps.think.setup.repo.CustomerDetailsRepo;
@@ -108,6 +109,21 @@ public class AddressesServiceImpl implements AddressService  {
 		Addresses delete = findbyAddressesId(addressesId);
 		addressRepo.delete(delete);
 		return delete;
+	}
+	
+	@Override
+	public Addresses updatePrimaryAddressbyCustId(Integer customerId, Integer addressId) {
+		CustomerDetails customer= customerDetailsServiceImpl.findbyCustomerDetailsId(customerId);
+		for(CustomerAddresses custAddress:customer.getCustomerAddresses()) {
+			for(Addresses address:custAddress.getAddressess()) {
+				address.setPrimaryAddress(false);
+				addressRepo.save(address);
+			}
+		}
+		Addresses details= addressRepo.findByaddressId(addressId);
+		details.setPrimaryAddress(true);
+		addressRepo.save(details);
+		return details;
 	}
 
 //	@Override

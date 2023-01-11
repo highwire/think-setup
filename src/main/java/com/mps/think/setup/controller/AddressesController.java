@@ -61,6 +61,11 @@ public class AddressesController {
 	public ResponseEntity<?> getAllFrequency() {
 		return ResponseEntity.ok(Frequency.values());
 	}
+	
+	@PostMapping("/updatePrimaryAddressbyCustId")
+	public ResponseEntity<?> updatePrimaryAddressbyCustId(Integer customerId, Integer addressId) {
+		return ResponseEntity.ok(addressService.updatePrimaryAddressbyCustId(customerId, addressId));
+	}
 //	=============================================================================
 	
 //	@PostMapping("/findAllAddressesByCustomerId")

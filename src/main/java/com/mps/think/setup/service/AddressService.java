@@ -19,6 +19,8 @@ public interface AddressService {
 	public Addresses findbyAddressesId(Integer addressesId);
 	
 	public Addresses deleteByAddressesId(Integer addressesId);
+
+	Addresses updatePrimaryAddressbyCustId(Integer customerId, Integer addressId);
 	
 //	public List<Addresses> getAllAddressesByCustomerId(Integer cusId);
 
